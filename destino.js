@@ -20,4 +20,4 @@
    correo del visitante. No se rompe nada.
    ─────────────────────────────────────────────────────────────────────────────────────── */
 
-window.NEXO_ENDPOINT = "";
+window.NEXO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxtry10VnYV2FZ87-7H9s0mLXDH9Oy8lmI2Z4ccyQAIkERa-1IqvVXLjkoenIDRDD5atg/exec";
