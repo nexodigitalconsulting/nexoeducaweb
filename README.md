@@ -9,7 +9,8 @@ ficheros que hacen falta para que la web funcione.
 
 - `index.html`  la web (un unico fichero: no necesita servidor ni instalar nada)
 - `legal.html`  aviso legal y politica de privacidad
-- `destino.js`  a donde se mandan las respuestas de la encuesta
+- `destino.js`  a donde se mandan las respuestas de la encuesta (familias y profes)
+- `profe/index.html`  la pagina de captacion de profesores: se sirve en /profe
 
 **No se edita nada aqui a mano.** Los cambios se hacen en el proyecto y se publican con el script
 `scripts/publicar_web.py`. Cualquier cambio hecho directamente aqui se pierde en la siguiente publicacion.

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXOEDUCA para profesores · prepara tus clases en 30 segundos</title>
+<meta name="description" content="Para profesores particulares: el material de cada alumno, los deberes y el informe para la familia, hechos por ti en 30 segundos. Plazas de prueba gratis para los primeros 100 profes.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --gris:#CBD5E1; --coral:#EF4444;
+  --uva:#8B5CF6; --menta:#14B8A6;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5.2vw,54px);font-weight:800;letter-spacing:-.5px}
+h2{font-size:clamp(24px,3.4vw,36px);font-weight:700;letter-spacing:-.3px}
+h3{font-size:20px;font-weight:700}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+.mini{font-size:14.5px}
+.muted{color:var(--tinta-suave)}
+.centrado{text-align:center}
+.ancho{max-width:1080px;margin:0 auto;padding:0 20px}
+.ancho-estrecho{max-width:760px;margin:0 auto;padding:0 20px}
+.tiza{display:block;width:100%;height:18px;color:var(--linea)}
+section{padding:54px 0;position:relative}
+.sep{border:0;border-top:2px dashed var(--linea);margin:0}
+
+/* ---------- barra superior ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,248,238,.92);backdrop-filter:blur(6px);
+  border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px}
+.marca__logo{width:40px;height:40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.topbar__aviso{margin-left:auto;font-size:14.5px;color:var(--tinta-suave);display:flex;align-items:center;gap:8px}
+.punto{width:9px;height:9px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 4px rgba(22,163,74,.16)}
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:18px;
+  padding:13px 22px;border-radius:16px;border:2px solid #D9600B;background:var(--naranja);color:#fff;
+  cursor:pointer;text-decoration:none;box-shadow:0 5px 0 #B84D06;transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #B84D06}
+.btn--blanco{background:#fff;color:var(--tinta);border-color:var(--linea);box-shadow:0 5px 0 rgba(36,48,63,.12)}
+.btn--blanco:hover{box-shadow:0 3px 0 rgba(36,48,63,.12)}
+.btn--grande{font-size:20px;padding:16px 26px}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 20px;overflow:hidden}
+.hero__in{max-width:1080px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center}
+.hero__boca{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.hero__lista{list-style:none;padding:0;margin:16px 0 20px;display:grid;gap:9px}
+.hero__lista li{display:flex;gap:10px;align-items:flex-start;font-size:17px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero__nota{font-size:14px;color:var(--tinta-suave);margin-top:14px;display:flex;gap:8px;align-items:flex-start}
+.hero__mascota{display:grid;place-items:center;position:relative}
+
+/* ---------- subrayador, típex, post-it, pegatinas ---------- */
+.subrayado{position:relative;z-index:0;display:inline;padding:0 2px}
+.subrayado::before{content:"";position:absolute;left:-5px;right:-7px;bottom:-1px;height:.66em;background:var(--c,#FDE68A);
+  opacity:.95;transform:rotate(-.9deg);z-index:-1;
+  clip-path:polygon(1% 26%,22% 12%,48% 20%,74% 8%,99% 22%,98% 72%,76% 88%,52% 78%,26% 92%,2% 76%)}
+.subrayado::after{content:"";position:absolute;left:-2px;right:-3px;bottom:.12em;height:.22em;background:var(--c,#FDE68A);
+  opacity:.5;transform:rotate(-.4deg);z-index:-1;
+  clip-path:polygon(0 40%,34% 8%,68% 34%,100% 6%,100% 62%,66% 92%,32% 66%,0 96%)}
+.subrayador-caja{display:inline-block;position:relative;padding:2px 4px}
+.postit{position:relative;display:inline-block;background:#FFF6B8;padding:16px 15px 14px;border-radius:3px;
+  box-shadow:0 7px 12px rgba(36,48,63,.13);transform:rotate(-1.5deg);font-family:'Caveat',cursive;
+  font-size:21px;line-height:1.15;color:#3A2E0A;max-width:290px}
+.postit__cinta{position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);width:70px;height:16px;
+  background:rgba(255,255,255,.6);border-left:1px dashed rgba(36,48,63,.16);border-right:1px dashed rgba(36,48,63,.16)}
+.pegatina-grande{display:inline-grid;place-items:center;transform:rotate(-3deg);filter:drop-shadow(0 6px 6px rgba(36,48,63,.2))}
+.tipex{position:relative;display:inline-block;padding:0 3px}
+.tipex__b{position:absolute;left:-4px;top:-3px;right:-6px;bottom:-2px;background:#FFFDF8;border-radius:8px 12px 9px 11px;
+  transform:rotate(-.8deg);box-shadow:0 0 0 2px rgba(255,253,248,.9)}
+.tipex__t{position:relative;font-family:'Caveat',cursive;font-size:21px;color:var(--tinta)}
+.garabato{position:absolute;color:var(--naranja);opacity:.55;pointer-events:none}
+
+/* ---------- tarjetas ---------- */
+.rejilla{display:grid;gap:18px}
+.rejilla--2{grid-template-columns:repeat(2,1fr)}
+.rejilla--3{grid-template-columns:repeat(3,1fr)}
+.rejilla--4{grid-template-columns:repeat(4,1fr)}
+.tarjeta{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:20px;
+  box-shadow:var(--sombra);position:relative}
+.tarjeta--plana{box-shadow:none}
+.tarjeta__ic{width:52px;height:52px;border-radius:16px;background:#FFF1DF;border:2px solid var(--linea);
+  display:grid;place-items:center;margin-bottom:12px}
+.tarjeta h3{margin-bottom:6px}
+.pastilla{display:inline-block;font-size:13.5px;font-weight:700;padding:4px 11px;border-radius:999px;
+  background:#fff;border:2px solid var(--linea);color:var(--tinta-suave)}
+.pastilla--naranja{background:var(--naranja-2);border-color:#F6C79B;color:var(--naranja-tinta)}
+.pastilla--verde{background:#DCFCE7;border-color:#A7E8BD;color:#166534}
+.pastilla--azul{background:var(--azul-2);border-color:#BBD3FF;color:var(--azul-tinta)}
+
+/* ---------- pasos ---------- */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.paso{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:20px;box-shadow:var(--sombra)}
+.paso__n{font-family:'Baloo 2';font-weight:800;font-size:15px;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;background:var(--naranja);color:#fff;border:2px solid #D9600B;margin-bottom:10px}
+
+/* ---------- el movil (reflejo de la app) ---------- */
+.movil{width:330px;max-width:100%;background:#fff;border:2px solid var(--linea);border-radius:30px;padding:10px;
+  box-shadow:var(--sombra)}
+.hoja{background:var(--papel-3);border:2px solid var(--linea);border-radius:22px;overflow:hidden}
+.hoja__barra{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border-bottom:2px solid var(--linea)}
+.hoja__cuerpo{padding:14px}
+.av{width:34px;height:34px;border-radius:12px;background:var(--naranja-2);border:2px solid #F6C79B;display:grid;place-items:center;
+  font-family:'Baloo 2';font-weight:800;color:var(--naranja-tinta);flex:0 0 34px}
+.quien b{font-family:'Baloo 2';font-size:16px}
+.quien div{font-size:13px}
+
+/* ---------- el simulador ---------- */
+.sim{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:start}
+.ficha-opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:#fff;border:2px solid var(--linea);
+  border-radius:18px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font:inherit;color:inherit;
+  box-shadow:0 4px 0 rgba(36,48,63,.06);transition:transform .12s}
+.ficha-opt:hover{transform:translateY(2px)}
+.ficha-opt.on{border-color:var(--naranja);background:var(--naranja-2)}
+.ficha-opt__min{width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:var(--papel);border:2px solid var(--linea);
+  display:grid;place-items:center}
+.foto{position:relative;background:#fff;border:2px solid var(--linea);border-radius:14px;padding:12px;overflow:hidden;
+  background-image:repeating-linear-gradient(transparent 0 26px, rgba(37,99,235,.18) 26px 27px)}
+.foto__scan{position:absolute;left:0;right:0;height:38px;top:-40px;
+  background:linear-gradient(180deg,rgba(20,184,166,0),rgba(20,184,166,.45));pointer-events:none}
+.foto.leyendo .foto__scan{animation:scan 1.5s ease-in-out}
+@keyframes scan{0%{top:-40px}100%{top:110%}}
+.enunciado{font-family:'Caveat',cursive;font-size:22px;color:#12306F;line-height:1.3}
+.tema{display:inline-block;background:var(--azul-2);border:2px solid #BBD3FF;color:var(--azul-tinta);
+  font-family:'Baloo 2';font-weight:700;font-size:14px;border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.paso-ex{display:flex;gap:11px;margin-bottom:10px}
+.paso-ex__n{width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--menta);color:#fff;border:2px solid #0F8C80;
+  display:grid;place-items:center;font-family:'Baloo 2';font-weight:700;font-size:14px;margin-top:2px}
+.opcion{display:flex;gap:10px;align-items:center;padding:9px 12px;border:2px solid var(--linea);border-radius:14px;
+  margin-bottom:8px;background:#fff;cursor:pointer;font:inherit;color:inherit;width:100%;text-align:left}
+.opcion:hover{border-color:#F6C79B}
+.opcion.bien{border-color:#A7E8BD;background:#DCFCE7}
+.opcion.mal{border-color:#F6B4B4;background:#FEE7E7}
+.racha{display:flex;align-items:center;gap:8px;font-family:'Baloo 2';font-weight:700;color:#166534}
+.racha__tira{display:flex;gap:5px}
+.racha__p{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--linea)}
+.racha__p.on{background:var(--verde);border-color:#0F8C40}
+
+/* ---------- preguntas frecuentes ---------- */
+details{background:#fff;border:2px solid var(--linea);border-radius:18px;padding:14px 16px;margin-bottom:10px;
+  box-shadow:0 4px 0 rgba(36,48,63,.05)}
+details[open]{border-color:#F6C79B}
+summary{cursor:pointer;font-family:'Baloo 2';font-weight:700;font-size:18px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--naranja);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+
+/* ---------- la encuesta ---------- */
+.encuesta{background:var(--papel-2);border:2px solid var(--linea);border-radius:26px;box-shadow:var(--sombra);
+  padding:24px;position:relative}
+.barra-prog{display:flex;gap:7px;margin-bottom:18px}
+.barra-prog__b{flex:1;height:9px;border-radius:99px;background:#EFE4D3;overflow:hidden}
+.barra-prog__b.on{background:var(--naranja)}
+.bloque{display:none}
+.bloque.on{display:block;animation:entra .28s ease}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.preg{margin-bottom:20px}
+.preg__t{font-family:'Baloo 2';font-weight:700;font-size:19px;margin-bottom:3px}
+.preg__h{font-size:14px;color:var(--tinta-suave);margin-bottom:9px}
+.ops{display:flex;flex-wrap:wrap;gap:8px}
+.op{font:inherit;font-size:15.5px;padding:9px 14px;border-radius:14px;border:2px solid var(--linea);background:#fff;
+  cursor:pointer;color:inherit;transition:transform .1s}
+.op:hover{transform:translateY(2px)}
+.op.on{background:var(--naranja-2);border-color:var(--naranja);font-weight:700}
+.op--otra{display:flex;align-items:center;gap:8px}
+input[type=text],input[type=email],select,textarea{font:inherit;font-size:16px;padding:11px 13px;border-radius:14px;
+  border:2px solid var(--linea);background:#fff;color:inherit;width:100%;max-width:100%}
+input[type=text]:focus,input[type=email]:focus,select:focus,textarea:focus{outline:3px solid #FBD9B7;border-color:var(--naranja)}
+.casilla{display:flex;gap:11px;align-items:flex-start;background:#FFF6B8;border:2px solid #EFE0A0;border-radius:16px;
+  padding:14px;margin-top:12px}
+.casilla input{width:22px;height:22px;flex:0 0 22px;margin-top:2px;accent-color:var(--naranja)}
+.pie-bloque{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.aviso-error{color:#B91C1C;font-size:14.5px;margin-top:8px}
+.gracias{text-align:center;padding:14px 6px}
+.check-anim{width:78px;height:78px;margin:0 auto 12px;display:grid;place-items:center;animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+
+/* ---------- pie ---------- */
+footer{background:#fff;border-top:2px solid var(--linea);padding:30px 0;margin-top:20px}
+footer .ancho{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+footer a{color:var(--tinta-suave)}
+
+/* ---------- animaciones de entrada ---------- */
+.revela{opacity:0;transform:translateY(14px)}
+.revela.ya{opacity:1;transform:none;transition:opacity .5s ease, transform .5s ease}
+@media (prefers-reduced-motion:reduce){
+  .revela{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .foto.leyendo .foto__scan{animation:none}
+}
+
+/* ---------- movil ---------- */
+@media (max-width:900px){
+  .hero__in{grid-template-columns:1fr;gap:10px}
+  .hero__mascota{order:-1}
+  .sim{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr}
+  .rejilla--3,.rejilla--4{grid-template-columns:repeat(2,1fr)}
+  .topbar__aviso{display:none}
+  section{padding:40px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .rejilla--2,.rejilla--3,.rejilla--4{grid-template-columns:1fr}
+  .topbar__in{padding:8px 14px}
+  .btn{width:100%;justify-content:center}
+  .hero__cta .btn{width:100%}
+  .ancho{padding:0 16px}
+  .encuesta{padding:16px}
+  .garabato{display:none}
+}
+
+/* ---------- solo de la página del profesor ---------- */
+.hero--profe{background:linear-gradient(180deg,#EFF4FF,#FFF8EE);border-bottom:2px solid var(--linea)}
+.hero--profe h1{font-size:clamp(30px,4.6vw,48px)}
+.beneficio{display:flex;gap:12px;align-items:flex-start}
+.beneficio__ic{flex:0 0 54px}
+.gen{display:grid;grid-template-columns:.82fr 1.18fr;gap:22px;align-items:start}
+.gen__bloque{margin-bottom:16px}
+.gen__bloque>b{font-family:'Baloo 2';font-size:15px;display:block;margin-bottom:7px;color:var(--tinta-suave)}
+.chip{font:inherit;font-size:15px;padding:9px 14px;border-radius:14px;border:2px solid var(--linea);background:#fff;
+  cursor:pointer;color:inherit;margin:0 7px 7px 0}
+.chip:hover{transform:translateY(2px)}
+.chip.on{background:var(--azul-2);border-color:var(--azul);font-weight:700;color:var(--azul-tinta)}
+.a4{background:#fff;border:2px solid var(--linea);border-radius:16px;padding:22px 24px;position:relative;
+  box-shadow:var(--sombra);min-height:470px}
+.a4__cab{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:2px dashed var(--linea);
+  padding-bottom:10px;margin-bottom:14px}
+.a4__sello{border:2px dashed var(--azul);border-radius:12px;padding:5px 10px;font-family:'Baloo 2';font-size:13px;
+  color:var(--azul-tinta);background:#F2F7FF;transform:rotate(-2deg);white-space:nowrap}
+.a4__t{font-family:'Baloo 2';font-size:19px}
+.a4__linea{font-family:'Caveat',cursive;font-size:22px;color:#12306F;margin:0 0 12px;line-height:1.35}
+.a4__hueco{height:24px;border-bottom:2px dotted var(--linea);margin:0 0 10px}
+.pasos--4{grid-template-columns:repeat(4,1fr)}
+.plan{background:#fff;border:2px solid var(--linea);border-radius:var(--r);padding:20px;box-shadow:var(--sombra);position:relative}
+.plan--destacado{border-color:#F6C79B;background:#FFFDF8}
+.plan__p{font-family:'Baloo 2';font-size:36px;font-weight:800;line-height:1}
+.plan__p small{font-size:15px;font-weight:600;color:var(--tinta-suave)}
+.regla{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:16px;padding:14px;margin-top:12px}
+.tabla-caja{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabla-caja .tabla-profe{min-width:560px}
+.tabla-profe{width:100%;border-collapse:collapse;font-size:15px}
+.tabla-profe th,.tabla-profe td{text-align:left;padding:9px 8px;border-bottom:2px dashed var(--linea)}
+.tabla-profe th{color:var(--tinta-suave);font-size:13.5px}
+@media (max-width:900px){.gen{grid-template-columns:1fr}.pasos--4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pasos--4{grid-template-columns:1fr}.a4{padding:16px}}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs></svg>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <div class="marca"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></svg></div><div>NEXOEDUCA</div></div>
+    <div class="topbar__aviso"><span class="punto"></span> Plazas de prueba para los primeros 100 profes</div>
+    <a class="btn btn--blanco" href="../" style="margin-left:auto">Soy familia</a>
+  </div>
+</header>
+
+<section class="hero hero--profe">
+  <div class="hero__in">
+    <div>
+      <div class="hero__boca"><span class="pastilla pastilla--azul">Para profesores particulares</span></div>
+      <h1>Tus clases, preparadas solas.<br><span style="color:var(--azul)">Tus familias,</span> dentro.</h1>
+      <p class="muted" style="font-size:19px">La ficha de cada alumno, los deberes puestos y el informe para la
+      familia. Tú sigues dando clase; el papeleo se hace detrás, en treinta segundos.</p>
+      <ul class="hero__lista">
+        <li><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M4.6 8.4c5-.4 9.8-.4 14.8 0 .5 3.8.5 7.6 0 11.4-5 .4-9.8.4-14.8 0-.5-3.8-.5-7.6 0-11.4z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M4.6 8.4c5-.4 9.8-.4 14.8 0 .5 3.8.5 7.6 0 11.4-5 .4-9.8.4-14.8 0-.5-3.8-.5-7.6 0-11.4z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M9.4 8.3c-.2-2 0-3.3.7-4 .6-.6 3.1-.6 3.7-.1.7.6.9 2 .7 4.1" fill="none" stroke="#24303F" stroke-width="2.4"/><path d="M9.6 13.4c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/></g></svg></span><span><b>Llegas sabiendo qué tocar:</b> lo que trabajó, lo que le costó y lo que se le olvidó.</span></li>
+        <li><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 10.2c3.1-.3 6.2-.3 9.3 0 .4 0 .6.3.6.7v7.6c0 .4-.2.7-.6.7-3.1.3-6.2.3-9.3 0-.4 0-.6-.3-.6-.7v-7.6c0-.4.2-.7.6-.7z" fill="#FFFFFF"/><path d="M4.6 9.4c4.9-.4 9.8-.4 14.8 0 .6 2.4.6 4.8 0 7.2-4.9.4-9.8.4-14.8 0-.6-2.4-.6-4.8 0-7.2z" fill="#CBD5E1"/><path d="M7.6 4.4c2.9-.3 5.8-.3 8.8 0 .3 1.9.3 3.8 0 5.7-2.9.3-5.8.3-8.8 0-.3-1.9-.3-3.8 0-5.7z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M4.6 9.4c4.9-.4 9.8-.4 14.8 0 .6 2.4.6 4.8 0 7.2-4.9.4-9.8.4-14.8 0-.6-2.4-.6-4.8 0-7.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M7.6 4.4c2.9-.3 5.8-.3 8.8 0 .3 1.9.3 3.8 0 5.7-2.9.3-5.8.3-8.8 0-.3-1.9-.3-3.8 0-5.7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M7.4 13.4c3.1-.3 6.2-.3 9.3 0" fill="none" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/><path d="M7.5 16.6c2.6-.3 5.2-.3 7.8 0" fill="none" stroke="#14B8A6" stroke-width="2.8" stroke-linecap="round"/></g></svg></span><span><b>Una ficha por alumno</b> con su nivel, en pantalla y en papel para imprimir.</span></li>
+        <li><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="#FFFDF8"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0" fill="none" stroke="#24303F" stroke-width="2.2"/><path d="M10.3 12.4c1.7-.3 3.4-.3 5.1 0" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/><path d="M10.4 16.2c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/></g></svg></span><span><b>El informe de la sesión, hecho:</b> lo revisas y lo mandas. La familia lo ve.</span></li>
+      </ul>
+      <div class="hero__cta">
+        <a class="btn btn--grande" href="#apuntarse">Quiero una plaza de prueba</a>
+        <a class="btn btn--blanco" href="#probarlo">Ver qué sale</a>
+        <a class="btn btn--blanco" href="#sinconexion">Sin conexión</a>
+      </div>
+      <div class="hero__nota"><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M12.1 7.4c.2 1.7.2 3.4 0 5.1 1.2.7 2.3 1.5 3.4 2.4" fill="none" stroke="#24303F" stroke-width="2.6" stroke-linecap="round"/><path d="M17.6 4.4c.6.6 1.1 1.2 1.6 1.9" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span>Los primeros <b>100 profes</b> entran con <b>6 meses gratis</b> a cambio de una sola cosa: decirnos qué falla.</span></div>
+    </div>
+    <div class="hero__mascota">
+      <svg viewBox="0 0 200 210" width="230" height="230" role="img" aria-label="Nexi"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs><ellipse cx="100" cy="199" rx="60" ry="9" fill="#24303F" opacity="0.10"/><g filter="url(#c)"><path d="M74 112c16-2.6 36-2.6 52-.2 5.8.9 8.8 4 9.2 9.6.5 10-.2 20-.3 30-.1 5.4-3.2 8.6-8.6 9.3-16.2 2-32.4 2-48.6 0-5.4-.7-8.4-3.9-8.6-9.3-.6-10.6-.7-21.2-.3-31.8.3-5.6 3.3-8.7 8.8-9.4z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M74 112c16-2.6 36-2.6 52-.2 5.8.9 8.8 4 9.2 9.6.5 10-.2 20-.3 30-.1 5.4-3.2 8.6-8.6 9.3-16.2 2-32.4 2-48.6 0-5.4-.7-8.4-3.9-8.6-9.3-.6-10.6-.7-21.2-.3-31.8.3-5.6 3.3-8.7 8.8-9.4z" fill="none" stroke="#24303F" stroke-width="4.8"/><path d="M86 126c9.6-1.4 19.6-1.4 29.2 0 1.6 7.6 1.6 15.2 0 22.8-9.6 1.4-19.6 1.4-29.2 0-1.6-7.6-1.6-15.2 0-22.8z" fill="#F97316" stroke="#24303F" stroke-width="3.6"/><path d="M92.4 132.4c1.8-.4 3.6-.4 5.4 0M92.4 138.4c1.8-.4 3.6-.4 5.4 0M100 130.2c.3 4.2.3 8.4 0 12.6" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/></g><g transform="translate(100 64) scale(1.16) translate(-100 -64)"><g filter="url(#c)"><path d="M99.6 20c22.6-1 41.4 17.4 41.9 39.6.5 22.4-17.6 41-39.9 41.6C79.2 101.9 60 83.5 59.7 61.2 59.4 39 77.4 20.8 99.6 20z" fill="#FFFFFF"/></g><g filter="url(#g)"><path d="M99.6 20c22.6-1 41.4 17.4 41.9 39.6.5 22.4-17.6 41-39.9 41.6C79.2 101.9 60 83.5 59.7 61.2 59.4 39 77.4 20.8 99.6 20z" fill="none" stroke="#24303F" stroke-width="4.8"/><path d="M76 47.4c15.8-1.6 31.6-1.6 47.4 0 4.8.5 8 3.7 8.4 8.6.5 5.8.5 11.6 0 17.4-.4 4.9-3.6 8.1-8.4 8.6-15.8 1.6-31.6 1.6-47.4 0-4.8-.5-8-3.7-8.4-8.6-.5-5.8-.5-11.6 0-17.4.4-4.9 3.6-8.1 8.4-8.6z" fill="url(#gVisor)" stroke="#24303F" stroke-width="4.2"/><path d="M61.4 40c-7-1.8-12.8-5.7-17.4-11.8" fill="none" stroke="#24303F" stroke-width="4.6" stroke-linecap="round"/><path d="M43.4 27.2c-2.7-1.5-4.6-3.7-5.7-6.5 2.8-.4 5.3.1 7.6 1.3 2.3 1.2 4 3.1 5 5.4" fill="none" stroke="#24303F" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="43.7" cy="23" r="3.6" fill="#F97316" stroke="#24303F" stroke-width="2.8"/></g><circle cx="88.5" cy="62.5" r="7" fill="#5EEAD4"/><circle cx="86.2" cy="60" r="2.4" fill="#FFFFFF"/><circle cx="111.5" cy="62.7" r="7" fill="#5EEAD4"/><circle cx="109.2" cy="60.2" r="2.4" fill="#FFFFFF"/><path d="M94 90c3.4 3 7.8 3 11.2 0" stroke="#5EEAD4" stroke-width="4.4" fill="none" stroke-linecap="round"/><ellipse cx="74" cy="88" rx="7.5" ry="5" fill="#F97316" opacity="0.32"/><ellipse cx="126" cy="88" rx="7.5" ry="5" fill="#F97316" opacity="0.32"/><path d="M62 116c-8 3-13 9-16 17" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><circle cx="44" cy="135" r="6.6" fill="#FFE7D1" stroke="#24303F" stroke-width="3.6"/><path d="M138 116c8 3 13 9 16 17" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><circle cx="156" cy="135" r="6.6" fill="#FFE7D1" stroke="#24303F" stroke-width="3.6"/><path d="M86 172c-1.4 4.6-1.2 9.2.6 13.8M114 172.2c1.5 4.6 1.6 9.2.4 13.8" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><ellipse cx="87" cy="190" rx="10.5" ry="6" fill="#FFFFFF" stroke="#24303F" stroke-width="4.2"/><ellipse cx="115" cy="190.2" rx="10.5" ry="6" fill="#FFFFFF" stroke="#24303F" stroke-width="4.2"/><path d="M152 40c1 3.6 2.6 7 4.6 10M162 56c3.4.6 6.8 1.4 10 2.6" fill="none" stroke="#14B8A6" stroke-width="3.2" stroke-linecap="round"/></svg>
+      <div class="postit" style="margin-top:10px">Soy Nexi. Dime el alumno y el tema,<br>y te preparo la clase
+      <div class="postit__cinta"></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section>
+  <div class="ancho centro">
+    <span class="pastilla">Tu semana, tal como es</span>
+    <h2 style="margin:10px 0 6px">Das clase muy bien. El trabajo de alrededor es el que te come</h2>
+    <p class="muted ancho-estrecho">Ningún profe particular cobra las horas que se pasa buscando material, adaptándolo
+    y escribiendo lo que ha pasado en clase. Eso es lo que se lleva esta herramienta.</p>
+    <div class="rejilla rejilla--3" style="margin-top:26px;text-align:left">
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M4.4 5.6c2.6-.6 5.1-.6 7.6-.1.1 4.6.1 9.2 0 13.8-2.6-.5-5.2-.5-7.7 0-.1-4.6-.1-9.2.1-13.7z" fill="#FFE7D1"/><path d="M12.4 5.6c2.5-.5 5-.5 7.4.1.2 4.6.2 9.1 0 13.7-2.5-.5-5-.5-7.5 0" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M4.4 5.6c2.6-.6 5.1-.6 7.6-.1.1 4.6.1 9.2 0 13.8-2.6-.5-5.2-.5-7.7 0-.1-4.6-.1-9.2.1-13.7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M12.4 5.6c2.5-.5 5-.5 7.4.1.2 4.6.2 9.1 0 13.7-2.5-.5-5-.5-7.5 0" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M6.8 9.6c1.2-.2 2.4-.2 3.6 0M6.8 13.2c1.2-.2 2.4-.2 3.6 0" fill="none" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round"/><path d="M14.4 9.6c1.2-.2 2.4-.2 3.6 0M14.4 13.2c1.2-.2 2.4-.2 3.6 0" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><h3>Antes de clase</h3>
+        <p class="mini muted" style="margin:0">Buscas una ficha que venga bien, la adaptas a mano y la imprimes o la mandas por WhatsApp. Veinte o cuarenta minutos por alumno.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M12.1 7.4c.2 1.7.2 3.4 0 5.1 1.2.7 2.3 1.5 3.4 2.4" fill="none" stroke="#24303F" stroke-width="2.6" stroke-linecap="round"/><path d="M17.6 4.4c.6.6 1.1 1.2 1.6 1.9" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><h3>Durante la clase</h3>
+        <p class="mini muted" style="margin:0">No sabes qué se le atascó la semana pasada salvo que lo tengas apuntado. Y repites explicaciones que ya le diste.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="#FFFDF8"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0" fill="none" stroke="#24303F" stroke-width="2.2"/><path d="M10.3 12.4c1.7-.3 3.4-.3 5.1 0" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/><path d="M10.4 16.2c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/></g></svg></div><h3>Después de clase</h3>
+        <p class="mini muted" style="margin:0">El informe a la familia «cuando puedas» (casi nunca), los deberes de memoria y sin saber si se hicieron.</p></div>
+    </div>
+    <div class="tarjeta" style="margin-top:22px;text-align:left">
+      <h3 style="margin-bottom:10px">Las tres cuentas que nadie hace</h3>
+      <table class="tabla-profe">
+        <tr><th>Lo que pasa hoy</th><th>Cuánto</th><th>Qué te cuesta</th></tr>
+        <tr><td>Preparar material por tu cuenta</td><td>1-2 horas a la semana</td><td>Entre 60 y 100 € de tu tarifa</td></tr>
+        <tr><td>Alumno que deja de venir sin avisar</td><td>2 o 3 al año</td><td>La familia entera… y su recomendación</td></tr>
+        <tr><td>Informes y avisos escritos a mano</td><td>3 horas al mes</td><td>Lo que la familia valora y no ve</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="llevas">
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--azul">Qué te llevas</span>
+      <h2 style="margin:10px 0 22px">Seis cosas, y todas son trabajo que no haces</h2></div>
+    <div class="rejilla rejilla--3">
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 10.2c3.1-.3 6.2-.3 9.3 0 .4 0 .6.3.6.7v7.6c0 .4-.2.7-.6.7-3.1.3-6.2.3-9.3 0-.4 0-.6-.3-.6-.7v-7.6c0-.4.2-.7.6-.7z" fill="#FFFFFF"/><path d="M4.6 9.4c4.9-.4 9.8-.4 14.8 0 .6 2.4.6 4.8 0 7.2-4.9.4-9.8.4-14.8 0-.6-2.4-.6-4.8 0-7.2z" fill="#CBD5E1"/><path d="M7.6 4.4c2.9-.3 5.8-.3 8.8 0 .3 1.9.3 3.8 0 5.7-2.9.3-5.8.3-8.8 0-.3-1.9-.3-3.8 0-5.7z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M4.6 9.4c4.9-.4 9.8-.4 14.8 0 .6 2.4.6 4.8 0 7.2-4.9.4-9.8.4-14.8 0-.6-2.4-.6-4.8 0-7.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M7.6 4.4c2.9-.3 5.8-.3 8.8 0 .3 1.9.3 3.8 0 5.7-2.9.3-5.8.3-8.8 0-.3-1.9-.3-3.8 0-5.7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M7.4 13.4c3.1-.3 6.2-.3 9.3 0" fill="none" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/><path d="M7.5 16.6c2.6-.3 5.2-.3 7.8 0" fill="none" stroke="#14B8A6" stroke-width="2.8" stroke-linecap="round"/></g></svg></span><div><h3>Material por alumno en 30 s</h3><p class="mini muted" style="margin:0">Ficha de clase, deberes o plan hasta el examen, con el nivel y las dificultades de ese alumno concreto.</p></div></div></div>
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M4.6 8.4c5-.4 9.8-.4 14.8 0 .5 3.8.5 7.6 0 11.4-5 .4-9.8.4-14.8 0-.5-3.8-.5-7.6 0-11.4z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M4.6 8.4c5-.4 9.8-.4 14.8 0 .5 3.8.5 7.6 0 11.4-5 .4-9.8.4-14.8 0-.5-3.8-.5-7.6 0-11.4z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M9.4 8.3c-.2-2 0-3.3.7-4 .6-.6 3.1-.6 3.7-.1.7.6.9 2 .7 4.1" fill="none" stroke="#24303F" stroke-width="2.4"/><path d="M9.6 13.4c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/></g></svg></span><div><h3>Llegas sabiendo qué tocar</h3><p class="mini muted" style="margin:0">Lo trabajado, lo que le costó y lo que se le ha olvidado, desde la última sesión. Sin preguntar a nadie.</p></div></div></div>
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="#FFFDF8"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0" fill="none" stroke="#24303F" stroke-width="2.2"/><path d="M10.3 12.4c1.7-.3 3.4-.3 5.1 0" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/><path d="M10.4 16.2c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/></g></svg></span><div><h3>El informe, hecho</h3><p class="mini muted" style="margin:0">Un toque: revisas, envías y queda constancia. Es lo que hace que la familia renueve y te recomiende.</p></div></div></div>
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M4.4 5.6c2.6-.6 5.1-.6 7.6-.1.1 4.6.1 9.2 0 13.8-2.6-.5-5.2-.5-7.7 0-.1-4.6-.1-9.2.1-13.7z" fill="#FFE7D1"/><path d="M12.4 5.6c2.5-.5 5-.5 7.4.1.2 4.6.2 9.1 0 13.7-2.5-.5-5-.5-7.5 0" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M4.4 5.6c2.6-.6 5.1-.6 7.6-.1.1 4.6.1 9.2 0 13.8-2.6-.5-5.2-.5-7.7 0-.1-4.6-.1-9.2.1-13.7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M12.4 5.6c2.5-.5 5-.5 7.4.1.2 4.6.2 9.1 0 13.7-2.5-.5-5-.5-7.5 0" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M6.8 9.6c1.2-.2 2.4-.2 3.6 0M6.8 13.2c1.2-.2 2.4-.2 3.6 0" fill="none" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round"/><path d="M14.4 9.6c1.2-.2 2.4-.2 3.6 0M14.4 13.2c1.2-.2 2.4-.2 3.6 0" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><div><h3>Tu banco de material</h3><p class="mini muted" style="margin:0">Todo lo que generas se guarda y lo reutilizas con otros alumnos del mismo nivel. El banco crece solo.</p></div></div></div>
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M8.6 4.6c4-.2 7.4 3 7.4 7 0 4-3.4 7.3-7.4 7.3-4 0-7.3-3.3-7.3-7.3 0-4 3.4-7.2 7.3-7z" fill="#FDE68A"/><path d="M16.4 9.4c3.2-.1 5.8 2.4 5.8 5.6 0 3.1-2.7 5.7-5.8 5.7-3.1 0-5.7-2.6-5.7-5.7 0-3.1 2.6-5.6 5.7-5.6z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M8.6 4.6c4-.2 7.4 3 7.4 7 0 4-3.4 7.3-7.4 7.3-4 0-7.3-3.3-7.3-7.3 0-4 3.4-7.2 7.3-7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M16.4 9.4c3.2-.1 5.8 2.4 5.8 5.6 0 3.1-2.7 5.7-5.8 5.7-3.1 0-5.7-2.6-5.7-5.7 0-3.1 2.6-5.6 5.7-5.6z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M9.4 13.6c1.6.9 3.4.9 5 0" fill="none" stroke="#24303F" stroke-width="2.2" stroke-linecap="round"/></g></svg></span><div><h3>Los deberes, en la app</h3><p class="mini muted" style="margin:0">El alumno los hace en la app o en papel (con foto) y tú ves qué se hizo antes de la siguiente clase.</p></div></div></div>
+      <div class="tarjeta"><div class="beneficio"><span class="beneficio__ic"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.6c4.7-.2 8.4 3.6 8.4 8.3 0 4.7-3.7 8.5-8.4 8.5-4.7 0-8.5-3.8-8.5-8.5 0-4.7 3.8-8.5 8.5-8.3z" fill="#A7E8BD"/></g><g filter="url(#g)"><path d="M12 3.6c4.7-.2 8.4 3.6 8.4 8.3 0 4.7-3.7 8.5-8.4 8.5-4.7 0-8.5-3.8-8.5-8.5 0-4.7 3.8-8.5 8.5-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M15.8 9.2c-.7-.9-1.7-1.4-2.8-1.4-2.1 0-3.4 1.8-3.4 4s1.3 4 3.4 4c1.1 0 2.1-.5 2.8-1.4" fill="none" stroke="#14532D" stroke-width="2.8" stroke-linecap="round"/><path d="M7.6 11.4c1.7-.2 3.4-.2 5.1 0M7.6 13.6c1.7-.2 3.4-.2 5.1 0" fill="none" stroke="#14532D" stroke-width="2.4" stroke-linecap="round"/></g></svg></span><div><h3>Un mes gratis por familia</h3><p class="mini muted" style="margin:0">Por cada familia que active un plan de pago por tu recomendación, hasta 3 meses al año. Se calcula solo.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="probarlo">
+  <div class="ancho">
+    <div class="centro" style="margin-bottom:24px">
+      <span class="pastilla pastilla--naranja">Pruébalo aquí mismo</span>
+      <h2 style="margin:10px 0 6px">Elige un alumno y una salida, y mira lo que sale</h2>
+      <p class="muted ancho-estrecho">No es un vídeo: es lo que va a generar la herramienta. Alumnos de ejemplo, sin datos de nadie.</p>
+    </div>
+    <div class="gen">
+      <div>
+        <div class="gen__bloque"><b>1. El alumno</b>
+          <button type="button" class="chip on" data-al="lucas">Lucas · 5º Primaria</button>
+          <button type="button" class="chip" data-al="marina">Marina · 2º ESO</button>
+          <button type="button" class="chip" data-al="iker">Iker · 3º ESO</button>
+        </div>
+        <div class="gen__bloque"><b>2. Qué necesitas</b>
+          <button type="button" class="chip on" data-sa="ficha">Ficha para la clase</button>
+          <button type="button" class="chip" data-sa="deberes">Deberes para casa</button>
+          <button type="button" class="chip" data-sa="plan">Plan hasta el examen</button>
+          <button type="button" class="chip" data-sa="informe">Informe para la familia</button>
+          <button type="button" class="chip" data-sa="examen">Examen (pantalla o papel)</button>
+        </div>
+        <div class="tarjeta tarjeta--plana" style="background:var(--papel-3)">
+          <div class="mini muted" style="margin:0">Aquí abajo no hay nada que instalar y no pedimos nada: es una
+          demostración con alumnos inventados. Con tu alumno de verdad, el material sale con su historial.</div>
+        </div>
+      </div>
+      <div>
+        <div class="mini muted" style="margin-bottom:8px"><b>3.</b> Lo que te llevas a clase</div>
+        <div id="genSalida"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section>
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--verde">Cómo funciona</span>
+      <h2 style="margin:10px 0 22px">Cuatro pasos, y ninguno te quita tiempo</h2></div>
+    <div class="pasos pasos--4">
+      <div class="paso"><div class="paso__n">1</div><h3>Eliges alumno</h3><div class="mini muted">De tu cartera. También sirve para alumnos que no están en la app: los llevas solo tú.</div></div>
+      <div class="paso"><div class="paso__n">2</div><h3>Eliges salida</h3><div class="mini muted">Ficha, deberes, plan o informe. Con el nivel de ese alumno y lo que se le atasca.</div></div>
+      <div class="paso"><div class="paso__n">3</div><h3>Sale la hoja</h3><div class="mini muted">En pantalla y en papel. La mandas al alumno o la imprimes y la pegas en su cuaderno.</div></div>
+      <div class="paso"><div class="paso__n">4</div><h3>Queda apuntado</h3><div class="mini muted">Qué se trabajó y cómo fue. La siguiente clase empieza donde se quedó, no de cero.</div></div>
+    </div>
+    <p class="mini muted centro" style="margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto">
+      Y todo lo que generas se queda en <b>tu banco</b>: lo reutilizas con otros alumnos del mismo nivel y con el
+      tiempo tienes tu propio fondo de material.</p>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="historico">
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--azul">El histórico del alumno</span>
+      <h2 style="margin:10px 0 6px">Sigues al alumno sin preguntar a nadie</h2>
+      <p class="muted ancho-estrecho">Cada sesión queda apuntada: qué se trabajó, cómo salió y dónde se atasca.
+      Y eso es exactamente lo que hace que la clase siguiente empiece donde toca.</p></div>
+    <div class="tarjeta" style="margin-top:24px">
+      <div class="tabla-caja"><table class="tabla-profe">
+        <tr><th>Alumno</th><th>Última sesión</th><th>Lo trabajado</th><th>Cómo salió</th><th>Deberes</th></tr>
+        <tr><td><b>Lucas</b> · 5º</td><td>martes</td><td>Fracciones equivalentes</td><td><span class="pastilla pastilla--naranja">se atasca con el dibujo</span></td><td><span class="pastilla pastilla--verde">hechos</span></td></tr>
+        <tr><td><b>Marina</b> · 2º ESO</td><td>ayer</td><td>Análisis sintáctico</td><td><span class="pastilla pastilla--verde">progresa</span></td><td><span class="pastilla pastilla--verde">hechos</span></td></tr>
+        <tr><td><b>Iker</b> · 3º ESO</td><td>hace 9 días</td><td>Ecuaciones</td><td><span class="pastilla">se le olvida el signo</span></td><td><span class="pastilla">sin entregar</span></td></tr>
+      </table></div>
+      <div class="mini muted" style="margin-top:10px">Esto lo ves <b>si la familia lo autoriza</b> (nivel «histórico
+      educativo»): temas, dificultades, correcciones y progreso. Nunca las notas privadas del padre.</div>
+    </div>
+    <div class="rejilla rejilla--3" style="margin-top:20px">
+      <div class="tarjeta"><h3 style="font-size:19px">Un vistazo antes de clase</h3><p class="mini muted" style="margin:0">Abres, ves dónde se quedó cada uno y entras sabiendo qué tocar. Sin preguntar por WhatsApp a la familia.</p></div>
+      <div class="tarjeta"><h3 style="font-size:19px">Evolución por sub-tema</h3><p class="mini muted" style="margin:0">Qué domina, qué está en proceso y qué se le ha olvidado de hace un mes: el hueco entre «lo aprendió» y «lo aprobó».</p></div>
+      <div class="tarjeta"><h3 style="font-size:19px">El informe, sin escribirlo</h3><p class="mini muted" style="margin:0">El informe de la sesión sale hecho de lo que él mismo trabajó. Lo revisas y lo mandas.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="refuerzo">
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--naranja">Cuando no viene</span>
+      <h2 style="margin:10px 0 6px">Un alumno que falta no pierde la semana</h2>
+      <p class="muted ancho-estrecho">Le mandas la tarea de refuerzo en un toque. La hace donde pueda, con app o en
+      papel, y tú lo ves antes de la próxima clase.</p></div>
+    <div class="pasos">
+      <div class="paso"><div class="paso__n">1</div><h3>Le mandas la tarea</h3>
+        <div class="mini muted">Eliges el tema y la dificultad y sale sola, con sus ejercicios y su explicación corta.
+        Se le manda al alumno (o a la familia, si el alumno es pequeño).</div></div>
+      <div class="paso"><div class="paso__n">2</div><h3>La hace como pueda</h3>
+        <div class="mini muted">En la app, en el móvil de la familia o <b>en papel</b> y luego una foto. Y
+        <b>sin conexión</b>, porque lo que ya está preparado se descarga y funciona.</div></div>
+      <div class="paso"><div class="paso__n">3</div><h3>Llegas sabiendo qué falló</h3>
+        <div class="mini muted">Lo hecho se corrige y se apunta en su histórico. La siguiente clase empieza por lo
+        que de verdad falló, no por el tema entero otra vez.</div></div>
+    </div>
+    <div class="regla"><b>Y si el alumno no está en la app</b> (familia que no entra, alumno de verano): igual. Le
+    mandas la tarea por donde habléis de siempre, la hace en papel y tú la corriges. Su histórico de profe lo llevas tú.</div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="examenes">
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--azul">Exámenes</span>
+      <h2 style="margin:10px 0 6px">Exámenes: en pantalla o en papel</h2>
+      <p class="muted ancho-estrecho">Montas el examen por temas y dificultad en un minuto. Y decides cómo se hace:
+      con la app o imprimido, que es lo que de verdad pasa en casa.</p></div>
+    <div class="rejilla rejilla--2" style="margin-top:24px">
+      <div class="tarjeta"><span class="pastilla pastilla--azul">En pantalla</span>
+        <h3 style="margin:8px 0 6px">Online</h3>
+        <ul class="hero__lista">
+          <li><span class="mini">Las preguntas de respuesta fija (opción múltiple, completar, relacionar) <b>se corrigen solas</b>.</span></li>
+          <li><span class="mini">El alumno recibe la corrección al momento y tú ves el detalle por pregunta.</span></li>
+          <li><span class="mini">Se puede hacer <b>sin conexión</b>: se descarga el examen y al volver se envía.</span></li>
+          <li><span class="mini">Tú decides si el alumno ve la nota o solo el «repasemos esto».</span></li>
+        </ul>
+      </div>
+      <div class="tarjeta"><span class="pastilla">En papel</span>
+        <h3 style="margin:8px 0 6px">Imprimido</h3>
+        <ul class="hero__lista">
+          <li><span class="mini">Sale en <b>A4</b>, con huecos para escribir y su cabecera, igual que un examen del colegio.</span></li>
+          <li><span class="mini">El alumno lo hace en papel, como siempre; después se corrige <b>con una foto</b>.</span></li>
+          <li><span class="mini">Es lo que hay que hacer cuando no hay móvil a mano o no quieres pantalla en un examen.</span></li>
+          <li><span class="mini">Queda el mismo histórico: da igual cómo se hizo.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="regla"><b>Nada va a la familia sin tu visto bueno:</b> la corrección automática es una ayuda para ti.
+    La nota y el informe los revisas tú (y si algo no te cuadra, lo cambias).</div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="sinconexion">
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--verde">Sin conexión</span>
+      <h2 style="margin:10px 0 6px">Funciona sin internet. Y el motor lo revisa a la vuelta</h2>
+      <p class="muted ancho-estrecho">En el coche, en el pueblo, en casa de los abuelos o donde no hay datos. Lo que
+      ya está preparado <b>se descarga y se usa</b>: no hay que esperar a la cobertura para dar clase o hacer los deberes.</p></div>
+    <div class="rejilla rejilla--3" style="margin-top:24px">
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="#FFFDF8"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0" fill="none" stroke="#24303F" stroke-width="2.2"/><path d="M10.3 12.4c1.7-.3 3.4-.3 5.1 0" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/><path d="M10.4 16.2c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/></g></svg></div><h3>Lo preparado, disponible</h3>
+        <p class="mini muted" style="margin:0">Las fichas, los ejercicios, los repasos y los exámenes de sus alumnos
+        se quedan descargados en el dispositivo. Se abren sin internet y se imprimen sin internet.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M12.1 7.4c.2 1.7.2 3.4 0 5.1 1.2.7 2.3 1.5 3.4 2.4" fill="none" stroke="#24303F" stroke-width="2.6" stroke-linecap="round"/><path d="M17.6 4.4c.6.6 1.1 1.2 1.6 1.9" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><h3>Se trabaja fuera de línea</h3>
+        <p class="mini muted" style="margin:0">El alumno hace los ejercicios o el examen en papel o en la app sin
+        conexión. Todo queda guardado en el propio dispositivo, con su fecha.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M8.6 4.6c4-.2 7.4 3 7.4 7 0 4-3.4 7.3-7.4 7.3-4 0-7.3-3.3-7.3-7.3 0-4 3.4-7.2 7.3-7z" fill="#FDE68A"/><path d="M16.4 9.4c3.2-.1 5.8 2.4 5.8 5.6 0 3.1-2.7 5.7-5.8 5.7-3.1 0-5.7-2.6-5.7-5.7 0-3.1 2.6-5.6 5.7-5.6z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M8.6 4.6c4-.2 7.4 3 7.4 7 0 4-3.4 7.3-7.4 7.3-4 0-7.3-3.3-7.3-7.3 0-4 3.4-7.2 7.3-7z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M16.4 9.4c3.2-.1 5.8 2.4 5.8 5.6 0 3.1-2.7 5.7-5.8 5.7-3.1 0-5.7-2.6-5.7-5.7 0-3.1 2.6-5.6 5.7-5.6z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M9.4 13.6c1.6.9 3.4.9 5 0" fill="none" stroke="#24303F" stroke-width="2.2" stroke-linecap="round"/></g></svg></div><h3>Y el motor lo revisa al volver</h3>
+        <p class="mini muted" style="margin:0">Cuando hay conexión, se envía lo pendiente y el motor hace su trabajo:
+        identifica el tema, corrige y actualiza el histórico. <b>No se pierde nada</b> ni se paga dos veces.</p></div>
+    </div>
+    <div class="rejilla rejilla--2" style="margin-top:20px">
+      <div class="tarjeta tarjeta--plana" style="background:var(--papel-3)">
+        <h3 style="font-size:19px">Lo que sí necesita internet</h3>
+        <p class="mini muted" style="margin:0">Explicar por primera vez un tema nuevo y dibujar su esquema (eso lo hace
+        el motor). Todo lo demás —usar lo ya preparado, practicar, corregir lo objetivo, imprimir— funciona sin conexión.</p>
+      </div>
+      <div class="tarjeta tarjeta--plana" style="background:#FFF6B8;border-color:#EFE0A0">
+        <h3 style="font-size:19px">Para las familias: material siempre a mano</h3>
+        <p class="mini muted" style="margin:0">El padre puede tener preparado y descargado lo de la semana (fichas,
+        repasos, esquemas) para cuando no hay datos o no quiere pantalla. Será <b>gratis</b> dentro del plan de pago;
+        si alguien quiere tener el curso entero descargado siempre, se podrá como <b>servicio añadido</b>.</p>
+      </div>
+    </div>
+    <div class="regla" style="background:#E7EEFF;border-color:#9DB8F5">
+      <b>Honestidad:</b> el modo sin conexión está en el plan del producto, no en la caja todavía. Lo hemos decidido
+      ahora porque cambia cómo se prepara el material desde el primer día (se prepara <b>paquetes</b>, no pantallas
+      sueltas). Va con su paso en el plan de construcción y con su prueba.
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section>
+  <div class="ancho">
+    <div class="centro"><span class="pastilla pastilla--verde">La familia manda</span>
+      <h2 style="margin:10px 0 6px">Tú entras donde la familia te abre</h2>
+      <p class="muted ancho-estrecho">Esto es lo que más nos preguntáis, y es lo primero que hemos decidido: los datos
+      del niño son de su familia. Punto.</p></div>
+    <div class="rejilla rejilla--3" style="margin-top:24px">
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M5.4 10.4c4.4-.4 8.8-.4 13.2 0 .5 3 .5 6 0 9-4.4.4-8.8.4-13.2 0-.5-3-.5-6 0-9z" fill="#FDE68A"/></g><g filter="url(#g)"><path d="M5.4 10.4c4.4-.4 8.8-.4 13.2 0 .5 3 .5 6 0 9-4.4.4-8.8.4-13.2 0-.5-3-.5-6 0-9z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M8.6 10.3c-.2-2.6.2-4.5 1.4-5.6 1.1-1 3-1 4.1 0 1.2 1.1 1.6 3 1.4 5.6" fill="none" stroke="#24303F" stroke-width="2.5"/><circle cx="12" cy="14.6" r="1.6" fill="#24303F"/><path d="M12 15.8c.2 1 .2 2 0 3" fill="none" stroke="#24303F" stroke-width="2" stroke-linecap="round"/></g></svg></div><h3>Todo empieza cerrado</h3>
+        <p class="mini muted" style="margin:0">La familia decide qué compartes y puede cortarlo cuando quiera. Si no autoriza, trabajas igual con lo que generas tú.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="#FFFDF8"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M7.4 3.6c2.4-.4 4.8-.2 7.2.3 1.4 1.5 2.7 3 3.9 4.6.2 4.5.2 9-.1 13.5-3.7.5-7.4.5-11.1 0-.4-4.6-.4-9.2.1-13.8z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M14.6 4c.1 1.5.1 3 0 4.5 1.5.1 3 .1 4.5 0" fill="none" stroke="#24303F" stroke-width="2.2"/><path d="M10.3 12.4c1.7-.3 3.4-.3 5.1 0" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/><path d="M10.4 16.2c1.6-.3 3.2-.3 4.8 0" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/></g></svg></div><h3>Tres niveles de permiso</h3>
+        <p class="mini muted" style="margin:0">Solo material · material y deberes · histórico educativo (temas, dificultades y progreso). Los elige la familia, uno a uno.</p></div>
+      <div class="tarjeta"><div class="tarjeta__ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><g filter="url(#c)"><path d="M5.4 10.4c4.4-.4 8.8-.4 13.2 0 .5 3 .5 6 0 9-4.4.4-8.8.4-13.2 0-.5-3-.5-6 0-9z" fill="#FDE68A"/></g><g filter="url(#g)"><path d="M5.4 10.4c4.4-.4 8.8-.4 13.2 0 .5 3 .5 6 0 9-4.4.4-8.8.4-13.2 0-.5-3-.5-6 0-9z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M8.6 10.3c-.2-2.6.2-4.5 1.4-5.6 1.1-1 3-1 4.1 0 1.2 1.1 1.6 3 1.4 5.6" fill="none" stroke="#24303F" stroke-width="2.5"/><circle cx="12" cy="14.6" r="1.6" fill="#24303F"/><path d="M12 15.8c.2 1 .2 2 0 3" fill="none" stroke="#24303F" stroke-width="2" stroke-linecap="round"/></g></svg></div><h3>Lo que nunca verás</h3>
+        <p class="mini muted" style="margin:0">Las notas privadas de los padres, sus avisos y el historial de errores detallado del niño. Eso no se comparte con nadie.</p></div>
+    </div>
+    <div class="regla"><b>Y una cosa más:</b> puedes llevar alumnos que <b>no</b> están en la app. Esos van solo en tu
+    panel, sin tocar ningún dato de ningún menor. Muchos profes empiezan así.</div>
+  </div>
+</section>
+
+<hr class="sep">
+<section>
+  <div class="ancho">
+    <div class="centro"><span class="pastilla">Los planes</span>
+      <h2 style="margin:10px 0 6px">Dos planes, y una hora de clase los paga</h2>
+      <p class="muted ancho-estrecho">Precio previsto, sin permanencia y con lo que incluye escrito antes de pagar.
+      Los que entren ahora no pagan: <b>6 meses gratis</b> por decirnos qué falla.</p></div>
+    <div class="rejilla rejilla--2" style="margin-top:24px">
+      <div class="plan">
+        <span class="pastilla pastilla--azul">Starter</span>
+        <div class="plan__p" style="margin:10px 0 2px">9,99 €<small>/mes · 89 €/año</small></div>
+        <p class="mini muted" style="margin:0 0 12px">Para el profe con su cartera de casa</p>
+        <ul class="hero__lista">
+          <li><span class="mini">Hasta <b>8 alumnos</b></span></li>
+          <li><span class="mini">Generador de material (ficha, deberes, plan e informe)</span></li>
+          <li><span class="mini">Tu banco personal de fichas</span></li>
+          <li><span class="mini">Deberes y avisos para la familia</span></li>
+        </ul>
+      </div>
+      <div class="plan plan--destacado">
+        <span class="pastilla pastilla--naranja">Pro</span>
+        <div class="plan__p" style="margin:10px 0 2px">19,99 €<small>/mes · 169 €/año</small></div>
+        <p class="mini muted" style="margin:0 0 12px">Para el que vive de esto o lleva grupos</p>
+        <ul class="hero__lista">
+          <li><span class="mini"><b>Alumnos ilimitados</b></span></li>
+          <li><span class="mini">Planes de estudio automáticos hasta el examen</span></li>
+          <li><span class="mini">Material para clase (grupos)</span></li>
+          <li><span class="mini">Retos y concursos de clase, con autorización de las familias</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rejilla rejilla--2" style="margin-top:18px">
+      <div class="tarjeta"><h3 style="font-size:19px">El mes gratis por familia</h3>
+        <p class="mini muted" style="margin:0">Cada familia que active un plan de pago por tu recomendación te da un
+        mes gratis, hasta 3 al año. No te pedimos que vendas: si el material funciona, la familia lo cuenta sola.</p></div>
+      <div class="tarjeta"><h3 style="font-size:19px">Lo que no hacemos</h3>
+        <p class="mini muted" style="margin:0">No cobramos un porcentaje de tus clases ni nos quedamos con tus
+        alumnos. Tú eres el cliente, no el proveedor.</p></div>
+    </div>
+    <p class="mini muted centro" style="margin-top:14px">El precio es <b>previsto</b>: lo cerramos con los primeros
+    profes de prueba y se avisa antes de cobrar nada.</p>
+  </div>
+</section>
+
+<hr class="sep">
+<section>
+  <div class="ancho-estrecho">
+    <div class="centro"><span class="pastilla">Dudas de profe</span><h2 style="margin:10px 0 22px">Lo que nos preguntáis siempre</h2></div>
+    <details><summary>¿Puedo usarlo con alumnos que no están en la app?</summary><p class="mini muted">Sí. Tu panel funciona igual: eliges al alumno, generas su material y te lo llevas. De esos alumnos no se guarda nada que no hayas escrito tú.</p></details>
+    <details><summary>¿Cuánto tardo en preparar una ficha?</summary><p class="mini muted">Menos de un minuto desde que eliges alumno y salida. La hoja sale con su cabecera, su dificultad y su versión para imprimir en A4.</p></details>
+    <details><summary>¿La familia lo va a ver?</summary><p class="mini muted">Solo lo que la familia autorice, y siempre puedes mandar el informe tú. Si no autoriza nada, la familia no aparece en tu panel y tú trabajas con tu material.</p></details>
+    <details><summary>¿Veo el historial del niño?</summary><p class="mini muted">Solo si la familia lo abre (nivel «histórico educativo»): temas, dificultades, correcciones y progreso. Nunca las notas que el padre se guarda para sí.</p></details>
+    <details><summary>¿Y si el alumno es de otro curso o de otra comunidad?</summary><p class="mini muted">Empieza por Andalucía (Primaria y ESO) y va creciendo. Si tu alumno es de otro sitio, te lo decimos antes de que cuentes con ello: no queremos venderte lo que aún no está.</p></details>
+    <details><summary>¿Hay que instalar algo?</summary><p class="mini muted">No. Se abre en el móvil o en el ordenador y se puede instalar como una app del móvil (sin tienda, gratis). Las fichas se imprimen en A4 normal.</p></details>
+    <details><summary>¿Qué pasa con los datos de mis alumnos?</summary><p class="mini muted">Los del niño son de su familia: se piden los mínimos (curso y edad) y todo lo demás es voluntario. Lo tuyo (tu cartera, tu material y tus informes) es tuyo.</p></details>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="apuntarse">
+  <div class="ancho-estrecho">
+    <div class="centro" style="margin-bottom:22px">
+      <span class="pastilla pastilla--naranja">Plazas de prueba</span>
+      <h2 style="margin:10px 0 6px">Apúntate y te llamamos nosotros</h2>
+      <p class="muted">Estamos a unas semanas de abrirlo. Con estos datos te avisamos y te pasamos tu clase de
+      ejemplo. Son cuatro campos y no hay que pagar nada.</p>
+    </div>
+    <div class="encuesta" id="cajaProfe">
+      <div class="preg"><div class="preg__t">1. Cómo te llamas y dónde das clase</div>
+        <div class="preg__h">Con el nombre de pila nos vale.</div>
+        <div class="rejilla rejilla--2" style="gap:10px">
+          <input type="text" id="pNombre" placeholder="Nombre (por ejemplo: Marta)">
+          <input type="text" id="pCiudad" placeholder="Ciudad o zona (por ejemplo: Cádiz)">
+        </div>
+      </div>
+      <div class="preg"><div class="preg__t">2. Tu correo</div>
+        <div class="preg__h">Solo para avisarte del lanzamiento y darte la plaza. Nada de publicidad.</div>
+        <input type="email" id="pCorreo" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+      </div>
+      <div class="preg"><div class="preg__t">3. Qué das y a cuántos alumnos</div>
+        <div class="preg__h">Marca lo que des.</div>
+        <div class="ops" id="pMaterias">
+          <button type="button" class="op" data-v="Primaria">Primaria</button>
+          <button type="button" class="op" data-v="ESO">ESO</button>
+          <button type="button" class="op" data-v="Bachillerato">Bachillerato</button>
+          <button type="button" class="op" data-v="Matemáticas">Matemáticas</button>
+          <button type="button" class="op" data-v="Lengua">Lengua</button>
+          <button type="button" class="op" data-v="Inglés">Inglés</button>
+          <button type="button" class="op" data-v="Ciencias">Ciencias</button>
+          <button type="button" class="op" data-v="Otros">Otros</button>
+        </div>
+        <div style="margin-top:9px;max-width:420px">
+          <select id="pAlumnos">
+            <option value="">¿Cuántos alumnos llevas?</option>
+            <option value="1-3">1 a 3</option>
+            <option value="4-8">4 a 8</option>
+            <option value="9-15">9 a 15</option>
+            <option value="más de 15">Más de 15</option>
+          </select>
+        </div>
+      </div>
+      <div class="preg"><div class="preg__t">4. ¿Qué es lo que más te cuesta hoy?</div>
+        <div class="preg__h">Preparar material, los informes, saber qué se le atascó, cobrar… lo que sea.</div>
+        <textarea id="pQueja" rows="3" placeholder="Por ejemplo: preparar material distinto para cada uno y escribir los informes"></textarea>
+      </div>
+      <label class="casilla" for="pQuiere"><input type="checkbox" id="pQuiere">
+        <span class="mini">Quiero que me avisen de las <b>plazas de prueba</b> (6 meses gratis) y que me guarden el correo solo para eso.
+        He leído que puedo pedir que lo borren escribiendo a <b>info@nexodigitalconsulting.com</b>.</span></label>
+      <div class="aviso-error" id="pError" hidden></div>
+      <div class="pie-bloque" style="margin-top:16px">
+        <button type="button" class="btn btn--grande" id="pEnviar">Apuntarme</button>
+        <span class="mini muted">Sin permanencia, sin tarjeta y sin compromiso.</span>
+      </div>
+      <div id="pPanel" style="margin-top:16px"></div>
+    </div>
+    <p class="mini muted centro" style="margin-top:16px">No hay cookies de seguimiento en esta página.
+    <a href="../legal.html">Aviso legal y privacidad</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="ancho">
+    <div style="max-width:420px">
+      <div class="marca" style="margin-bottom:8px"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></svg></div><div>NEXOEDUCA</div></div>
+      <p class="mini muted" style="margin:0"><b>Para profesores particulares.</b> NEXOEDUCA es un producto de
+      <b>Nexo Digital Advisory S.L.</b> Nace de una pregunta sencilla: ¿por qué el material de cada alumno se prepara
+      aún a mano?</p>
+      <p class="mini muted" style="margin:8px 0 0">Nexo Digital Advisory S.L. · CIF B88744032 · Urb. Mirador del Río Fase I 27B, 11370 Los Barrios (Cádiz), España</p>
+    </div>
+    <div class="mini">
+      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Información</div>
+      <div><a href="#apuntarse">Plazas de prueba</a></div>
+      <div><a href="#probarlo">Qué sale</a></div>
+      <div><a href="../">NEXOEDUCA para familias</a></div>
+      <div><a href="../legal.html">Aviso legal</a></div>
+    </div>
+    <div class="mini" style="max-width:260px">
+      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Contacto</div>
+      <div>Escríbenos a <b>info@nexodigitalconsulting.com</b> o déjanos el correo arriba.</div>
+      <div class="muted" style="margin-top:8px">Nexo Digital Advisory S.L. · Los Barrios (Cádiz)</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../destino.js"></script>
+<script>
+/* ============================================================ el destino de las respuestas
+   El mismo programa de Google que usa la encuesta de las familias: la fila llega a la misma
+   hoja, marcada con canal "profe" para distinguirla. */
+var ENDPOINT = window.NEXO_ENDPOINT || "";
+var SESION = (function () {
+  try { if (window.crypto && crypto.randomUUID) { return crypto.randomUUID(); } } catch (e) {}
+  return 'P' + Date.now() + '-' + Math.floor(Math.random() * 1e6);
+})();
+var materias = [];
+
+function filas() {
+  var l = [], n, c, ci, a, q;
+  n = (document.getElementById('pNombre').value || '').trim();
+  c = (document.getElementById('pCorreo').value || '').trim();
+  ci = (document.getElementById('pCiudad').value || '').trim();
+  a = document.getElementById('pAlumnos').value || '';
+  q = (document.getElementById('pQueja').value || '').trim();
+  if (n) { l.push(['Nombre', n]); }
+  if (ci) { l.push(['Ciudad o zona', ci]); }
+  if (materias.length) { l.push(['Materias y niveles', materias.join(' / ')]); }
+  if (a) { l.push(['Alumnos', a]); }
+  if (q) { l.push(['Lo que más le cuesta', q]); }
+  return { lista: l, correo: c };
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('#pMaterias .op'), function (op) {
+  op.addEventListener('click', function () {
+    var v = op.getAttribute('data-v'), i = materias.indexOf(v);
+    if (i >= 0) { materias.splice(i, 1); op.classList.remove('on'); }
+    else { materias.push(v); op.classList.add('on'); }
+  });
+});
+
+document.getElementById('pEnviar').addEventListener('click', function () {
+  var err = document.getElementById('pError'), panel = document.getElementById('pPanel');
+  var d = filas();
+  err.hidden = true;
+  if (!d.correo || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo)) {
+    err.textContent = 'Nos hace falta tu correo para poder avisarte.'; err.hidden = false; return;
+  }
+  if (!document.getElementById('pQuiere').checked) {
+    err.textContent = 'Marca la casilla de que quieres que te avisemos: es lo que nos permite guardarte el correo.'; err.hidden = false; return;
+  }
+  if (!d.lista.length) {
+    err.textContent = 'Cuéntanos al menos qué das y a cuántos alumnos.'; err.hidden = false; return;
+  }
+  var cuerpo = d.lista.map(function (f) { return '· ' + f[0] + ' → ' + f[1]; }).join('\n') +
+               '\n· Correo para las plazas de prueba → ' + d.correo;
+  try { localStorage.setItem('nexoeduca_profe', JSON.stringify({ filas: d.lista, correo: d.correo, fecha: new Date().toISOString() })); } catch (e2) {}
+  panel.innerHTML = '<div class="mini muted centro">Enviando…</div>';
+
+  if (!ENDPOINT) { panel.innerHTML = panelCorreo(cuerpo, ''); return; }
+  fetch(ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({
+      sesion: SESION, canal: 'profe', completo: true, consentimiento: true,
+      correo: d.correo, filas: [['Profesor interesado', 'sí']].concat(d.lista)
+    })
+  }).then(function () {
+    panel.innerHTML = '<div class="tarjeta" style="text-align:left;max-width:560px;margin:0 auto">' +
+      '<h3 style="margin-bottom:6px">Apuntado. Gracias.</h3><div class="mini muted">Te escribiremos a <b>' + d.correo +
+      '</b> para darte tu plaza de prueba y pasarte la clase de ejemplo. Si quieres cambiar algo, vuelve a rellenarlo: lo último es lo que cuenta.</div></div>';
+  })['catch'](function () {
+    panel.innerHTML = panelCorreo(cuerpo, 'No se ha podido enviar solo. Mándalo con un clic y no se pierde nada:');
+  });
+});
+
+function panelCorreo(cuerpo, aviso) {
+  var enlace = 'mailto:info@nexodigitalconsulting.com?subject=' + encodeURIComponent('Plaza de prueba NEXOEDUCA para profes') +
+               '&body=' + encodeURIComponent(cuerpo);
+  return '<div class="tarjeta" style="text-align:left;max-width:560px;margin:0 auto">' +
+    '<h3 style="margin-bottom:6px">Tus datos están listos</h3>' +
+    '<div class="mini muted">' + (aviso || 'Están guardados en tu navegador. Para que nos lleguen, mándalos con un clic.') + '</div>' +
+    '<div style="margin-top:12px"><a class="btn" href="' + enlace + '">Mandar mis datos</a></div>' +
+    '<details style="margin-top:14px"><summary style="font-size:15px">Ver lo que se manda</summary>' +
+    '<div class="mini" style="white-space:pre-line;font-family:ui-monospace,Menlo,monospace">' + cuerpo + '</div></details></div>';
+}
+
+/* ============================================================ el generador (simulador) */
+var ALUMNOS = {
+  lucas: { nombre: 'Lucas', curso: '5º de Primaria', tema: 'Fracciones equivalentes',
+           cole: 'Andalucía · Matemáticas', atasco: 'se atasca cuando el dibujo cambia',
+           linea: 'Domina el truco de multiplicar arriba y abajo; se pierde si el dibujo ya no es la pizza.' },
+  marina: { nombre: 'Marina', curso: '2º de ESO', tema: 'Análisis sintáctico',
+           cole: 'Andalucía · Lengua', atasco: 'confunde el complemento directo con el indirecto',
+           linea: 'Identifica sujeto y predicado sin fallar; con dos complementos se pierde.' },
+  iker: { nombre: 'Iker', curso: '3º de ESO', tema: 'Ecuaciones de primer grado',
+           cole: 'Andalucía · Matemáticas', atasco: 'se le olvida cambiar el signo al pasar un término',
+           linea: 'Resuelve ecuaciones sencillas; al mover términos con signo negativo falla.' }
+};
+var SALIDAS = {
+  ficha: function (a) { return {
+    titulo: 'Ficha para la clase · ' + a.tema,
+    cuerpo: '<div class="a4__linea">1 · Mira el dibujo y explica con tus palabras qué significa que dos fracciones sean equivalentes.</div>' +
+            '<div class="a4__hueco"></div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">2 · Completa: 1/2 = ___/8 &nbsp;&nbsp; 3/4 = 9/___</div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">3 · Dibuja dos fracciones equivalentes a 2/3.</div><div class="a4__hueco"></div>' +
+            '<div class="a4__hueco"></div>' +
+            '<div class="regla mini">Para esta clase: empieza por el dibujo (es donde se atasca) y sube después a los números.</div>' };
+  },
+  deberes: function (a) { return {
+    titulo: 'Deberes para casa · ' + a.tema,
+    cuerpo: '<div class="a4__linea">Cinco ejercicios cortos, en dificultad creciente. Para el próximo día antes de la clase.</div>' +
+            '<div class="a4__linea">1 · ¿Son equivalentes 2/4 y 1/2? Explícalo.</div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">2 · Escribe una fracción equivalente a 3/5 con denominador 20.</div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">3 · Encuentra el error: «2/4 = 3/4».</div><div class="a4__hueco"></div>' +
+            '<div class="regla mini">Se le manda también a la app: tú verás quién lo hizo y qué falló antes de la clase.</div>' };
+  },
+  plan: function (a) { return {
+    titulo: 'Plan hasta el examen · ' + a.tema,
+    cuerpo: '<table class="tabla-profe"><tr><th>Día</th><th>Qué se toca</th><th>Cuánto</th></tr>' +
+            '<tr><td>Hoy</td><td>Repaso del concepto con dibujo</td><td>15 min</td></tr>' +
+            '<tr><td>+ 2 días</td><td>Ejercicios de equivalencia con denominadores</td><td>15 min</td></tr>' +
+            '<tr><td>+ 4 días</td><td>Problemas mezclados y comparación</td><td>20 min</td></tr>' +
+            '<tr><td>+ 6 días</td><td>Simulacro corto del examen</td><td>25 min</td></tr></table>' +
+            '<div class="regla mini">Ajustado a lo que lleva flojo: más tiempo en el dibujo, menos en el truco (que ya domina).</div>' };
+  },
+  examen: function (a) { return {
+    titulo: 'Examen · ' + a.tema,
+    cuerpo: '<div class="a4__linea">Se puede hacer <b>en pantalla</b> (se corrige solo lo objetivo) o <b>imprimido</b> en A4 y corregido por foto.</div>' +
+            '<div class="a4__linea">1 · ¿Qué dos fracciones son equivalentes? &nbsp; a) 1/2 y 2/4 &nbsp; b) 2/3 y 3/2 &nbsp; c) 3/4 y 4/5</div>' +
+            '<div class="a4__hueco"></div>' +
+            '<div class="a4__linea">2 · Completa y explica: 2/3 = ___/9</div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">3 · Dibuja dos fracciones equivalentes.</div><div class="a4__hueco"></div>' +
+            '<div class="a4__linea">4 · Explica con tus palabras por qué 1/2 y 3/6 son la misma cantidad.</div><div class="a4__hueco"></div>' +
+            '<div class="regla mini">Corregido en 20 minutos: la parte objetiva sola, lo de explicar lo revisas tú. Antes de enviar nada a la familia, tu visto bueno.</div>' };
+  },
+  informe: function (a) { return {
+    titulo: 'Informe para la familia · hoy',
+    cuerpo: '<div class="a4__linea">Hoy hemos trabajado <b>' + a.tema.toLowerCase() + '</b>.</div>' +
+            '<div class="a4__linea">' + a.linea + '</div>' +
+            '<div class="a4__linea">Esta semana toca: dos ejercicios cortos y repasar lo trabajado antes de la próxima clase.</div>' +
+            '<div class="a4__hueco"></div><div class="a4__hueco"></div>' +
+            '<div class="regla mini">Lo revisas tú antes de enviarlo. Nada sale hacia una familia sin que lo leas.</div>' };
+  }
+};
+var alumno = 'lucas', salida = 'ficha', cajaGen = document.getElementById('genSalida');
+
+function pintaGen() {
+  var a = ALUMNOS[alumno], plantilla = SALIDAS[salida](a);
+  var cuerpoGen = plantilla.cuerpo;
+  cajaGen.innerHTML = '<div class="tarjeta tarjeta--plana" style="padding:12px;margin-bottom:12px">' +
+    '<div class="mini muted" style="margin:0">Alumno de ejemplo: <b>' + a.nombre + '</b> · ' + a.curso + ' · ' + a.cole +
+    '<br>De su historial: ' + a.atasco + '.</div></div>' +
+    '<div class="a4"><div class="a4__cab"><div><div class="mini muted" style="margin:0">' + a.cole + '</div>' +
+    '<b class="a4__t">' + plantilla.titulo + '</b></div>' +
+    '<div class="a4__sello">' + a.nombre + ' · ' + a.curso + '</div></div>' + cuerpoGen +
+    '<div style="position:absolute;right:18px;bottom:14px" class="mini muted">NEXOEDUCA · ' + a.curso + '</div></div>';
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('[data-al]'), function (b) {
+  b.addEventListener('click', function () {
+    alumno = b.getAttribute('data-al');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-al]'), function (o) { o.classList.toggle('on', o === b); });
+    pintaGen();
+  });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-sa]'), function (b) {
+  b.addEventListener('click', function () {
+    salida = b.getAttribute('data-sa');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sa]'), function (o) { o.classList.toggle('on', o === b); });
+    pintaGen();
+  });
+});
+pintaGen();
+
+/* ============================================================ aparición suave */
+(function () {
+  var nodos = document.querySelectorAll('.tarjeta, .paso, .preg, details, .paciente, .a4');
+  Array.prototype.forEach.call(nodos, function (e) { e.classList.add('revela'); });
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(document.querySelectorAll('.revela'), function (e) { e.classList.add('ya'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('ya'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -6% 0px' });
+  Array.prototype.forEach.call(document.querySelectorAll('.revela'), function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
