@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXOEDUCA · Condiciones de uso</title>
+<meta name="description" content="Condiciones de uso de NEXOEDUCA para familias y profesores: cuentas, planes, uso correcto, baja y responsabilidad.">
+<meta name="robots" content="noindex">
+<link href="../letras/letras.css" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F97316'/%3E%3Cpath d='M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z' fill='%23FFFFFF'/%3E%3Cpath d='M10.6 9.4c2.8-.4 5.6-.4 8.4 0l2.9 2.9c.2 3.6.2 7.2 0 10.8-3.8.5-7.6.5-11.4 0-.3-4.6-.3-9.1.1-13.7z' fill='%23FFE7D1'/%3E%3Cpath d='M13.6 19.8c.9 1 2 1.1 3.1.3' stroke='%2324303F' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --coral:#EF4444;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,5vw,38px);font-weight:800;letter-spacing:-.4px}
+h2{font-size:clamp(22px,3.2vw,28px);font-weight:700;letter-spacing:-.2px;margin-top:34px;margin-bottom:8px}
+h3{font-size:19px;font-weight:700;margin-top:18px;margin-bottom:4px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:5px}
+.mini{font-size:14.5px}
+.muted{color:var(--tinta-suave)}
+
+/* cabecera fija: banda de borrador + barra */
+.cabecera{position:sticky;top:0;z-index:60}
+.banda{background:#FDE68A;border-bottom:3px solid #D97706;color:#4A2B00;text-align:center;
+  font-weight:700;font-size:14.5px;line-height:1.35;padding:7px 14px}
+.banda b{font-family:'Baloo 2';font-size:15.5px}
+.topbar{background:rgba(255,248,238,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:1080px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:10px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px;
+  color:var(--tinta);text-decoration:none}
+.marca__logo{width:40px;height:40px;flex:0 0 40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.topbar__acciones{margin-left:auto;display:flex;gap:8px;align-items:center}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:16px;
+  padding:8px 16px;border-radius:14px;border:2px solid #D9600B;background:var(--naranja);color:#fff;
+  cursor:pointer;text-decoration:none;box-shadow:0 4px 0 #B84D06;transition:transform .12s, box-shadow .12s;white-space:nowrap}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #B84D06}
+.btn--blanco{background:#fff;color:var(--tinta);border-color:var(--linea);box-shadow:0 4px 0 rgba(36,48,63,.12)}
+.btn--blanco:hover{box-shadow:0 2px 0 rgba(36,48,63,.12)}
+
+/* cuerpo */
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 56px}
+.nav-legal{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 8px;padding:0;list-style:none}
+.nav-legal li{margin:0}
+.nav-legal a{display:inline-block;font-size:14.5px;font-weight:700;padding:5px 12px;border-radius:999px;border:2px solid var(--linea);
+  background:#fff;color:var(--tinta-suave);text-decoration:none}
+.nav-legal a[aria-current]{background:var(--naranja-2);border-color:#F6C79B;color:var(--naranja-tinta)}
+.resumen{background:var(--azul-2);border:2px solid #BBD3FF;border-radius:18px;padding:14px 16px;margin:16px 0}
+.resumen b:first-child{font-family:'Baloo 2';color:var(--azul-tinta)}
+.resumen ul{margin:6px 0 0}
+.ninos{background:#DCFCE7;border:2px solid #A7E8BD;border-radius:18px;padding:16px 18px;margin:14px 0}
+.ninos h3{margin-top:0;color:#166534}
+.pend{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:14px;padding:12px 14px;margin:14px 0;font-size:15.5px}
+.pend-t{background:#FFF6B8;border-bottom:2px solid #F59E0B;padding:0 3px;border-radius:3px;font-weight:700;color:#5A3B00}
+.falta{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:18px;padding:16px 18px;margin:36px 0 0;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+.falta h2{margin:0 0 6px;font-size:21px}
+.falta ul{margin:6px 0 0}
+.falta li{font-size:15px}
+
+/* tablas */
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}
+.tabla th,.tabla td{border:2px solid var(--linea);padding:9px 11px;text-align:left;font-size:15.5px;vertical-align:top}
+.tabla th{background:#FFF1DF;font-family:'Baloo 2'}
+.tabla.kv th{width:30%}
+
+/* pie */
+footer{background:#fff;border-top:2px solid var(--linea);padding:26px 0;margin-top:10px}
+footer .ancho{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:12px 28px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+footer a{color:var(--tinta-suave)}
+.pie-enlaces{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .caja{padding:20px 16px 44px}
+  .topbar__in{padding:8px 14px}
+  .marca{font-size:18px}
+  .banda{font-size:13px;padding:6px 10px}
+  .banda b{font-size:14px}
+  .btn{padding:7px 12px;font-size:15px}
+  /* las tablas pasan a tarjetas de una columna */
+  .tabla,.tabla tbody,.tabla tr,.tabla td,.tabla th{display:block;width:100%}
+  .tabla thead{position:absolute;left:-9999px}
+  .tabla tr{border:2px solid var(--linea);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .tabla th,.tabla td{border:0;border-bottom:1px solid var(--linea)}
+  .tabla td:last-child{border-bottom:0}
+  .tabla td[data-et]::before{content:attr(data-et);display:block;font-family:'Baloo 2';font-weight:700;font-size:13.5px;color:var(--tinta-suave)}
+  .tabla.kv th{width:100%}
+}
+@media (max-width:380px){
+  .marca div:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs></svg>
+<div class="cabecera">
+<div class="banda" role="note"><b>Borrador pendiente de revisión legal · versión 2026-10-borrador</b></div>
+<header class="topbar"><div class="topbar__in">
+  <a class="marca" href="../index.html" aria-label="NEXOEDUCA, inicio"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><g filter="url(#c)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><div>NEXOEDUCA</div></a>
+  <div class="topbar__acciones"><a class="btn btn--blanco" href="../index.html">Volver</a><a class="btn" data-entrar href="../index.html" rel="noopener">Iniciar sesión</a></div>
+</div></header></div>
+<main class="caja">
+<h1>Condiciones de uso</h1>
+<p class="muted">Las reglas para usar la aplicación, para familias y para profesores. Versión 2026-10-borrador.</p>
+<ul class="nav-legal" aria-label="Textos legales"><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="condiciones.html" aria-current="page">Condiciones de uso</a></li><li><a href="nexipuntos.html">Nexipuntos</a></li><li><a href="cookies.html">Cookies</a></li></ul>
+
+<div class="resumen"><b>Lo esencial</b>
+<ul>
+  <li>NEXOEDUCA te ayuda a <b>estudiar en casa</b>; no sustituye al colegio ni al profesor.</li>
+  <li>La cuenta la crea un adulto. Los niños usan un perfil dentro de esa cuenta.</li>
+  <li>Las explicaciones las prepara una inteligencia artificial con revisión, pero <b>puede equivocarse</b>: tú tienes la última palabra.</li>
+  <li>Puedes darte de baja cuando quieras.</li>
+</ul></div>
+
+<h2>1 · Quién ofrece el servicio y qué aceptas</h2>
+<p>NEXOEDUCA es un servicio de <b>Nexo Digital Advisory S.L.</b> (datos en el <a href="aviso-legal.html">aviso legal</a>). Al crear una cuenta o usar la
+aplicación aceptas estas condiciones, la <a href="privacidad.html">política de privacidad</a> y, si participas, las
+<a href="nexipuntos.html">condiciones de los Nexipuntos</a>. Si no estás de acuerdo, no uses el servicio.</p>
+
+<h2>2 · Qué es NEXOEDUCA, y qué no es</h2>
+<ul>
+  <li><b>Es</b> una herramienta de apoyo al estudio: te ayuda a entender un ejercicio, a repasar un tema y a acompañar a tu hijo en los deberes.</li>
+  <li><b>No es</b> un centro educativo ni un sustituto del colegio, del profesor o de la atención de los padres. No emite notas, títulos ni
+  certificados oficiales.</li>
+  <li><b>No es</b> un servicio médico, psicológico ni psicopedagógico, y no diagnostica nada.</li>
+  <li><b>No garantizamos resultados</b>: ni aprobados, ni notas, ni plazos de mejora.</li>
+  <li>Estamos en fase de preparación o de pruebas. Algunas funciones pueden cambiar, fallar o retirarse.</li>
+</ul>
+
+<h2>3 · Cuentas</h2>
+<h3>La cuenta de familia</h3>
+<ul>
+  <li>Solo pueden crearla <b>personas mayores de edad</b> que sean madre, padre o tutor legal de los niños que den de alta.
+  Al hacerlo confirmas que tienes la patria potestad o la tutela.</li>
+  <li>Cada hijo es un <b>perfil de la familia</b>, sin correo ni contraseña propios. El número de hijos depende del plan <span class="pend-t">[PENDIENTE: número de hijos por plan, tras fijar los planes]</span>.</li>
+  <li>Eres responsable de que los datos que das sean ciertos, de guardar tus credenciales y de lo que ocurra desde tu cuenta.</li>
+</ul>
+<h3>Cómo entra un hijo en su perfil</h3>
+<ul>
+  <li>En <b>tu móvil</b>, cuando se lo pasas.</li>
+  <li>En <b>su propio aparato</b>, con una <b>llave</b> que le das desde tu cuenta (un código o QR de un solo uso que empareja ese aparato con su perfil) y,
+  para entrar, una <b>clave de dibujos</b> o un <b>PIN</b>, según el estilo de pantalla.</li>
+  <li>Puedes ver los aparatos de cada hijo y <b>quitarlos cuando quieras</b>. Si pierdes un aparato o alguien conoce la clave, quítalo y avísanos.</li>
+  <li>Desde los 14 años pedimos también la conformidad del chaval, como indica la ley.</li>
+</ul>
+<h3>La cuenta de profesor</h3>
+<ul>
+  <li>Es para profesores particulares que trabajan con las familias. Es una cuenta aparte, con su propio plan.</li>
+  <li>El profe <b>solo ve lo que cada familia le autoriza</b> y mientras lo autorice. Guarda la confidencialidad de lo que vea, no lo usa
+  para otra cosa ni lo comparte, y <b>no contacta con el niño directamente</b> a través de la aplicación: siempre pasa por la familia.</li>
+  <li>El profe es responsable de su trabajo con la familia; NEXOEDUCA es la herramienta, no la empleadora ni la garante de sus clases.
+  <span class="pend-t">[PENDIENTE: asesor: revisar la relación con el profe (marketplace, comisiones, responsabilidad) antes de abrirlo]</span></li>
+</ul>
+
+<h2>4 · Uso correcto</h2>
+<ul>
+  <li>Sube solo <b>fichas y ejercicios de tu hijo</b> para ayudarle. No subas fotos de otras personas ni de lugares privados, y procura
+  que no se vean caras ni nombres de otros niños.</li>
+  <li>No uses el servicio para hacer trampas en un examen, ni para actividades ilegales, ofensivas o que dañen a otros.</li>
+  <li>El plan gratuito y el de familia son para <b>uso familiar</b>. Para dar clases a terceros existe el plan de profe.</li>
+  <li>No intentes saltarte los límites del plan, crear cuentas múltiples para obtener ventajas, automatizar el uso ni acceder a datos de otras familias.</li>
+  <li>No subas libros ni materiales de otros para su reproducción. Lo que subes se usa para ayudar a tu hijo y se borra al terminar la sesión.</li>
+</ul>
+
+<h2>5 · Las explicaciones las hace una inteligencia artificial</h2>
+<ul>
+  <li>Las explicaciones, ejercicios y correcciones las genera un sistema de inteligencia artificial y pasan una revisión antes de llegar a ti.
+  <b>Aun así, pueden tener errores</b>.</li>
+  <li>Si algo no cuadra, contrástalo con el libro, el profesor o el colegio, y pulsa el botón de valorar: así lo corregimos.</li>
+  <li>La corrección de una foto es una ayuda, <b>no una nota</b>. Si no se entiende bien la foto, lo diremos en vez de inventar una corrección.</li>
+  <li>El currículo en el que nos basamos es el oficial publicado <span class="pend-t">[PENDIENTE: indicar normas y comunidad cubierta al abrir]</span>; los colegios pueden aplicarlo de forma distinta.</li>
+</ul>
+
+<h2>6 · Planes, precios y pagos</h2>
+<ul>
+  <li>Hay un plan <b>gratuito, con límites</b> y no pide tarjeta, y planes de pago para familias y para profesores.</li>
+  <li><b>Precios:</b> <span class="pend-t">[PENDIENTE: precios definitivos de cada plan, con IVA incluido]</span>. Se mostrarán con claridad antes de que pagues.</li>
+  <li><b>Cobro:</b> a través de una pasarela de pago externa <span class="pend-t">[PENDIENTE: proveedor y periodicidad: mensual o anual]</span>. La suscripción <span class="pend-t">[PENDIENTE: renovación automática: confirmar y redactar el aviso previo]</span>.</li>
+  <li><b>Cambios de precio:</b> te avisaremos con antelación <span class="pend-t">[PENDIENTE: plazo de preaviso, p. ej. 30 días]</span> y podrás darte de baja antes de que se apliquen.</li>
+  <li><b>Desistimiento:</b> si eres consumidor, tienes derecho de desistimiento en los plazos que fija la ley, con las excepciones previstas para el contenido
+  y los servicios digitales que ya hayas empezado a usar <span class="pend-t">[PENDIENTE: asesor: redactar el procedimiento y el consentimiento expreso para empezar a usar el servicio antes de que acabe el plazo]</span>.</li>
+  <li><b>Nexipuntos:</b> pueden dar un descuento en el plan de familia. Mira sus <a href="nexipuntos.html">condiciones</a>.</li>
+</ul>
+
+<h2>7 · Baja y fin del servicio</h2>
+<ul>
+  <li>Puedes darte de baja <b>cuando quieras</b> desde la aplicación <span class="pend-t">[PENDIENTE: confirmar efecto: al final del periodo ya pagado]</span>.</li>
+  <li>Puedes <b>descargar tus datos</b> y <b>borrar la cuenta</b> desde la aplicación. Al borrarla se borran de verdad la memoria de tu hijo, sus sesiones
+  y su material (ver la <a href="privacidad.html">privacidad</a>).</li>
+  <li>Podemos suspender o cerrar una cuenta si se incumplen estas condiciones o hay un uso fraudulento, avisándote cuando sea posible.</li>
+  <li>Si dejáramos de prestar el servicio, te avisaremos con antelación y podrás descargar tus datos <span class="pend-t">[PENDIENTE: plazo de preaviso y reembolso proporcional de lo pagado por adelantado]</span>.</li>
+</ul>
+
+<h2>8 · Contenidos y propiedad intelectual</h2>
+<ul>
+  <li>La aplicación, sus textos, ejercicios, ilustraciones, la mascota Nexi y el material que generamos son de Nexo Digital Advisory S.L. o de sus licenciantes.
+  Te damos una licencia <b>personal, no exclusiva e intransferible</b> para usarlos con tu familia (o con tus alumnos, si eres profe).
+  No puedes revenderlos ni publicarlos.</li>
+  <li>Lo que tú subes (fichas, fotos) sigue siendo tuyo. Nos permites tratarlo solo para prestarte el servicio, como explica la
+  <a href="privacidad.html">privacidad</a>.</li>
+  <li>No guardamos libros ni fichas de editoriales. Las marcas que se nombren son de sus dueños y no tenemos relación con ellos.</li>
+</ul>
+
+<h2>9 · Disponibilidad y modo sin conexión</h2>
+<p>Hacemos lo posible por que el servicio funcione siempre, pero puede haber paradas o fallos. Lo que descargas para usar sin conexión
+funciona sin internet; al volver la red, la aplicación lo revisa y actualiza. No nos hacemos responsables de lo que dependa de
+tu conexión o de tu aparato.</p>
+
+<h2>10 · Responsabilidad</h2>
+<ul>
+  <li>Respondemos de lo que la ley nos obliga a responder. En particular, <b>nada de estas condiciones limita los derechos que la ley reconoce a los
+  consumidores</b> ni nuestra responsabilidad por dolo o negligencia grave.</li>
+  <li>En lo demás, y dentro de lo que la ley permita, no respondemos de los daños indirectos ni de decisiones tomadas solo con una
+  explicación de la aplicación sin contrastarla. La responsabilidad sobre la educación del niño sigue siendo de la familia y del colegio.</li>
+  <li>Limitación económica de la responsabilidad <span class="pend-t">[PENDIENTE: asesor: valorar si se incluye un tope y su redacción]</span>.</li>
+</ul>
+
+<h2>11 · Cambios en estas condiciones</h2>
+<p>Podemos cambiar las condiciones. Si el cambio es relevante, te lo avisaremos con antelación <span class="pend-t">[PENDIENTE: plazo de preaviso]</span> y te pediremos que aceptes la
+versión vigente. Si no estás de acuerdo, puedes darte de baja. Cada aceptación queda registrada con la versión que aceptaste.</p>
+
+<h2>12 · Ley aplicable y tribunales</h2>
+<p>Estas condiciones se rigen por la ley española. Si eres consumidor, podrás acudir a los juzgados de tu domicilio. Para los demás usuarios,
+serán competentes <span class="pend-t">[PENDIENTE: juzgados de qué ciudad, a decidir con el asesor]</span>. Antes de acudir a un juzgado, escríbenos a info@nexodigitalconsulting.com e intentaremos resolverlo.</p>
+
+<aside class="falta" aria-labelledby="falta-t"><h2 id="falta-t">Lo que falta para que este texto sea definitivo</h2><p class="mini">Hay 13 huecos marcados como <span class="pend-t">[PENDIENTE: …]</span> en esta página. Hasta que se cierren y un asesor legal valide el texto, es solo un borrador.</p><ul><li>número de hijos por plan, tras fijar los planes</li><li>asesor: revisar la relación con el profe (marketplace, comisiones, responsabilidad) antes de abrirlo</li><li>indicar normas y comunidad cubierta al abrir</li><li>precios definitivos de cada plan, con IVA incluido</li><li>proveedor y periodicidad: mensual o anual</li><li>renovación automática: confirmar y redactar el aviso previo</li><li>plazo de preaviso, p. ej. 30 días</li><li>asesor: redactar el procedimiento y el consentimiento expreso para empezar a usar el servicio antes de que acabe el plazo</li><li>confirmar efecto: al final del periodo ya pagado</li><li>plazo de preaviso y reembolso proporcional de lo pagado por adelantado</li><li>asesor: valorar si se incluye un tope y su redacción</li><li>plazo de preaviso</li><li>juzgados de qué ciudad, a decidir con el asesor</li><li>correo de contacto</li></ul></aside>
+</main>
+<footer><div class="ancho"><div class="mini muted">NEXOEDUCA es un producto de <b>Nexo Digital Advisory S.L.</b><br>Textos legales · versión 2026-10-borrador (borrador)</div><nav class="mini pie-enlaces" aria-label="Textos legales"><a href="../index.html">Inicio</a><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="condiciones.html">Condiciones de uso</a><a href="nexipuntos.html">Nexipuntos</a><a href="cookies.html">Cookies</a></nav></div></footer>
+<script src="../destino.js"></script>
+<script>/* el botón «Entrar» toma su dirección de destino.js (NEXO_APP_URL): un solo sitio que cambiar */
+(function(){var u=window.NEXO_APP_URL;if(!u)return;Array.prototype.forEach.call(document.querySelectorAll("[data-entrar]"),function(a){a.setAttribute("href",u);});})();</script>
+</body></html>

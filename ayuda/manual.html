@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NexoEduca · Manual</title>
+<meta name="description" content="El manual completo de NexoEduca: familia, niño, profe, instalación y configuración.">
+<link href="../letras/letras.css" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --gris:#CBD5E1; --coral:#EF4444;
+  --uva:#8B5CF6; --menta:#14B8A6;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,h4{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5.2vw,44px);font-weight:800;letter-spacing:-.5px}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.3px;margin-top:38px}
+h3{font-size:22px;font-weight:700;margin-top:28px}
+h4{font-size:18px;font-weight:700;margin-top:18px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+.muted{color:var(--tinta-suave)}
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,248,238,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px}
+.marca__logo{width:40px;height:40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:17px;
+  padding:10px 18px;border-radius:16px;border:2px solid var(--linea);background:#fff;color:var(--tinta);
+  text-decoration:none;box-shadow:0 5px 0 rgba(36,48,63,.12);min-height:44px}
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 60px}
+.indice{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:16px 20px;box-shadow:var(--sombra);margin:20px 0}
+.indice h2{margin-top:0;font-size:24px}
+.indice ul{margin:6px 0 10px;padding-left:20px}
+.indice li{margin:2px 0}
+.indice a{display:inline-block;padding:4px 0}
+.pantalla{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:6px 20px 20px;margin:18px 0;box-shadow:var(--sombra);scroll-margin-top:80px}
+.pantalla h3{margin-top:16px}
+.apartado{scroll-margin-top:80px}
+ol,ul.lista{padding-left:22px;margin:8px 0 12px}
+li{margin:4px 0}
+dl{margin:8px 0}
+dt{font-weight:700;margin-top:10px}
+dd{margin:2px 0 0;color:var(--tinta-suave)}
+details{background:#fff;border:2px solid var(--linea);border-radius:18px;padding:12px 16px;margin-bottom:10px;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+details[open]{border-color:#F6C79B}
+summary{cursor:pointer;font-family:'Baloo 2';font-weight:700;font-size:18px;list-style:none;min-height:28px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--naranja);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+.nota{background:var(--naranja-2);border-radius:14px;padding:10px 14px;margin:14px 0 0;font-size:16px}
+.paso-n{counter-reset:paso;list-style:none;padding:0;margin:12px 0}
+.paso-n>li{counter-increment:paso;position:relative;padding:12px 14px 12px 58px;margin:10px 0;background:var(--papel-2);
+  border:2px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+.paso-n>li::before{content:counter(paso);position:absolute;left:14px;top:12px;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;background:var(--naranja);color:#fff;border:2px solid #D9600B;font-family:'Baloo 2';font-weight:800}
+footer{background:#fff;border-top:2px solid var(--linea);padding:24px 0;margin-top:20px;font-size:15px;color:var(--tinta-suave)}
+footer .caja-pie{max-width:760px;margin:0 auto;padding:0 20px}
+@media (max-width:560px){body{font-size:16px}.caja{padding:20px 16px 50px}.topbar__in{padding:8px 14px}.pantalla{padding:4px 14px 16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.topbar{display:none}body{background:#fff}details{box-shadow:none}}
+</style>
+</head><body>
+<header class="topbar"><div class="topbar__in">
+  <div class="marca"><div class="marca__logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z" fill="#FFFFFF"/><path d="M13.6 19.8c.9 1 2 1.1 3.1.3" stroke="#F97316" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div>NexoEduca</div>
+  <a class="btn" href="primeros-pasos.html" style="margin-left:auto">Guía corta</a>
+</div></header>
+<div class="caja">
+<h1>Manual de NexoEduca</h1>
+<p class="muted">Todo lo que hace la aplicación, pantalla a pantalla, y cómo instalarla y configurarla. Si solo quieres empezar, tienes la <a href="primeros-pasos.html">guía corta para padres</a>.</p>
+<nav class="indice" aria-label="Índice">
+<h2>Índice</h2>
+<ul><li><a href="#primeros-pasos">Primeros pasos</a></li></ul>
+<b>Instalar y configurar</b>
+<ul><li><a href="#instalar-android">Instalar NexoEduca en un móvil Android</a></li><li><a href="#instalar-iphone">Instalar NexoEduca en un iPhone o iPad</a></li><li><a href="#sin-conexion">Abrirla sin conexión</a></li><li><a href="#crear-cuenta">Crear tu cuenta</a></li><li><a href="#anadir-hijos">Añadir a tus hijos y elegir su estilo</a></li><li><a href="#codigo-padres">El código de padres</a></li><li><a href="#llave">Darle la llave a tu hijo en su móvil</a></li><li><a href="#voz-nexi">Que Nexi hable en voz alta</a></li><li><a href="#colegio-bilingue">Colegio bilingüe: Ciencias en inglés</a></li><li><a href="#si-eres-profe">Si eres profe</a></li><li><a href="#datos">Descargar y borrar tus datos</a></li><li><a href="#si-falla">Qué hacer si algo falla</a></li></ul>
+<b>Para el padre o la madre</b>
+<ul><li><a href="#familia-bienvenida">Bienvenida: añadir a tu hijo</a></li><li><a href="#familia-hoy">Hoy: la tarde de tu hijo</a></li><li><a href="#familia-capturar">Capturar: enseñarme los deberes</a></li><li><a href="#familia-piensa">Nexi está mirando los deberes</a></li><li><a href="#familia-explicacion">La explicación para ti</a></li><li><a href="#familia-calendario">Calendario de exámenes</a></li><li><a href="#familia-practicar">Practicar juntos</a></li><li><a href="#familia-cuadernillo">El cuadernillo de la semana</a></li><li><a href="#familia-mi-hijo">Mi hijo: cómo va</a></li><li><a href="#familia-revisar">Revisar fichas</a></li><li><a href="#familia-ajustes">Ajustes de la familia y mis datos</a></li></ul>
+<b>Para tu hijo</b>
+<ul><li><a href="#nino-nevera">Mi nevera</a></li><li><a href="#nino-ejercicios">Ejercicios con Nexi</a></li><li><a href="#nino-album">Mi álbum</a></li><li><a href="#nino-dibujo">Mi cuaderno de dibujo</a></li><li><a href="#nino-recreo">El recreo de Nexi</a></li></ul>
+<b>Para el profe</b>
+<ul><li><a href="#profe-entrada">Probar como profe de ejemplo</a></li><li><a href="#profe-hoy">Hoy: tu mesa y tu perfil</a></li><li><a href="#profe-revisar">Tu mesa de revisión</a></li><li><a href="#profe-reto">El reto al azar</a></li><li><a href="#profe-material">Material para clase</a></li><li><a href="#profe-alumnos">Mis alumnos</a></li><li><a href="#profe-cuadernillo">El cuadernillo del alumno</a></li><li><a href="#profe-puntos">Mis Nexipuntos</a></li><li><a href="#profe-cuenta">Tu cuenta de profe</a></li></ul>
+<b>La cuenta y la llave del niño</b>
+<ul><li><a href="#cuenta-entrar">Entrar en NexoEduca</a></li><li><a href="#cuenta-alta">Crear la cuenta de la familia</a></li><li><a href="#cuenta-alta-profe">Crear la cuenta de profe</a></li><li><a href="#cuenta-llave">La llave del niño</a></li></ul>
+</nav>
+<section class="apartado" id="primeros-pasos">
+<h2>Primeros pasos</h2>
+<p>La primera vez que entras en «Hoy», Nexi te enseña esto mismo dentro de la app, y habla ella. Puedes volver a verlo desde el botón <b>?</b>, en «Volver a ver los primeros pasos».</p>
+<ol><li><b>Tu hijo y su estilo.</b> Aquí ves con quién estudiamos. Púlsalo para cambiar de hijo, elegir cómo verá la app (Cera, Cuaderno o Libreta, según su edad) o añadir a otro.</li><li><b>La foto de los deberes.</b> Cuando traiga deberes, pulsa aquí y hazles una foto con buena luz. Te cuento cómo explicárselo y le preparo los ejercicios.</li><li><b>Dárselo a tu hijo.</b> Cuando esté listo, pulsa «Dárselo» y el móvil pasa a su espacio. Para recuperarlo, mantén pulsado el candado que verás arriba y escribe tu código de padres.</li><li><b>El calendario de exámenes.</b> Apunta aquí los exámenes y yo reparto el repaso en las tardes de antes, para que no tengas que planificar nada.</li><li><b>Practicar y el cuadernillo.</b> En «Practicar» le pones temas con un mensaje tuyo y, si lo prefieres en papel, montas el cuadernillo de la semana en PDF.</li><li><b>«Mi hijo» y la voz de Nexi.</b> Aquí ves cómo le va la semana y le dejas notas en su nevera. Y decides si Nexi le habla en voz alta o solo se lee.</li></ol>
+</section>
+<h2>Instalar y configurar</h2>
+<section class="apartado" id="instalar-android">
+<h3>Instalar NexoEduca en un móvil Android</h3>
+<p>Se instala desde el navegador, sin tienda de aplicaciones, y queda en tu pantalla de inicio como cualquier otra.</p>
+<ol><li>Abre con Chrome el enlace de NexoEduca que te han dado.</li><li>Toca los tres puntos de arriba a la derecha.</li><li>Elige «Instalar aplicación». En algunos móviles pone «Añadir a la pantalla de inicio».</li><li>Confirma con «Instalar».</li><li>Verás el icono de NexoEduca junto a tus otras aplicaciones. Ábrela desde ahí, como una más.</li></ol>
+
+</section>
+<section class="apartado" id="instalar-iphone">
+<h3>Instalar NexoEduca en un iPhone o iPad</h3>
+<p>En Apple se hace desde Safari, con «Añadir a pantalla de inicio».</p>
+<ol><li>Abre con Safari el enlace de NexoEduca que te han dado.</li><li>Toca el botón de compartir: el cuadrado con una flecha hacia arriba.</li><li>Baja en la lista y elige «Añadir a pantalla de inicio».</li><li>Toca «Añadir», arriba a la derecha.</li><li>Ábrela desde el icono nuevo de tu pantalla de inicio.</li></ol>
+
+</section>
+<section class="apartado" id="sin-conexion">
+<h3>Abrirla sin conexión</h3>
+<p>NexoEduca se guarda en el móvil la primera vez que la abres con internet; después se abre aunque no haya red.</p>
+<ol><li>Ábrela una vez con internet, desde el icono, y espera unos segundos.</li><li>Desde entonces la puedes abrir sin conexión: en el coche, en el tren o donde no haya cobertura.</li><li>La voz de Nexi de los más pequeños (el estilo Cera) viaja siempre contigo. La de los otros estilos se guarda la primera vez que suena.</li></ol>
+<p class="muted">Lo que necesite internet (por ejemplo, entrar en tu cuenta en otro móvil) lo hará cuando vuelva la conexión.</p>
+</section>
+<section class="apartado" id="crear-cuenta">
+<h3>Crear tu cuenta</h3>
+<p>La cuenta guarda a tu familia. Son unos tres minutos, en dos pasos: la cuenta y tu primer hijo.</p>
+<ol><li>Al abrir la app, si no hay ninguna cuenta, llegas a «Entra en NexoEduca». Pulsa «Crear cuenta de familia».</li><li>Paso 1: escribe tu nombre y tu correo, y elige una contraseña de 10 caracteres o más, con una letra y un número. El botón «Ver» te deja comprobarla.</li><li>Elige tu código de padres, de 4 cifras: lo pedirá la app cuando vuelvas del espacio de tu hijo.</li><li>Lee y marca las casillas de «Antes de empezar»: el aviso legal y la privacidad, tu consentimiento como padre o tutor de menores y las condiciones de uso. La de novedades es opcional.</li><li>Pulsa «Crear mi cuenta». Llegas al paso 2: añadir a tu primer hijo.</li></ol>
+<p class="muted">¿Solo quieres verla? En la entrada, «Probar con la familia de ejemplo» te deja entrar con tres niños inventados.</p>
+</section>
+<section class="apartado" id="anadir-hijos">
+<h3>Añadir a tus hijos y elegir su estilo</h3>
+<p>Cada hijo tiene su espacio, con su curso y un estilo pensado para su edad.</p>
+<ol><li>En «Bienvenida», escribe el nombre de tu hijo y elige su curso y su edad.</li><li>Mira el estilo que te propongo: Cera (de 3 a 7 años), Cuaderno (de 8 a 11) o Libreta (de 12 a 16).</li><li>Cámbialo si lo prefieres tocando otro. Podrás cambiarlo más tarde desde el nombre de tu hijo o en «Mi hijo».</li><li>Pulsa «Añadir a …». Para otro hijo, toca el nombre de tu hijo, arriba, y elige «Añadir un hijo».</li></ol>
+
+</section>
+<section class="apartado" id="codigo-padres">
+<h3>El código de padres</h3>
+<p>Es lo que separa tu espacio del de tu hijo.</p>
+<ol><li>Lo eliges al crear la cuenta: 4 cifras que solo sabéis los mayores.</li><li>Cuando le das el móvil a tu hijo con «Dárselo a …», se queda en su espacio.</li><li>Para volver al tuyo, mantén pulsado el candado de arriba un momento y escribe el código en «Código de padres»; después pulsa «Volver con papá o mamá».</li><li>Para cambiarlo, ve a «Ajustes de la familia y mis datos» (en el nombre de tu hijo, «Añadir un hijo» y, abajo, el enlace de ajustes) y usa «Cambiar el código».</li></ol>
+
+</section>
+<section class="apartado" id="llave">
+<h3>Darle la llave a tu hijo en su móvil</h3>
+<p>Si tu hijo tiene su propio móvil o tablet, lo unes a su perfil con una llave y él entra con una clave suya, sin tu contraseña.</p>
+<ol><li>En «Mi hijo», baja hasta «Darle acceso en su propio móvil o tablet» y pulsa «Crear la llave de …»: sale un código de 6 letras y un QR. Vale una sola vez y 15 minutos.</li><li>En el aparato de tu hijo, que abra NexoEduca, toque «Tengo una llave» y escriba el código (o escanee el QR con la cámara). Puede ponerle un nombre al aparato.</li><li>Si tiene 14 años o más, antes marca «Estoy de acuerdo».</li><li>Tu hijo elige su clave: tres dibujos (en Cera y Cuaderno) o un PIN de 4 cifras (en Libreta), y la repite.</li><li>En «Mi hijo» ves los aparatos de cada hijo y puedes quitar cualquiera con «Quitar».</li></ol>
+
+</section>
+<section class="apartado" id="voz-nexi">
+<h3>Que Nexi hable en voz alta</h3>
+<p>Nexi tiene voz de verdad. Decides tú, hijo a hijo, si le habla a tu hijo o solo se lee.</p>
+<ol><li>Entra en «Mi hijo» y baja hasta «Cómo ve la app».</li><li>Pulsa el interruptor «Nexi habla en voz alta» para activarlo o apagarlo.</li><li>De fábrica, Nexi habla en Cera y en Cuaderno, y no en Libreta.</li><li>Si no oyes nada, sube el volumen del móvil y comprueba que el interruptor esté activado.</li></ol>
+
+</section>
+<section class="apartado" id="colegio-bilingue">
+<h3>Colegio bilingüe: Ciencias en inglés</h3>
+<p>Si el colegio de tu hijo da las Ciencias en inglés y en casa no se habla, NexoEduca te lo cuenta a ti en español y le pone los ejercicios a él en inglés.</p>
+<ol><li>Entra en «Mi hijo», baja hasta «Cómo ve la app» y pulsa el interruptor «Ciencias en inglés (colegio bilingüe)». Viene apagado.</li><li>Marca las materias que su colegio da en inglés: Ciencias Naturales, Ciencias Sociales o las dos.</li><li>Haz la foto de la ficha como siempre. La explicación te sale en español y, debajo, «En clase lo dan en inglés»: las palabras clave en inglés y en español, con un altavoz para oír cada una. Repasadlas juntos.</li><li>Dale el móvil: los ejercicios de ese tema salen en inglés. Si no entiende lo que piden, pulsa «¿En español?», sin miedo: es una ayuda.</li><li>En el recreo tiene «Parejas de vocabulario», y en el cuadernillo los ejercicios de esos temas salen en inglés, con una hoja «Vocabulary / Vocabulario» al final.</li></ol>
+<p class="muted">Las voces inglesas son las del navegador del móvil (en inglés británico si las tiene); Nexi no habla inglés con su voz grabada. Hoy hay vocabulario y ejercicios en inglés para unos pocos temas de ejemplo; llegarán más con el resto del temario.</p>
+</section>
+<section class="apartado" id="si-eres-profe">
+<h3>Si eres profe</h3>
+<p>El profe tiene su propio espacio: revisar fichas, ver a sus alumnos y preparar material.</p>
+<ol><li>En la entrada, pulsa «Soy profe, crear cuenta de profe»: tu correo, una contraseña, los cursos y las materias que das, y las casillas de «Antes de empezar».</li><li>En «Hoy» ajusta tu perfil de revisor: solo te llegan fichas de los cursos y las materias que marques.</li><li>En «Revisar» tienes tu mesa: una ficha cada vez. En «Reto», diez fichas rápidas lanzando post-it.</li><li>En «Mi cuenta» tienes tu código de profe: dáselo a la familia de un alumno y, desde «Mi hijo», te abrirá lo que ha trabajado. Lo verás en «Alumnos».</li><li>En «Mis Nexipuntos» ves lo que has ganado por ayudar.</li></ol>
+<p class="muted">Para verlo antes de crear la cuenta, en la entrada está «Probar como profe de ejemplo».</p>
+</section>
+<section class="apartado" id="datos">
+<h3>Descargar y borrar tus datos</h3>
+<p>Los datos de tus hijos son tuyos. Puedes llevártelos o borrarlos cuando quieras, sin pedírselo a nadie.</p>
+<ol><li>Entra en «Ajustes de la familia y mis datos»: en el nombre de tu hijo, arriba, elige «Añadir un hijo» y baja hasta el enlace de ajustes. Si eres profe, usa «Mi cuenta».</li><li>Para llevarte una copia, pulsa «Descargar mis datos»: se baja un fichero con tu cuenta, tus hijos, el plan, las chispas, las valoraciones y los dibujos.</li><li>Para borrar, pulsa «Borrar mi cuenta», lee lo que se borra y escribe BORRAR. No se puede deshacer, así que descarga la copia antes.</li><li>Para borrar solo a un hijo, usa «Borrar a …» al final de «Mi hijo».</li></ol>
+
+</section>
+<section class="apartado" id="si-falla">
+<h3>Qué hacer si algo falla</h3>
+
+<ol><li>La app no abre sin conexión: ábrela una vez con internet, espera unos segundos y prueba de nuevo.</li><li>No lee la foto: haz otra con más luz, sin sombras y con la página entera; o cuéntame los deberes con tus palabras en «Capturar».</li><li>No se monta el PDF del cuadernillo: pulsa «Imprimir» y elige «Guardar como PDF».</li><li>Nexi no habla: mira en «Mi hijo» que «Nexi habla en voz alta» esté activado y que el volumen esté subido.</li><li>No consigues volver del espacio de tu hijo: mantén pulsado el candado de arriba sin soltar, un momento, hasta que se llene el anillo, y escribe tu código de padres.</li><li>Si algo se ve raro, cierra la app del todo y ábrela de nuevo.</li></ol>
+
+</section>
+<section id="familia">
+<h2>Para el padre o la madre</h2>
+<p class="muted">Tu espacio: las pantallas donde preparas la tarde de tu hijo y sigues cómo le va.</p>
+<article class="pantalla" id="familia-bienvenida">
+<h3>Bienvenida: añadir a tu hijo</h3>
+<p>Es el paso 2 de 2 al crear la cuenta, y también donde añades a otro hijo: me dices cómo se llama, en qué curso está y qué edad tiene, y preparo la app a su medida. También eliges cómo la verá él.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Escribe su nombre.</li><li>Elige su curso y su edad.</li><li>Mira el estilo propuesto: lo elijo según la edad, pero puedes cambiarlo.</li><li>Pulsa «Añadir a …» y entras en «Hoy».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«¿Cómo se llama?»</dt><dd>El nombre de tu hijo. Nexi lo usa para saludarle. Basta el de pila.</dd><dt>«Curso»</dt><dd>Su curso, desde Infantil de 3 años hasta 4º de ESO.</dd><dt>«Edad»</dt><dd>Su edad, de 3 a 18 años. Con ella te propongo el estilo.</dd><dt>«Cómo verá la app»</dt><dd>Tres estilos: Cera (3 a 7 años), Cuaderno (8 a 11) y Libreta (12 a 16). El que propongo lleva la marca «propuesto».</dd><dt>«Añadir a»</dt><dd>Guarda a tu hijo y te lleva a «Hoy». Está apagado hasta que escribas su nombre.</dd><dt>«Volver a los deberes de hoy»</dt><dd>Aparece cuando ya tienes algún hijo y solo estabas mirando: te devuelve a «Hoy».</dd><dt>«Ajustes de la familia y mis datos»</dt><dd>Te lleva a los ajustes: código de padres, avisos, lo que has aceptado y descargar o borrar tus datos.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Puedo cambiar el estilo más tarde?</summary><p>Sí, cuando quieras: desde el nombre de tu hijo, arriba, o en «Mi hijo», dentro de «Cómo ve la app».</p></details><details><summary>¿Puedo añadir más de un hijo?</summary><p>Sí. Pulsa el nombre de tu hijo, arriba, y elige «Añadir un hijo». Cada uno tiene sus ejercicios, su calendario y su estilo.</p></details><details><summary>¿Qué datos me pide?</summary><p>Solo su nombre, su curso y su edad.</p></details>
+<p class="nota"><b>Para los peques.</b> Tu hijo no ve esta pantalla: es solo para mayores.</p>
+</article>
+<article class="pantalla" id="familia-hoy">
+<h3>Hoy: la tarde de tu hijo</h3>
+<p>Es la pantalla de inicio. Resume lo que toca hoy —los deberes, el repaso del examen que viene y los temas que le has puesto—, con una acción en cada cosa, y te avisa de lo importante.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Lee la línea de Nexi: cuántas cosas quedan y cuánto tiempo llevan.</li><li>Si trae deberes, pulsa «Hacer la foto de los deberes».</li><li>En cada deber elige «Cómo explicárselo» (para ti) o «Que lo practique» (para él).</li><li>Cuando algo esté hecho, márcalo con «Marcar».</li><li>Al final mira el próximo examen y cómo va la semana.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Cambiar de hijo»</dt><dd>El botón con su nombre, arriba, abre «¿Con quién estudiamos?»: eliges hijo, su estilo o «Añadir un hijo».</dd><dt>«Dárselo a»</dt><dd>Pasa el móvil al espacio de tu hijo, con su estilo. Para recuperarlo, mantén pulsado el candado que tiene arriba y escribe tu código de padres.</dd><dt>«Nexi te avisa»</dt><dd>Avisos amables: un repaso que toca, un examen que se acerca, algo que le cuesta o un ánimo. Cada aviso trae su botón para actuar.</dd><dt>«Hacer la foto de los deberes»</dt><dd>Te lleva a «Capturar». Es el botón grande de la pantalla.</dd><dt>«Marcar»</dt><dd>Marca un deber como hecho. Una vez hecho, el botón dice «Hecho» y lo desmarca si te equivocas.</dd><dt>«Cómo explicárselo»</dt><dd>Abre la explicación del tema pensada para ti, el adulto.</dd><dt>«Que lo practique»</dt><dd>Le da el móvil a tu hijo con los ejercicios de ese tema.</dd><dt>«Además, hoy»</dt><dd>Los repasos de examen y los temas que le han puesto. «Dárselo» le pasa el móvil con ese tema.</dd><dt>«Próximo examen»</dt><dd>La tarjeta que abre el calendario de exámenes.</dd><dt>«Esta semana»</dt><dd>Los días con estudio y los minutos de la semana. Abre «Mi hijo».</dd><dt>«¿Nos ayudas a revisar?»</dt><dd>Una invitación discreta, como mucho una vez por semana, a revisar fichas. «Vamos» te lleva al reto; «Ahora no» la cierra.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué hoy no aparece nada?</summary><p>Porque no hay deberes apuntados ni repasos. Si trae algo, hazle la foto; si no, en «Practicar» le pones un repaso de diez minutos.</p></details><details><summary>¿Qué pasa si marco un deber como hecho sin que lo haya practicado?</summary><p>Nada: es solo tu marca para llevar el día. Lo que hace tu hijo con los ejercicios se apunta aparte, y si practica ese tema hoy, el deber también se marca solo.</p></details><details><summary>¿Qué es la tarjeta «¿Nos ayudas a revisar?»</summary><p>Una invitación a ayudar a que las fichas estén bien. Es voluntaria, nunca hace falta para usar la app y tu hijo no la ve.</p></details>
+<p class="nota"><b>Para los peques.</b> Tu hijo ve lo mismo en «Mi nevera»: una tarjeta por tema, con un color según quién se lo pone (Nexi, tú o los deberes del cole).</p>
+</article>
+<article class="pantalla" id="familia-capturar">
+<h3>Capturar: enseñarme los deberes</h3>
+<p>Aquí me enseñas los deberes: con una foto, con un fichero que ya tengas o contándomelos con tus palabras.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige cómo enseñármelos.</li><li>Si haces una foto, que sea de la página o la ficha entera, con buena luz y sin sombras.</li><li>Si los cuentas, escribe (o dicta) la asignatura y de qué va, y pulsa «Buscar el tema».</li><li>Espera un momento: Nexi lo mira y te lleva a la explicación.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Hacer una foto»</dt><dd>Abre la cámara del móvil.</dd><dt>«Elegir un fichero»</dt><dd>Para una foto que ya tienes o un PDF.</dd><dt>«Contarlo con tus palabras»</dt><dd>Abre una hoja para escribir lo que pone en los deberes, como lo dirías tú.</dd><dt>«Dictarlo»</dt><dd>Para hablar en vez de escribir. Solo sale si tu móvil lo permite.</dd><dt>«Buscar el tema»</dt><dd>Busca el tema por lo que has dicho y te lleva a su explicación.</dd><dt>«Probar con la foto de ejemplo»</dt><dd>Para ver cómo funciona sin hacer ninguna foto.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Y si no sé cómo se llama el tema?</summary><p>Usa «Contarlo con tus palabras» y dime la asignatura y de qué va; por ejemplo, «fracciones» o «el sujeto». Yo busco el tema.</p></details><details><summary>¿Qué foto sale mejor?</summary><p>La de la página o ficha entera, con buena luz, sin sombras y sin que se corte ningún trozo.</p></details><details><summary>¿Puedo usar un PDF del colegio?</summary><p>Sí. «Elegir un fichero» acepta fotos y PDF.</p></details>
+
+</article>
+<article class="pantalla" id="familia-piensa">
+<h3>Nexi está mirando los deberes</h3>
+<p>Es la pantalla de espera mientras Nexi mira la foto. Pasa sola a la explicación cuando termina.</p>
+<h4>Cómo se usa</h4>
+<ol><li>No tienes que hacer nada.</li><li>Verás tres frases seguidas: leer la letra, buscar el tema y preparar cómo explicárselo.</li><li>Si no puedo leer la foto, te lo digo y vuelves a intentarlo.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Cancelar»</dt><dd>Vuelve a «Capturar» si ya no quieres esperar.</dd><dt>«Volver a intentarlo»</dt><dd>Aparece si no he podido leer la foto: te devuelve a «Capturar».</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué dice «No he podido leerla»?</summary><p>Suele ser por poca luz, sombras o una foto cortada. Haz otra con la página entera y más luz.</p></details><details><summary>Se hace largo, ¿qué hago?</summary><p>Pulsa «Cancelar» y prueba otra vez, o cuéntamelo con tus palabras en «Capturar».</p></details>
+
+</article>
+<article class="pantalla" id="familia-explicacion">
+<h3>La explicación para ti</h3>
+<p>Te cuento el tema pensado para ti, el adulto: cómo explicárselo a tu hijo paso a paso y cuál es el error de siempre. Desde aquí también se lo das para que practique.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Lee la línea de Nexi y el tema.</li><li>Sigue «Cómo explicárselo», paso a paso.</li><li>Fíjate en el «Ojo con el error de siempre».</li><li>Si te hace falta, abre una de las tres ayudas para profundizar.</li><li>Si su colegio da esta materia en inglés, mira «En clase lo dan en inglés»: el vocabulario y cómo ayudarle.</li><li>Pulsa «Que lo practique ya» para dárselo, o «Ponérselo para más tarde».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Cómo explicárselo»</dt><dd>Los pasos para contárselo a tu hijo con sus palabras.</dd><dt>«Ojo con el error de siempre»</dt><dd>La equivocación más común en este tema, para que la veas venir.</dd><dt>«En clase lo dan en inglés»</dt><dd>Solo sale si has puesto esa materia en inglés en «Mi hijo». Trae el vocabulario clave del tema (la palabra inglesa, cómo se dice en español y un altavoz para oírla) y cómo ayudarle aunque no hables inglés. La explicación sigue en español.</dd><dt>«Explícamelo de otra forma»</dt><dd>Otro ejemplo, por si el primero no le llega.</dd><dt>«¿Por qué es así?»</dt><dd>El porqué de la regla, por si te pregunta.</dd><dt>«Qué necesita saber antes»</dt><dd>Lo que tiene que dominar antes. Si se atasca, puede que falte esto.</dd><dt>«¿Te ha servido esta explicación?»</dt><dd>Un toque, bien o mal, y si quieres una frase. Me ayuda a mejorarlas.</dd><dt>«Que lo practique ya: dárselo a»</dt><dd>Pasa el móvil a tu hijo con los ejercicios de este tema.</dd><dt>«Ponérselo para más tarde»</dt><dd>Lo deja en su nevera como un tema pendiente. Luego pone «Puesto: le sale en su nevera».</dd><dt>«Imprimir para el cuaderno»</dt><dd>Imprime la explicación (sin los botones) para pegarla en el cuaderno.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>Mi hijo se atasca, ¿qué hago?</summary><p>Abre «Qué necesita saber antes»: puede que le falte algo de base. Repasadlo primero y vuelve a intentarlo.</p></details><details><summary>¿Puedo leerla yo sin que él lo vea?</summary><p>Sí. Las tres ayudas para profundizar sirven también para que tú repases el tema por tu cuenta.</p></details><details><summary>¿Para qué sirve valorar la explicación?</summary><p>Con un toque y, si quieres, una frase, me ayudas a mejorar las explicaciones para ti y para otras familias.</p></details>
+<p class="nota"><b>Para los peques.</b> Tu hijo no ve esta pantalla: la explicación es para ti. Él recibe los ejercicios.</p>
+</article>
+<article class="pantalla" id="familia-calendario">
+<h3>Calendario de exámenes</h3>
+<p>Aquí apuntas los exámenes de tu hijo. Yo reparto el repaso en las tardes de antes, para que no tengas que planificar nada.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Pulsa «Apuntar un examen».</li><li>Elige de qué es y qué día.</li><li>Si quieres, añade un apunte (por ejemplo, qué temas entran).</li><li>Pulsa «Apuntarlo»: el repaso aparece en los días de antes.</li><li>Cuando toque un repaso, pulsa «Dárselo ahora».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Apuntar un examen»</dt><dd>Abre el formulario para apuntar uno nuevo.</dd><dt>«¿De qué es?»</dt><dd>El tema del examen, entre los de su curso.</dd><dt>«¿Qué día?»</dt><dd>La fecha, de hoy en adelante. Debajo te digo en cuántas tardes repartiré el repaso.</dd><dt>«Algo que apuntar»</dt><dd>Un recordatorio opcional, como «Entran los temas 4 y 5».</dd><dt>«Apuntarlo»</dt><dd>Guarda el examen y reparte el repaso.</dd><dt>«Las dos próximas semanas»</dt><dd>Los catorce días de un vistazo. Toca un día para ver solo lo de ese día; una marca indica examen y otra repaso.</dd><dt>«ver todos los días»</dt><dd>Quita el día elegido y vuelves a la lista completa.</dd><dt>«Repasarlo yo»</dt><dd>Abre la explicación del tema para que lo repases tú.</dd><dt>«Cuadernillo de repaso»</dt><dd>Monta un cuadernillo en papel de ese tema.</dd><dt>«Cambiar»</dt><dd>Cambia el tema, la fecha o el apunte del examen. El repaso se reparte de nuevo sin perder lo que ya estaba hecho.</dd><dt>«Quitar»</dt><dd>Quita el examen y su repaso, tras preguntarte («Sí, quitarlo» o «No, dejarlo»).</dd><dt>«Dárselo ahora»</dt><dd>Aparece en el repaso de hoy: le da el móvil a tu hijo con ese tema.</dd><dt>«Ya pasaron»</dt><dd>Los últimos exámenes ya pasados, con su sello.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Cuántas tardes de repaso prepara?</summary><p>Hasta tres antes del examen. Si queda menos tiempo, las que haya, y siempre al menos una.</p></details><details><summary>¿Qué pasa si cambio la fecha del examen?</summary><p>Pulsa «Cambiar» y elige otro día: el repaso se coloca de nuevo y no pierdes lo que tu hijo ya había repasado.</p></details><details><summary>¿Lo ve mi hijo?</summary><p>Sí, pero a su manera: Nexi se lo recuerda en su nevera cuando el examen se acerca, y el repaso de cada día le sale entre «Lo de hoy».</p></details>
+<p class="nota"><b>Para los peques.</b> Tu hijo ve el repaso de cada día como una tarjeta de Nexi en «Lo de hoy», y el recordatorio del examen en su nevera.</p>
+</article>
+<article class="pantalla" id="familia-practicar">
+<h3>Practicar juntos</h3>
+<p>Aquí le pones temas a tu hijo, con un mensaje tuyo y, si quieres, para cuándo: le salen en su nevera. También puedes hacerlos juntos ahora, ver cómo explicárselos o tirar de lo que Nexi sugiere.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Pulsa «Ponerle un tema».</li><li>Elige el tema, escribe tu mensaje (o toca uno rápido) y dime para cuándo.</li><li>Marca «Hacerlo juntos ahora» si queréis empezar ya: le doy el móvil.</li><li>Pulsa «Ponérselo». Le sale en su nevera con tu mensaje.</li><li>Mira «Nexi te sugiere» para ideas basadas en lo que le cuesta.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Ponerle un tema»</dt><dd>Abre la hoja para elegir tema, mensaje y fecha.</dd><dt>«Repaso de diez minutos»</dt><dd>Le da el móvil ya con un tema: primero lo que le ha costado esta semana; si no, lo que tiene pendiente o el primero de su curso.</dd><dt>«Cuadernillo para imprimir»</dt><dd>Abre el cuadernillo de la semana, para papel o PDF.</dd><dt>«Para practicar»</dt><dd>Los temas que tiene pendientes, con quién los puso y para cuándo.</dd><dt>«Hacerlo juntos ahora»</dt><dd>Le da el móvil a tu hijo con ese tema, para hacerlo ya.</dd><dt>«En papel»</dt><dd>Monta el cuadernillo de ese tema.</dd><dt>«Quitar»</dt><dd>Quita el tema. Unos segundos después, «Deshacer» lo recupera.</dd><dt>«Tu mensaje»</dt><dd>Lo que le saldrá en el post-it de su nevera. Debajo hay tres mensajes rápidos.</dd><dt>«¿Para cuándo?»</dt><dd>Sin prisa, Hoy, Mañana o Esta semana.</dd><dt>«Ponérselo»</dt><dd>Deja el tema en su nevera (en la hoja, con tu mensaje; en las sugerencias, con «Te lo sugiere Nexi»).</dd><dt>«Nexi te sugiere»</dt><dd>Hasta tres temas con el motivo: lo que le ha costado esta semana o lo que tiene a medias en su mapa.</dd><dt>«Ya practicado»</dt><dd>Los temas hechos, con su pegatina. «Repetirlo» lo vuelve a poner.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Cómo le llega el tema a mi hijo?</summary><p>Le sale en su nevera, en «Lo de hoy», como un post-it rosa con tu mensaje.</p></details><details><summary>¿Por qué me sugiere estos temas?</summary><p>Por lo que ha costado esta semana (con pista o sin acabar) y por lo que tiene a medias en su mapa de pegatinas.</p></details><details><summary>He quitado un tema sin querer.</summary><p>Durante unos segundos aparece «Deshacer». Si ya pasó, vuelve a ponérselo.</p></details>
+<p class="nota"><b>Para los peques.</b> Cada tema que le pones le sale en «Lo de hoy» como una tarjeta rosa, con tu mensaje debajo.</p>
+</article>
+<article class="pantalla" id="familia-cuadernillo">
+<h3>El cuadernillo de la semana</h3>
+<p>Monta el cuadernillo de la semana de tu hijo: portada, una hoja por día y las soluciones para ti. Lo guardas o compartes en PDF, o lo imprimes.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige los temas (por defecto, todos los que tienen cuadernillo).</li><li>Elige desde qué día, cuántos días de colegio y cuántos ejercicios al día.</li><li>Decide si quieres las soluciones al final.</li><li>Mira cómo quedan las hojas (A4) debajo.</li><li>Pulsa «PDF para compartir o guardar» o «Imprimir».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Temas»</dt><dd>Los temas del curso de tu hijo que ya tienen ejercicios en papel. Toca para quitar o poner. Los que van «en inglés» son los que su colegio da en ese idioma.</dd><dt>«Desde»</dt><dd>El primer día del cuadernillo. Por defecto, el próximo lunes.</dd><dt>«Días de colegio»</dt><dd>1, 3 o 5 días.</dd><dt>«Ejercicios al día»</dt><dd>3 (una hoja al día), 4, 6 u 8. Si no caben en una hoja, pasan a la siguiente.</dd><dt>«Con las soluciones al final (para la familia)»</dt><dd>Añade al final las hojas de soluciones, para vosotros.</dd><dt>«PDF para compartir o guardar»</dt><dd>Monta el PDF y lo comparte o lo descarga en tu móvil.</dd><dt>«Imprimir»</dt><dd>Abre la impresión del móvil; ahí también puedes elegir «Guardar como PDF».</dd><dt>«Vocabulary»</dt><dd>Si hay temas en inglés, una hoja al final de los días, «Vocabulary / Vocabulario», con las palabras en inglés y en español y una casilla para marcar las que ya sabe.</dd><dt>«¿Cómo te ha ido hoy?»</dt><dd>En el papel, al final de cada día, tres caritas para colorear y un hueco para el sello de casa. Sin notas.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué solo salen algunos temas?</summary><p>Porque los ejercicios en papel se preparan tema a tema: aquí salen los de su curso que ya están listos.</p></details><details><summary>No se monta el PDF, ¿qué hago?</summary><p>En algunos navegadores no es posible. Pulsa «Imprimir» y elige «Guardar como PDF».</p></details><details><summary>¿Y si mi hijo da Ciencias en inglés?</summary><p>Si lo has activado en «Mi hijo», los ejercicios de esos temas salen en inglés, con las soluciones y las instrucciones para ti en español, y se añade una hoja de vocabulario.</p></details><details><summary>¿Se pone nota al cuadernillo?</summary><p>No. Cada día acaba con «¿Cómo te ha ido hoy?» y vosotros ponéis el sello. Corregid juntos con las soluciones.</p></details>
+<p class="nota"><b>Para el profe.</b> Si eres profe, llegas desde «Material»: eliges al alumno y el cuadernillo se monta igual.</p>
+<p class="nota"><b>Para los peques.</b> La portada la firma Nexi y cada día lleva sus caritas para colorear.</p>
+</article>
+<article class="pantalla" id="familia-mi-hijo">
+<h3>Mi hijo: cómo va</h3>
+<p>El seguimiento de tu hijo de un vistazo: su semana, lo que ha terminado, su mapa de lo que domina, sus sesiones con la nota que solo ves tú, las notas que le dejas en su nevera y cómo ve la app.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Mira «Su semana»: un sello por cada día que ha estudiado, sin rachas.</li><li>Lee «El cuento de la semana»: un párrafo listo para compartir o llevar a la tutoría.</li><li>Repasa su mapa de pegatinas: qué domina, qué está en proceso y qué no ha trabajado.</li><li>En «Sus sesiones», decide con «Enseñársela» si le muestras una nota.</li><li>Déjale un mensaje con «Dejarle una nota» y ajusta el estilo y la voz de Nexi en «Cómo ve la app». Si su colegio es bilingüe, activa ahí las Ciencias en inglés.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Su semana»</dt><dd>Los últimos siete días: un sello por cada día con estudio y sus minutos.</dd><dt>«Lo que ha terminado»</dt><dd>Un resumen de lo que ha completado esta semana y los dibujos que ha pegado en su nevera.</dd><dt>«El cuento de la semana»</dt><dd>Un párrafo de padre a padre, concreto y sin culpas.</dd><dt>«Compartirlo»</dt><dd>Lo manda por donde quieras o, si el móvil no puede, lo copia para pegarlo.</dd><dt>«Imprimir para la tutoría»</dt><dd>Imprime el cuento de la semana.</dd><dt>«Su mapa de pegatinas»</dt><dd>Cada tema con sus partes: Dominado, En proceso o Sin trabajar. Debajo, «Cómo explicarle …» te lleva a la explicación.</dd><dt>«Sus sesiones»</dt><dd>Las últimas sesiones: tema, día, minutos, pegatinas y la nota del 1 al 10, que solo ves tú.</dd><dt>«Enseñársela»</dt><dd>Decides tú si tu hijo ve esa nota. Si lo haces, pone «Ya se la enseñaste» y se la verá en su álbum.</dd><dt>«¿Los ejercicios eran adecuados para él?»</dt><dd>Un toque, bien o mal: me dice si los ejercicios le iban bien.</dd><dt>«Lo que le dejas en su nevera»</dt><dd>Las notas que le has dejado, con su estado: «Le llega al abrir su nevera» o «Ya la tiene».</dd><dt>«Dejarle una nota»</dt><dd>Escribe, graba o dibuja un post-it para tu hijo.</dd><dt>«Cómo ve la app»</dt><dd>Cambia el estilo de tu hijo: Cera, Cuaderno o Libreta.</dd><dt>«Nexi habla en voz alta»</dt><dd>Interruptor por hijo: con él activado, tu hijo oye a Nexi con su voz; apagado, solo lee.</dd><dt>«Ciencias en inglés (colegio bilingüe)»</dt><dd>Interruptor por hijo, apagado de fábrica. Encendido, los ejercicios, el cuadernillo y las parejas de vocabulario de esas materias salen en inglés para él, y tú ves el vocabulario en español en «Cómo explicárselo». Debajo eliges las materias: Ciencias Naturales, Ciencias Sociales o las dos.</dd><dt>«Darle acceso en su propio móvil o tablet»</dt><dd>Para que tu hijo abra su espacio en su aparato con una clave suya. «Crear la llave de …» saca un código de 6 letras y un QR que valen una vez y 15 minutos; «Crear una llave nueva» sustituye la anterior.</dd><dt>«Aparatos de»</dt><dd>La lista de aparatos de tu hijo, con cuándo se emparejó y se usó por última vez. «Quitar» (y «Sí, quitarlo») hace que ese aparato deje de abrir su espacio.</dd><dt>«Compartir con un profe»</dt><dd>Por defecto nadie ve nada de tu hijo. Con el «Código del profe» y «Compartir con este profe» le abres lo que ha trabajado; «Dejar de compartir» lo cierra cuando quieras.</dd><dt>«Borrar a»</dt><dd>Al final de la pantalla: borra a ese hijo y todo lo suyo. Pide escribir BORRAR y no se puede deshacer.</dd><dt>«Ayudar a revisar las fichas»</dt><dd>Te lleva a «Revisar», la ayuda voluntaria para que las fichas estén bien.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué mi hijo no ve la nota?</summary><p>Porque la nota del 1 al 10 es solo para ti. Él ve pegatinas, nunca números. Si crees que le ayuda, pulsa «Enseñársela» y la verá en su álbum, en «Te lo ha enseñado tu familia».</p></details><details><summary>¿Cómo le llega la nota que le dejo?</summary><p>Le llega una sola vez, cuando abre su nevera. Si la tira, no vuelve. Cuando la recoge, aquí pone «Ya la tiene».</p></details><details><summary>¿Qué pasa si no ha estudiado esta semana?</summary><p>Nada: no hay rachas ni castigos. Un día sin estudiar no se pierde nada, y en «Practicar» te sugiero un repaso de diez minutos.</p></details><details><summary>¿Qué hace «Nexi habla en voz alta»?</summary><p>Si está activado, tu hijo oye a Nexi con voz de verdad. De fábrica, sí en Cera y Cuaderno y no en Libreta. Se decide hijo a hijo.</p></details>
+<p class="nota"><b>Para los peques.</b> Los dibujos que tu hijo pega en su nevera aparecen aquí, en «Lo que ha terminado».</p>
+</article>
+<article class="pantalla" id="familia-revisar">
+<h3>Revisar fichas</h3>
+<p>Aquí ayudas a que lo que estudian los niños esté bien. Es voluntario y sin prisa. Solo ves fichas de los cursos de tus hijos, y tu hijo no ve esta pantalla.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige una pestaña: «La mesa», «El reto» o «Mis Nexipuntos».</li><li>En la mesa, lee la ficha y pulsa «Está bien», «Tiene un fallo» o «No lo sé, la siguiente».</li><li>Si hay un fallo, toca la parte que falla y, si quieres, cuéntalo con una frase.</li><li>En el reto, lanzas 10 fichas a la derecha («Está bien») o a la izquierda («Tiene algo»).</li><li>En «Mis Nexipuntos» ves cuánto llevas.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«La mesa»</dt><dd>Una ficha cada vez, con el motivo de por qué está aquí y cuántas quedan.</dd><dt>«El reto»</dt><dd>La revisión rápida: 10 fichas, unos dos minutos.</dd><dt>«Mis Nexipuntos»</dt><dd>Tu hucha: lo que llevas, lo que está en camino y cómo se gana.</dd><dt>«Leerla entera»</dt><dd>En el reto, despliega la ficha completa. «Ver menos» la recoge.</dd><dt>«Está bien»</dt><dd>La ficha se entiende y es correcta.</dd><dt>«Tiene un fallo»</dt><dd>Te deja marcar el trozo que falla y escribir una frase.</dd><dt>«Enviar el fallo»</dt><dd>Manda lo que has marcado o escrito. Está apagado hasta que marques o escribas algo.</dd><dt>«No lo sé, la siguiente»</dt><dd>Salta la ficha sin castigo: saltar es mejor que adivinar.</dd><dt>«Empezar el reto»</dt><dd>Empieza la baraja. Se contesta arrastrando, con los dos botones o con las flechas ← →.</dd><dt>«Tiene algo»</dt><dd>En el reto, el botón de la izquierda: la ficha tiene algo que corregir.</dd><dt>«Deshacer el último»</dt><dd>Quita tu último voto y te devuelve esa ficha.</dd><dt>«Otro reto»</dt><dd>Al acabar, empieza otra baraja.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Es obligatorio?</summary><p>No. Nunca se pide revisar para usar la app.</p></details><details><summary>¿Cuánto suman los Nexipuntos?</summary><p>Una ficha del reto suma 1; una de la mesa, 5; y +20 si encuentras un fallo y se confirma. 800 Nexipuntos son un mes gratis: como mucho uno cada mes y 2 guardados. Los puntos no se cambian ni se transfieren.</p></details><details><summary>¿Por qué mis respuestas no suman?</summary><p>Si vas muy deprisa, por un tiempo no suman ni deciden nada («Parece que vas deprisa»). Ve con calma y se activan solas.</p></details><details><summary>¿Cuándo llegan los puntos?</summary><p>Quedan «en camino» hasta que se decide la ficha, y solo se suman si tu voto coincide con lo decidido.</p></details>
+<p class="nota"><b>Para el profe.</b> El profe tiene su propia mesa, con sus materias y más detalle: ve de dónde sale cada ficha.</p>
+</article>
+<article class="pantalla" id="familia-ajustes">
+<h3>Ajustes de la familia y mis datos</h3>
+<p>Aquí cuidas la cuenta de la familia: el código de padres, los avisos, lo que has aceptado y tus datos, que puedes descargar o borrar.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Para llegar: en el nombre de tu hijo, arriba, elige «Añadir un hijo» y baja hasta «Ajustes de la familia y mis datos».</li><li>Para cambiar el código de padres, escribe el de ahora y el nuevo dos veces, y pulsa «Cambiar el código».</li><li>Mira lo que has aceptado, con su fecha y la versión del texto.</li><li>Para llevarte una copia de todo, pulsa «Descargar mis datos».</li><li>Para borrarlo todo, usa «Borrar mi cuenta» y escribe BORRAR para confirmar.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Salir de la cuenta»</dt><dd>Cierra la sesión en este aparato.</dd><dt>«Código de padres»</dt><dd>Cuatro cifras que se piden al volver del espacio de tu hijo.</dd><dt>«Cambiar el código»</dt><dd>Guarda el código nuevo. Si aún no tienes ninguno, el botón dice «Poner un código».</dd><dt>«Avisos de novedades»</dt><dd>Interruptor: si está activado, te escribiremos cuando haya novedades.</dd><dt>«Lo que has aceptado»</dt><dd>Cada «sí» que diste, con el texto exacto, la fecha y la versión. Debajo, los textos legales.</dd><dt>«Descargar mis datos»</dt><dd>Baja un fichero con tu cuenta, tus hijos, el plan, las chispas, las valoraciones y los dibujos de sus neveras.</dd><dt>«Borrar mi cuenta»</dt><dd>Borra la cuenta y todo lo de tu familia, también de este aparato. Antes te enseña qué se borra y te pide escribir BORRAR; «No, me quedo» lo cancela.</dd><dt>«Volver a Mi hijo»</dt><dd>Te devuelve al seguimiento de tu hijo.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Se pueden recuperar los datos borrados?</summary><p>No: borrar no se puede deshacer. Por eso, antes, descarga una copia con «Descargar mis datos».</p></details><details><summary>¿Necesito pedirle permiso a alguien para descargar o borrar?</summary><p>No. Los datos son tuyos y de tus hijos: puedes llevártelos o borrarlos cuando quieras.</p></details><details><summary>¿Cómo borro solo a un hijo?</summary><p>En «Mi hijo», al final, está «Borrar a …»: borra a ese hijo y todo lo suyo, y deja el resto de la familia.</p></details>
+
+</article>
+</section>
+<section id="nino">
+<h2>Para tu hijo</h2>
+<p class="muted">Lo que ve y hace tu hijo cuando le das el móvil. Aquí se cuenta para que sepas qué le espera y qué decirle.</p>
+<article class="pantalla" id="nino-nevera">
+<h3>Mi nevera</h3>
+<p>Es tu pantalla de inicio: lo que te toca hoy, el recreo, tu cuaderno de dibujo y tu nevera con tus post-it.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Mira «Lo de hoy»: cada tarjeta es un tema.</li><li>Toca una tarjeta para hacer sus ejercicios.</li><li>Si hoy no toca nada, Nexi te propone un repaso corto o te invita a jugar.</li><li>En tu nevera puedes mover los post-it y pegar los tuyos.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Lo de hoy»</dt><dd>Una tarjeta por cada tema que te toca. Su color dice quién te lo pone: Nexi, mamá o papá, o los deberes del cole.</dd><dt>«¡A jugar!» o «El recreo»</dt><dd>Abre los juegos de repaso de Nexi.</dd><dt>«¡Vamos!» o «Un repaso corto»</dt><dd>Sale cuando hoy no toca nada: te lleva a un repaso cortito.</dd><dt>«¡A dibujar!» o «Dibuja algo para tu nevera»</dt><dd>Abre tu cuaderno de dibujo.</dd><dt>«Nexi» o «El armario de Nexi»</dt><dd>Sale cuando Nexi ya ha estrenado algo: te lleva a su armario.</dd><dt>«Mi nevera» o «Mi tablero»</dt><dd>Tus post-it y tus imanes. Lo que colocas se queda donde lo dejes.</dd><dt>«Cerrar»</dt><dd>Si entraste con la clave de tu aparato, sale este botón arriba para cerrar tu espacio.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Qué son las luces del pecho de Nexi?</summary><p>Cada cosa que terminas enciende una luz. Cuando están todas, Nexi estrena algo y tú eliges qué.</p></details><details><summary>¿Qué son los post-it rosas?</summary><p>Mensajes que te dejan mamá o papá. Llegan una vez a tu nevera; si los tiras, no vuelven.</p></details><details><summary>¿Puedo mover mis post-it?</summary><p>Sí. Lo que colocas se queda donde lo dejes.</p></details>
+<p class="nota"><b>Para los mayores.</b> Es la pantalla de inicio de tu hijo. Para recuperar el móvil, mantén pulsado el candado de arriba (el botón «Volver con mamá o papá») y escribe tu código de padres: hay que sostenerlo un momento para que un niño pequeño no lo haga sin querer. Si tu hijo entró con la clave de su propio aparato, en su lugar ve «Cerrar». En Libreta, la nevera se llama «Mi tablero» y no hay imanes infantiles.</p>
+</article>
+<article class="pantalla" id="nino-ejercicios">
+<h3>Ejercicios con Nexi</h3>
+<p>Aquí practicas un tema con Nexi, un ejercicio cada vez.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige un tema. Los de hoy salen primero.</li><li>Lee el ejercicio o toca el altavoz para escucharlo.</li><li>Responde. Si no es esa, Nexi te deja una pista en un post-it: dale la vuelta y prueba otra vez.</li><li>Si aún no sale, Nexi te enseña cómo se hace.</li><li>Al terminar, ganas pegatinas y el sello del día.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Lo de hoy»</dt><dd>Los temas que te tocan hoy, arriba del todo.</dd><dt>«Escuchar»</dt><dd>Nexi lee el ejercicio en voz alta. En Cera es el altavoz grande.</dd><dt>«¿En español?»</dt><dd>Si el ejercicio está en inglés, te dice en español lo que pide. Es una ayuda y puedes usarla siempre.</dd><dt>«Comprobar»</dt><dd>Cuando escribes la respuesta, la mira Nexi.</dd><dt>«Una pista: dale la vuelta» o «¡Gírame!»</dt><dd>El post-it amarillo de Nexi con una pista por detrás. Tócalo para girarlo.</dd><dt>«Mira cómo se hace» o «Mira cómo es»</dt><dd>La explicación de Nexi cuando el ejercicio no ha salido.</dd><dt>«Siguiente» o «¡Otro!»</dt><dd>Pasa al ejercicio siguiente.</dd><dt>«¡A por el sello!» o «Terminar»</dt><dd>En el último ejercicio: acaba la sesión y te lleva a tu álbum.</dd><dt>«Elegir otro tema»</dt><dd>La flecha de arriba te vuelve a la lista de temas.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Qué pasa si fallo?</summary><p>Nada malo. Nexi te da una pista y lo intentas otra vez; si sigue sin salir, te enseña cómo se hace.</p></details><details><summary>¿Puedo repetir un tema?</summary><p>Sí, cuando quieras, también los que ya están hechos.</p></details><details><summary>¿Cómo sé por dónde voy?</summary><p>Arriba hay una fila de marcas: las hechas se rellenan.</p></details><details><summary>¿Por qué mi ejercicio está en inglés?</summary><p>Porque en tu cole das esa materia en inglés. Si no lo entiendes, pulsa «¿En español?».</p></details>
+<p class="nota"><b>Para los mayores.</b> Cada sesión sigue siempre el mismo orden: intento, pista, segundo intento y solución explicada. Tu hijo recibe pegatinas (en Libreta, marcas de subrayador), nunca números. Al terminar, la sesión se apunta en el plan y tú ves la nota del 1 al 10 en «Mi hijo». Si el colegio de tu hijo da Ciencias en inglés y lo has activado en «Mi hijo», esos ejercicios salen en inglés (enunciados y opciones), con el botón «¿En español?» para ver qué piden; Nexi le habla en inglés sencillo con la voz inglesa del navegador, y la corrección sigue la misma regla.</p>
+</article>
+<article class="pantalla" id="nino-album">
+<h3>Mi álbum</h3>
+<p>Es tu álbum: guarda las pegatinas que ganas cada día y los días que has estudiado esta semana.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Al terminar una sesión cae el sello y se pegan tus pegatinas nuevas.</li><li>Mira la semana: un sello por cada día que has estudiado. Si un día no estudias, no se pierde nada.</li><li>Más abajo está todo tu álbum, por días.</li><li>Si Nexi tiene ropa nueva, el armario te deja cambiársela cuando quieras.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Mi álbum» o «Mi libreta»</dt><dd>Las pegatinas de cada día, con el tema de cada una.</dd><dt>«El armario de Nexi»</dt><dd>Lo que Nexi ya ha estrenado. Tócalo para que se lo ponga; nada se pierde.</dd><dt>«Las chispas de Nexi»</dt><dd>Las luces de su pecho. Cuando se llenan, eliges lo que estrena.</dd><dt>«Otro tema» o «¡Otro!»</dt><dd>Te lleva a elegir otro tema de ejercicios.</dd><dt>«A mi nevera» o «A mi tablero»</dt><dd>Vuelves a tu pantalla de inicio.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Qué significan las pegatinas?</summary><p>Cuentan cómo te ha salido el ejercicio: bien, casi u otro día. Ninguna es mala: sirven para saber qué repasar.</p></details><details><summary>¿Qué es el armario de Nexi?</summary><p>Las cosas que Nexi ya ha estrenado. Tócalas para que se las ponga.</p></details><details><summary>¿Qué pasa si un día no estudio?</summary><p>Nada. Ese día queda sin sello, pero no pierdes nada.</p></details>
+<p class="nota"><b>Para los mayores.</b> Aquí tu hijo no ve números ni notas. Si decides enseñarle una desde «Mi hijo», con «Enseñársela», le aparece en «Te lo ha enseñado tu familia». Nunca se habla de rachas perdidas.</p>
+</article>
+<article class="pantalla" id="nino-dibujo">
+<h3>Mi cuaderno de dibujo</h3>
+<p>Aquí dibujas lo que propone Nexi, o coloreas siguiendo una regla, y lo pegas en tu nevera.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Escucha o lee la idea de Nexi. ¿No te gusta? Pulsa «Otra idea».</li><li>Elige una cera y dibuja con el dedo.</li><li>Si prefieres colorear, pulsa «Colorear» y sigue la regla.</li><li>Ponle nombre si quieres y pégalo en tu nevera.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Dibujar»</dt><dd>Una hoja en blanco para dibujar con el dedo, con las ceras de colores.</dd><dt>«Colorear»</dt><dd>Un dibujo de líneas con una regla, por ejemplo «colorea de azul lo que sea par».</dd><dt>«Otra idea»</dt><dd>Nexi te propone otra cosa para dibujar.</dd><dt>«Deshacer»</dt><dd>Quita el último trazo.</dd><dt>«Empezar de nuevo»</dt><dd>Borra la hoja entera.</dd><dt>«Ponle nombre» o «Nombre (opcional)»</dt><dd>Para escribirle un nombre a tu dibujo.</dd><dt>«¡A la nevera!» o «Pegar en la nevera» o «Pegar en mi tablero»</dt><dd>Pega tu dibujo en tu nevera como un post-it.</dd><dt>«Ver mi nevera» o «Ver mi tablero»</dt><dd>Cuando ya está pegado, te lleva a verlo.</dd><dt>«Dibujar otro» o «¡Otro!»</dt><dd>Empiezas un dibujo nuevo.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Me corrige Nexi el dibujo?</summary><p>No. Nexi lo celebra. Solo en «Colorear» te avisa si hay algo pintado que no toca.</p></details><details><summary>¿Quién ve mi dibujo?</summary><p>Se pega en tu nevera y tu familia lo verá en su móvil.</p></details>
+<p class="nota"><b>Para los mayores.</b> Los dibujos pegados aparecen en «Mi hijo», en «Lo que ha terminado». La app no los corrige, los celebra, y cada dibujo enciende una luz en el pecho de Nexi.</p>
+</article>
+<article class="pantalla" id="nino-recreo">
+<h3>El recreo de Nexi</h3>
+<p>Juegos para repasar jugando, con los temas que tienes.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige tu tema. Salen primero los del examen y los que te han puesto.</li><li>Elige un juego.</li><li>Juega con Nexi. Si lo repites, cada vez sale algo distinto.</li><li>Al acabar, Nexi tiene una chispa más.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Tu tema» o «¿De qué?»</dt><dd>Tus temas. Una etiqueta cuenta si hay un examen cerca o si te lo han puesto.</dd><dt>«Tu juego» o «¿A qué?»</dt><dd>Los juegos que hay para ese tema.</dd><dt>«¡Nexi se ha liado!»</dt><dd>Nexi explica algo con un fallo: toca el trozo malo, tápalo con el típex y elige lo bueno.</dd><dt>«El tendedero»</dt><dd>Cuelga las tarjetas de la cuerda en el orden bueno: arrastra, o toca una y luego su sitio.</dd><dt>«Imanes en la nevera»</dt><dd>Pega cada imán en su columna: arrastra, o toca el imán y luego la columna.</dd><dt>«Parejas de post-it»</dt><dd>Da la vuelta a dos post-it para encontrar cada pareja.</dd><dt>«Parejas de vocabulario»</dt><dd>Solo si tu cole da esa materia en inglés: da la vuelta a los post-it y une cada palabra en inglés con su pareja en español. Al girar una, la oyes.</dd><dt>«¿Qué dibuja Nexi?»</dt><dd>Nexi dibuja trazo a trazo: adivina qué es antes de que termine.</dd><dt>«La sopa y el crucigrama»</dt><dd>Busca las palabras en la sopa de letras y después rellena el crucigrama.</dd><dt>«Jugar otra vez» o «¡Otra vez!»</dt><dd>Repites el juego con algo distinto.</dd><dt>«Otro juego»</dt><dd>Vuelves a elegir.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué Nexi bosteza?</summary><p>Porque ya has jugado un buen rato. Puedes cerrar el recreo o seguir un poquito.</p></details><details><summary>¿Hay que ganar?</summary><p>No. Ningún juego tiene reloj ni cuentas: es para repasar sin prisa.</p></details><details><summary>¿Por qué no salen todos los juegos?</summary><p>Cada tema tiene los suyos, y cada estilo también.</p></details>
+<p class="nota"><b>Para los mayores.</b> Hay seis juegos, y cada estilo tiene los suyos: Cera, cuatro (tendedero, imanes, parejas y «¿Qué dibuja Nexi?»); Cuaderno, los seis; Libreta, los de pensar (¡Nexi se ha liado!, tendedero, imanes y la sopa con el crucigrama). Cada tema tiene solo los que le encajan. Ningún juego enseña números, notas ni tiempos. Tras un buen rato de juego, Nexi bosteza y propone cerrar el recreo. Si activas las Ciencias en inglés en «Mi hijo», los temas de esas materias suman un modo de las parejas con el vocabulario (palabra en inglés y su pareja en español).</p>
+</article>
+</section>
+<section id="profe">
+<h2>Para el profe</h2>
+<p class="muted">El espacio de quien da clases: revisar fichas, ver a sus alumnos y preparar material.</p>
+<article class="pantalla" id="profe-entrada">
+<h3>Probar como profe de ejemplo</h3>
+<p>Eliges con qué profe inventado pruebas la app, sin crear cuenta. Sirve para ver cómo es el espacio del profe antes de crear la tuya.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Mira los profes de ejemplo, con sus cursos.</li><li>Pulsa «Probar» en el que quieras.</li><li>Para volver a la entrada, pulsa «Volver».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Probar»</dt><dd>Entras como ese profe de ejemplo y llegas a «Hoy», con una clase y unos alumnos de muestra.</dd><dt>«Volver»</dt><dd>Vuelves a la entrada de NexoEduca.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Son profes de verdad?</summary><p>No: son personas inventadas para probar la app. Nada de lo que hagas se guarda como tuyo.</p></details><details><summary>¿Cómo creo mi cuenta de profe?</summary><p>En la entrada, con «Soy profe, crear cuenta de profe»: pones tu correo, tus cursos y tus materias, y entras en tu espacio.</p></details>
+
+</article>
+<article class="pantalla" id="profe-hoy">
+<h3>Hoy: tu mesa y tu perfil</h3>
+<p>Tu pantalla de inicio: cuántas fichas esperan en tu mesa, tus Nexipuntos del mes, tu acierto en las fichas de control, tu próxima clase y tu perfil de revisor.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Lee la línea de Nexi: cuántas fichas esperan en tu mesa.</li><li>Toca «Esperan en tu mesa» para empezar a revisar, o «Tus Nexipuntos este mes» para ver tu hucha.</li><li>Ajusta tu perfil de revisor: marca los cursos y las materias que dominas.</li><li>Mira tu próxima clase y pulsa «Ver a mis alumnos» para ver cómo van.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Esperan en tu mesa»</dt><dd>Las fichas de tus cursos y tus materias que aún nadie ha decidido. Abre la mesa.</dd><dt>«Tus Nexipuntos este mes»</dt><dd>Lo que has sumado este mes y lo que está en camino. Abre tu hucha.</dd><dt>«Tu acierto en las fichas de control»</dt><dd>Cuánto aciertas en las fichas de control. Solo lo ves tú; empieza a medirse con 5 contestadas.</dd><dt>«Tu próxima clase»</dt><dd>Una clase de ejemplo, con un alumno inventado, para ver cómo quedará.</dd><dt>«Ver a mis alumnos»</dt><dd>Abre «Alumnos», en modo lectura.</dd><dt>«Tu perfil de revisor»</dt><dd>Los cursos y las materias que marques aquí son los únicos que te llegan. Se activan y desactivan tocándolos.</dd><dt>«Ir a la mesa»</dt><dd>Te lleva a revisar fichas.</dd><dt>«Cambiar de profe o volver a familia»</dt><dd>Te lleva a la entrada del profe.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Qué son las fichas de control?</summary><p>Una de cada diez fichas del reto es de control: su respuesta ya se sabe. Sirven para medir cuánto aciertas. Solo lo ves tú.</p></details><details><summary>¿Qué pasa si acierto mucho?</summary><p>Con al menos 5 de control y un buen acierto, tu «bien» basta para el sello, sin esperar a otra persona.</p></details><details><summary>No me llega ninguna ficha.</summary><p>Revisa tu perfil de revisor: hace falta marcar al menos un curso y una materia. Y si tu mesa está al día, Nexi te lo dice.</p></details>
+
+</article>
+<article class="pantalla" id="profe-revisar">
+<h3>Tu mesa de revisión</h3>
+<p>Una ficha cada vez, la más urgente primero, de tus cursos y tus materias. Saltar una que no tengas clara es mejor que adivinar.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Lee la ficha y el motivo de por qué está en tu mesa.</li><li>Pulsa «Está bien» si es correcta y adecuada para su curso.</li><li>Pulsa «Tiene un fallo» para marcar el trozo y, si quieres, escribir una frase.</li><li>Pulsa «No lo sé, la siguiente» si no lo tienes claro.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Está bien»</dt><dd>La ficha es correcta y adecuada para su curso.</dd><dt>«Tiene un fallo»</dt><dd>Te deja tocar el trozo que falla, que se subraya, y escribir una frase.</dd><dt>«Enviar el fallo»</dt><dd>Manda el fallo. Está apagado hasta que marques un trozo o escribas algo.</dd><dt>«No lo sé, la siguiente»</dt><dd>Salta la ficha sin castigo.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Qué más veo que un padre?</summary><p>De dónde sale cada ficha. Además, la pregunta es más exigente: si es correcta y adecuada para ese curso.</p></details><details><summary>¿Cuánto suma cada voto?</summary><p>Una ficha de la mesa suma 5 Nexipuntos, y +20 si encuentras un fallo y se confirma. Quedan en camino hasta que la ficha se decide.</p></details><details><summary>¿Por qué dice que voy deprisa?</summary><p>Mide tu acierto en las fichas de control. Ve con calma y se activa solo.</p></details>
+
+</article>
+<article class="pantalla" id="profe-reto">
+<h3>El reto al azar</h3>
+<p>La revisión rápida: 10 fichas ya publicadas en un montón de post-it, unos dos minutos.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Pulsa «Empezar el reto».</li><li>Lanza cada post-it a la derecha si está bien y a la izquierda si tiene algo.</li><li>Puedes arrastrar, usar los dos botones o las flechas ← → del teclado.</li><li>Si te equivocas, «Deshacer el último».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Empezar el reto»</dt><dd>Empieza la baraja de fichas.</dd><dt>«Está bien»</dt><dd>A la derecha: la ficha está bien.</dd><dt>«Tiene algo»</dt><dd>A la izquierda: la ficha tiene algo que corregir.</dd><dt>«Leerla entera»</dt><dd>Despliega la ficha completa antes de decidir. «Ver menos» la recoge.</dd><dt>«Deshacer el último»</dt><dd>Quita tu último voto y te devuelve esa ficha.</dd><dt>«Otro reto»</dt><dd>Al acabar, otra baraja.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Cuánto suma?</summary><p>Cada ficha suma 1 Nexipunto cuando se decide y tu voto coincide con la decisión.</p></details><details><summary>¿Y si hoy ya no hay fichas?</summary><p>Nexi te lo dice: por hoy no quedan fichas nuevas para ti. Vuelve otro día.</p></details>
+
+</article>
+<article class="pantalla" id="profe-material">
+<h3>Material para clase</h3>
+<p>Eliges al alumno y ves los temas de su curso que ya tienen cuadernillo; de ahí preparas el cuadernillo para imprimir o compartir.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige al alumno.</li><li>Mira los temas de su curso con cuadernillo.</li><li>Pulsa «Solo este tema» o «Preparar el cuadernillo de …» para ir a montarlo.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Alumno»</dt><dd>Elige entre los alumnos de ejemplo.</dd><dt>«Solo este tema»</dt><dd>Monta el cuadernillo solo con ese tema.</dd><dt>«Preparar el cuadernillo de»</dt><dd>Monta el cuadernillo con todos los temas del curso que lo tienen.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué no puedo preparar el de un alumno?</summary><p>El cuadernillo trabaja con la familia de ejemplo: si el alumno ya no está en ella, no se le puede preparar.</p></details><details><summary>¿Qué temas salen?</summary><p>Solo los que ya tienen ejercicios en papel para ese curso. Si no hay, lo pone.</p></details>
+
+</article>
+<article class="pantalla" id="profe-alumnos">
+<h3>Mis alumnos</h3>
+<p>Tres alumnos de ejemplo, inventados, en modo lectura: su curso, su mapa de pegatinas y sus últimas sesiones. Aquí miras; no cambias nada.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige a un alumno.</li><li>Mira su mapa: qué domina, qué está en proceso y qué no ha trabajado.</li><li>Mira sus últimas sesiones y cómo salieron.</li><li>Pulsa «Preparar material para …» si quieres llevarle algo a clase.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Alumno»</dt><dd>Cambia entre los tres alumnos de ejemplo.</dd><dt>«El mapa de»</dt><dd>Los temas del alumno con sus partes: Dominado, En proceso o Sin trabajar.</dd><dt>«Sus últimas sesiones»</dt><dd>Qué trabajó, cuándo, cuántos minutos y si salió bien, casi u otro día.</dd><dt>«Preparar material para»</dt><dd>Te lleva a «Material».</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Veo las notas?</summary><p>No. Las notas del 1 al 10 son solo de los padres. Tú ves cómo salió: bien, casi u otro día.</p></details><details><summary>¿Puedo cambiar algo del alumno?</summary><p>No: es modo lectura, y lo que ven los niños y sus padres no cambia.</p></details>
+
+</article>
+<article class="pantalla" id="profe-cuadernillo">
+<h3>El cuadernillo del alumno</h3>
+<p>Monta el cuadernillo de la semana del alumno que has elegido en «Material»: portada, una hoja por día y las soluciones. Lo guardas o compartes en PDF, o lo imprimes para llevarlo a clase.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Elige los temas (por defecto, todos los que tienen cuadernillo).</li><li>Elige desde qué día, cuántos días de colegio y cuántos ejercicios al día.</li><li>Decide si quieres las soluciones al final.</li><li>Mira cómo quedan las hojas (A4) debajo.</li><li>Pulsa «PDF para compartir o guardar» o «Imprimir».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Temas»</dt><dd>Los temas del curso de tu hijo que ya tienen ejercicios en papel. Toca para quitar o poner. Los que van «en inglés» son los que su colegio da en ese idioma.</dd><dt>«Desde»</dt><dd>El primer día del cuadernillo. Por defecto, el próximo lunes.</dd><dt>«Días de colegio»</dt><dd>1, 3 o 5 días.</dd><dt>«Ejercicios al día»</dt><dd>3 (una hoja al día), 4, 6 u 8. Si no caben en una hoja, pasan a la siguiente.</dd><dt>«Con las soluciones al final (para la familia)»</dt><dd>Añade al final las hojas de soluciones, para vosotros.</dd><dt>«PDF para compartir o guardar»</dt><dd>Monta el PDF y lo comparte o lo descarga en tu móvil.</dd><dt>«Imprimir»</dt><dd>Abre la impresión del móvil; ahí también puedes elegir «Guardar como PDF».</dd><dt>«Vocabulary»</dt><dd>Si hay temas en inglés, una hoja al final de los días, «Vocabulary / Vocabulario», con las palabras en inglés y en español y una casilla para marcar las que ya sabe.</dd><dt>«¿Cómo te ha ido hoy?»</dt><dd>En el papel, al final de cada día, tres caritas para colorear y un hueco para el sello de casa. Sin notas.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué solo salen algunos temas?</summary><p>Porque los ejercicios en papel se preparan tema a tema: aquí salen los de su curso que ya están listos.</p></details><details><summary>No se monta el PDF, ¿qué hago?</summary><p>En algunos navegadores no es posible. Pulsa «Imprimir» y elige «Guardar como PDF».</p></details><details><summary>¿Y si mi hijo da Ciencias en inglés?</summary><p>Si lo has activado en «Mi hijo», los ejercicios de esos temas salen en inglés, con las soluciones y las instrucciones para ti en español, y se añade una hoja de vocabulario.</p></details><details><summary>¿Se pone nota al cuadernillo?</summary><p>No. Cada día acaba con «¿Cómo te ha ido hoy?» y vosotros ponéis el sello. Corregid juntos con las soluciones.</p></details>
+<p class="nota"><b>Para los peques.</b> La portada la firma Nexi y cada día lleva sus caritas para colorear.</p>
+</article>
+<article class="pantalla" id="profe-puntos">
+<h3>Mis Nexipuntos</h3>
+<p>Tu recompensa por ayudar: una hucha que se llena hacia un mes gratis.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Mira cuánto llevas y cuánto te falta.</li><li>Los puntos «en camino» llegan cuando la ficha se decide y tu voto coincide.</li><li>Abajo ves tus últimas fichas y cómo acabaron.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Nexipuntos hacia un mes gratis»</dt><dd>La hucha: 800 Nexipuntos son un mes gratis.</dd><dt>«en camino»</dt><dd>Puntos que esperan a que la ficha se decida.</dd><dt>«Cómo se ganan»</dt><dd>Cuánto suma cada tipo de ficha.</dd><dt>«Tus últimas fichas»</dt><dd>Cada una con su estado: En camino, Sumado, No sumó o Sin puntos.</dd><dt>«Para probar la demostración»</dt><dd>Despliega «Pasar un día» y «Empezar de cero»: en esta demostración los otros revisores son inventados y contestan en los días siguientes.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Cómo se ganan?</summary><p>Una ficha del reto suma 1; una de la mesa, 5; y +20 si encuentras un fallo y se confirma.</p></details><details><summary>¿Cuántos meses gratis puedo tener?</summary><p>Como mucho uno cada mes y 2 guardados. Si llegas al tope, tus puntos esperan: no se pierden.</p></details><details><summary>¿Se pueden cambiar o transferir?</summary><p>No: los puntos no se cambian ni se transfieren.</p></details>
+
+</article>
+<article class="pantalla" id="profe-cuenta">
+<h3>Tu cuenta de profe</h3>
+<p>Aquí tienes tu código de profe, ves a qué alumnos te ha abierto su familia y cuidas tu cuenta y tus datos.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Llegas desde «Mi cuenta», arriba a la derecha.</li><li>Dale tu código de profe a la familia de un alumno: con él, desde «Mi hijo», te abre lo que ha trabajado su hijo.</li><li>Mira abajo «Alumnos que te han abierto».</li><li>Para llevarte una copia de tus datos o borrar la cuenta, usa los botones de «Tu cuenta».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Tu código de profe»</dt><dd>Tu código personal. Las familias lo escriben para abrirte a un hijo, y pueden cerrarlo cuando quieran.</dd><dt>«Copiar mi código»</dt><dd>Lo copia para que lo pegues donde quieras (un mensaje, un correo).</dd><dt>«Alumnos que te han abierto»</dt><dd>Los niños de las familias que te han abierto su histórico. Por defecto, no ves a ninguno.</dd><dt>«Salir de la cuenta»</dt><dd>Cierra la sesión en este aparato.</dd><dt>«Descargar mis datos»</dt><dd>Baja un fichero con tus datos.</dd><dt>«Borrar mi cuenta»</dt><dd>Borra tu cuenta, tu correo y tu clave. Las familias dejan de tenerte como profe. Te pide escribir BORRAR para confirmar.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Puede la familia quitarme el acceso?</summary><p>Sí, cuando quiera. Dejas de ver a ese alumno desde ese momento.</p></details><details><summary>¿Veo las notas privadas de los padres?</summary><p>Nunca. Solo ves el histórico educativo del alumno: lo trabajado, cómo le salió y qué le cuesta.</p></details>
+
+</article>
+</section>
+<section id="cuentas">
+<h2>La cuenta y la llave del niño</h2>
+<p class="muted">Entrar, crear la cuenta y dar a tu hijo la llave de su propio móvil.</p>
+<article class="pantalla" id="cuenta-entrar">
+<h3>Entrar en NexoEduca</h3>
+<p>Es lo primero que ves si no hay ninguna cuenta abierta en este aparato: entras con tu correo y tu contraseña, creas una cuenta nueva, pruebas la app con datos de ejemplo o, si eres un niño, abres tu espacio con una llave.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Si ya tienes cuenta, escribe tu correo y tu contraseña y pulsa «Entrar».</li><li>Si eres nuevo, elige «Crear cuenta de familia» o «Soy profe, crear cuenta de profe».</li><li>Si solo quieres verla, pulsa «Probar con la familia de ejemplo» o «Probar como profe de ejemplo».</li><li>Si eres un niño y tu madre o tu padre te han dado un código, pulsa «Tengo una llave».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«Correo»</dt><dd>El correo con el que creaste la cuenta.</dd><dt>«Contraseña»</dt><dd>Tu contraseña. El botón «Ver» (y luego «Ocultar») te deja comprobar lo que escribes.</dd><dt>«Entrar»</dt><dd>Abre tu cuenta. Siempre llegas al espacio de los mayores.</dd><dt>«Crear cuenta de familia»</dt><dd>Te lleva a crear la cuenta de tu familia. Si en este aparato ya hay una cuenta de familia, no sale: entra con ella.</dd><dt>«Soy profe, crear cuenta de profe»</dt><dd>Te lleva a crear una cuenta de profe.</dd><dt>«Probar con la familia de ejemplo»</dt><dd>Entras con tres niños inventados, con deberes y sesiones de muestra. No se guarda nada tuyo.</dd><dt>«Probar como profe de ejemplo»</dt><dd>Te deja elegir entre dos profes inventados para ver cómo es el espacio del profe.</dd><dt>«Tengo una llave»</dt><dd>Para el aparato de un niño: abre la pantalla donde se escribe el código de la llave.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>No me deja entrar, ¿qué hago?</summary><p>Mira que el correo esté completo, con la @ y el punto, y que la contraseña sea la que elegiste al crear la cuenta. Con «Ver» puedes comprobar lo que escribes.</p></details><details><summary>¿Mi hijo tiene su propia cuenta?</summary><p>No. Tu hijo es un perfil de tu familia, sin correo ni contraseña. En su móvil o tablet entra con una llave que le das tú, desde «Mi hijo».</p></details><details><summary>¿Por qué no veo «Crear cuenta de familia»?</summary><p>Porque en este aparato ya hay una cuenta de familia. Entra con ella; para crear otra, usa otro aparato.</p></details>
+
+</article>
+<article class="pantalla" id="cuenta-alta">
+<h3>Crear la cuenta de la familia</h3>
+<p>Es el paso 1 de 2: creas la cuenta de tu familia en unos tres minutos. Después, en el paso 2, añades a tu primer hijo.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Escribe tu nombre y tu correo.</li><li>Elige una contraseña. Mientras escribes, verás qué le falta.</li><li>Elige tu código de padres, de cuatro cifras.</li><li>Lee y marca las casillas obligatorias, y la opcional si quieres recibir novedades.</li><li>Pulsa «Crear mi cuenta». Llegas a la bienvenida para añadir a tu primer hijo.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«¿Cómo te llamas?»</dt><dd>Tu nombre.</dd><dt>«Tu correo»</dt><dd>Con él entrarás en tu cuenta.</dd><dt>«Elige una contraseña»</dt><dd>Al menos 10 caracteres, con una letra y un número. El botón «Ver» te deja comprobarla.</dd><dt>«Tu código de padres (4 cifras)»</dt><dd>Se pide al volver del espacio de tu hijo, cuando le has pasado el móvil. Que solo lo sepáis vosotros.</dd><dt>«Antes de empezar»</dt><dd>Las casillas legales: el aviso legal y la privacidad, tu consentimiento como padre o tutor, las condiciones de uso (obligatorias) y las novedades (opcional). Cada enlace se abre en otra pestaña.</dd><dt>«Crear mi cuenta»</dt><dd>Crea la cuenta y te lleva a añadir a tu primer hijo.</dd><dt>«Entra aquí»</dt><dd>Si ya tienes cuenta, vuelves a la entrada.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Por qué piden mi consentimiento por los menores?</summary><p>Porque tus hijos son menores y la ley pide el consentimiento de su padre, madre o tutor. Solo se guarda lo imprescindible, y cada «sí» queda guardado con su texto exacto.</p></details><details><summary>¿Puedo cambiar el código de padres?</summary><p>Sí, en «Ajustes y mis datos», dentro de «Código de padres».</p></details><details><summary>¿Qué pasa si me equivoco en algún campo?</summary><p>Cada campo te avisa en llano de lo que falta y te lleva a él. No se pierde nada de lo que has escrito.</p></details>
+
+</article>
+<article class="pantalla" id="cuenta-alta-profe">
+<h3>Crear la cuenta de profe</h3>
+<p>Creas tu cuenta de profe: con ella revisas fichas y ves a tus alumnos. De un niño solo verás lo que su familia te abra, y la familia puede cerrarlo cuando quiera.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Escribe tu nombre y tu correo, y elige una contraseña.</li><li>Marca los cursos en los que das clase.</li><li>Marca las materias que das.</li><li>Marca las casillas obligatorias y pulsa «Crear mi cuenta de profe».</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«¿Cómo te llamas?»</dt><dd>Tu nombre.</dd><dt>«Tu correo»</dt><dd>Con él entrarás en tu cuenta.</dd><dt>«Elige una contraseña»</dt><dd>Al menos 10 caracteres, con una letra y un número. El botón «Ver» te deja comprobarla.</dd><dt>«Cursos en los que das clase»</dt><dd>Tócalos para marcarlos o quitarlos. Solo te llegarán fichas de estos cursos.</dd><dt>«Materias que das»</dt><dd>Igual: solo te llegarán fichas de estas materias.</dd><dt>«Antes de empezar»</dt><dd>Las casillas legales: el aviso legal y la privacidad, las condiciones de uso y las condiciones de los Nexipuntos. Todas son obligatorias.</dd><dt>«Crear mi cuenta de profe»</dt><dd>Crea la cuenta y te lleva a tu «Hoy».</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>¿Veo a los niños de cualquier familia?</summary><p>No. Por defecto no ves a ningún niño. Solo ves a un alumno si su familia te lo abre con tu código de profe, y puede cerrarlo cuando quiera.</p></details><details><summary>¿Puedo cambiar mis cursos y materias más tarde?</summary><p>Sí, en «Hoy», dentro de «Tu perfil de revisor».</p></details>
+
+</article>
+<article class="pantalla" id="cuenta-llave">
+<h3>La llave del niño</h3>
+<p>Es la pantalla del móvil o la tablet de tu hijo. Con la llave que le das desde tu cuenta, ese aparato queda unido a su perfil, y desde entonces él entra con su propia clave, sin tu contraseña.</p>
+<h4>Cómo se usa</h4>
+<ol><li>Los mayores piden una llave en «Mi hijo»: sale un código de 6 letras y un QR. Vale una sola vez y dura 15 minutos.</li><li>En el aparato del niño, se pulsa «Tengo una llave» y se escribe el código (o se escanea el QR con la cámara).</li><li>Si el niño tiene 14 años o más, antes lee y marca «Estoy de acuerdo».</li><li>El niño elige su clave: tres dibujos (en Cera y Cuaderno) o un PIN de 4 cifras (en Libreta), y la repite.</li><li>Desde entonces entra tocando sus tres dibujos o escribiendo su PIN.</li></ol>
+<h4>Qué hace cada botón</h4>
+<dl><dt>«El código de la llave»</dt><dd>El código que ha dado la madre o el padre.</dd><dt>«¿Cómo llamamos a este aparato?»</dt><dd>Un nombre para el aparato (por ejemplo, «Tablet del salón»). Así lo ven los mayores en su lista de aparatos.</dd><dt>«Usar esta llave»</dt><dd>Une el aparato al perfil del niño.</dd><dt>«Estoy de acuerdo»</dt><dd>Solo a partir de los 14 años: el chaval da también su conformidad. Después, «Seguir».</dd><dt>«Elegir otra»</dt><dd>Si el niño se equivoca al repetir sus dibujos, empieza de nuevo.</dd><dt>«Tu PIN (4 cifras)»</dt><dd>En Libreta: cuatro cifras que solo sabe él. Se repite en «Repítelo» y se guarda con «Guardar mi PIN».</dd><dt>«Abrir mi espacio»</dt><dd>Con el PIN escrito, abre el espacio del niño.</dd><dt>«Tengo otra llave»</dt><dd>Para empezar con una llave nueva, si hace falta. «Mejor sigo con la que tengo» lo cancela.</dd><dt>«Soy madre, padre o profe»</dt><dd>Vuelve a la entrada de los mayores.</dd></dl>
+<h4>Preguntas frecuentes</h4>
+<details><summary>La llave ya no me vale.</summary><p>Dura 15 minutos y solo se usa una vez. Pide otra en «Mi hijo», con «Crear una llave nueva».</p></details><details><summary>¿Y si el niño tiene 14 años o más?</summary><p>Entonces, antes de crear su clave, lee y marca él «Estoy de acuerdo»: la ley pide que también esté de acuerdo.</p></details><details><summary>¿Y si se equivoca varias veces con su clave?</summary><p>Tras varios fallos seguidos, el aparato espera un poco antes de dejarle probar otra vez.</p></details>
+
+</article>
+</section>
+</div>
+<footer><div class="caja-pie">Este documento se genera de la propia ayuda de la aplicación (cada pantalla tiene su ayuda con el botón <b>?</b>): por eso nunca se contradicen.</div></footer>
+</body></html>

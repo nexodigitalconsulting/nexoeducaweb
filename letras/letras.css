@@ -1,0 +1,5 @@
+/* Las letras de la web, servidas desde la propia web (10-10-2026, como en la app): antes venían de Google Fonts, que
+   recibía la dirección de cada visita (lo decía la página de cookies). Solo el juego «latin», en versión variable. */
+@font-face{font-family:'Baloo 2';font-style:normal;font-display:swap;font-weight:400 800;src:url('baloo-2-latin-wght-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:200 1000;src:url('nunito-sans-latin-wght-normal.woff2') format('woff2')}
+@font-face{font-family:'Caveat';font-style:normal;font-display:swap;font-weight:400 700;src:url('caveat-latin-wght-normal.woff2') format('woff2')}

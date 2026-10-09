@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXOEDUCA · Política de privacidad</title>
+<meta name="description" content="Política de privacidad de NEXOEDUCA (RGPD y LOPDGDD): datos de familias, niños y profesores, encargados del tratamiento, derechos.">
+<meta name="robots" content="noindex">
+<link href="../letras/letras.css" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F97316'/%3E%3Cpath d='M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z' fill='%23FFFFFF'/%3E%3Cpath d='M10.6 9.4c2.8-.4 5.6-.4 8.4 0l2.9 2.9c.2 3.6.2 7.2 0 10.8-3.8.5-7.6.5-11.4 0-.3-4.6-.3-9.1.1-13.7z' fill='%23FFE7D1'/%3E%3Cpath d='M13.6 19.8c.9 1 2 1.1 3.1.3' stroke='%2324303F' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --coral:#EF4444;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,5vw,38px);font-weight:800;letter-spacing:-.4px}
+h2{font-size:clamp(22px,3.2vw,28px);font-weight:700;letter-spacing:-.2px;margin-top:34px;margin-bottom:8px}
+h3{font-size:19px;font-weight:700;margin-top:18px;margin-bottom:4px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:5px}
+.mini{font-size:14.5px}
+.muted{color:var(--tinta-suave)}
+
+/* cabecera fija: banda de borrador + barra */
+.cabecera{position:sticky;top:0;z-index:60}
+.banda{background:#FDE68A;border-bottom:3px solid #D97706;color:#4A2B00;text-align:center;
+  font-weight:700;font-size:14.5px;line-height:1.35;padding:7px 14px}
+.banda b{font-family:'Baloo 2';font-size:15.5px}
+.topbar{background:rgba(255,248,238,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:1080px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:10px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px;
+  color:var(--tinta);text-decoration:none}
+.marca__logo{width:40px;height:40px;flex:0 0 40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.topbar__acciones{margin-left:auto;display:flex;gap:8px;align-items:center}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:16px;
+  padding:8px 16px;border-radius:14px;border:2px solid #D9600B;background:var(--naranja);color:#fff;
+  cursor:pointer;text-decoration:none;box-shadow:0 4px 0 #B84D06;transition:transform .12s, box-shadow .12s;white-space:nowrap}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #B84D06}
+.btn--blanco{background:#fff;color:var(--tinta);border-color:var(--linea);box-shadow:0 4px 0 rgba(36,48,63,.12)}
+.btn--blanco:hover{box-shadow:0 2px 0 rgba(36,48,63,.12)}
+
+/* cuerpo */
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 56px}
+.nav-legal{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 8px;padding:0;list-style:none}
+.nav-legal li{margin:0}
+.nav-legal a{display:inline-block;font-size:14.5px;font-weight:700;padding:5px 12px;border-radius:999px;border:2px solid var(--linea);
+  background:#fff;color:var(--tinta-suave);text-decoration:none}
+.nav-legal a[aria-current]{background:var(--naranja-2);border-color:#F6C79B;color:var(--naranja-tinta)}
+.resumen{background:var(--azul-2);border:2px solid #BBD3FF;border-radius:18px;padding:14px 16px;margin:16px 0}
+.resumen b:first-child{font-family:'Baloo 2';color:var(--azul-tinta)}
+.resumen ul{margin:6px 0 0}
+.ninos{background:#DCFCE7;border:2px solid #A7E8BD;border-radius:18px;padding:16px 18px;margin:14px 0}
+.ninos h3{margin-top:0;color:#166534}
+.pend{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:14px;padding:12px 14px;margin:14px 0;font-size:15.5px}
+.pend-t{background:#FFF6B8;border-bottom:2px solid #F59E0B;padding:0 3px;border-radius:3px;font-weight:700;color:#5A3B00}
+.falta{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:18px;padding:16px 18px;margin:36px 0 0;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+.falta h2{margin:0 0 6px;font-size:21px}
+.falta ul{margin:6px 0 0}
+.falta li{font-size:15px}
+
+/* tablas */
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}
+.tabla th,.tabla td{border:2px solid var(--linea);padding:9px 11px;text-align:left;font-size:15.5px;vertical-align:top}
+.tabla th{background:#FFF1DF;font-family:'Baloo 2'}
+.tabla.kv th{width:30%}
+
+/* pie */
+footer{background:#fff;border-top:2px solid var(--linea);padding:26px 0;margin-top:10px}
+footer .ancho{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:12px 28px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+footer a{color:var(--tinta-suave)}
+.pie-enlaces{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .caja{padding:20px 16px 44px}
+  .topbar__in{padding:8px 14px}
+  .marca{font-size:18px}
+  .banda{font-size:13px;padding:6px 10px}
+  .banda b{font-size:14px}
+  .btn{padding:7px 12px;font-size:15px}
+  /* las tablas pasan a tarjetas de una columna */
+  .tabla,.tabla tbody,.tabla tr,.tabla td,.tabla th{display:block;width:100%}
+  .tabla thead{position:absolute;left:-9999px}
+  .tabla tr{border:2px solid var(--linea);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .tabla th,.tabla td{border:0;border-bottom:1px solid var(--linea)}
+  .tabla td:last-child{border-bottom:0}
+  .tabla td[data-et]::before{content:attr(data-et);display:block;font-family:'Baloo 2';font-weight:700;font-size:13.5px;color:var(--tinta-suave)}
+  .tabla.kv th{width:100%}
+}
+@media (max-width:380px){
+  .marca div:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs></svg>
+<div class="cabecera">
+<div class="banda" role="note"><b>Borrador pendiente de revisión legal · versión 2026-10-borrador</b></div>
+<header class="topbar"><div class="topbar__in">
+  <a class="marca" href="../index.html" aria-label="NEXOEDUCA, inicio"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><g filter="url(#c)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><div>NEXOEDUCA</div></a>
+  <div class="topbar__acciones"><a class="btn btn--blanco" href="../index.html">Volver</a><a class="btn" data-entrar href="../index.html" rel="noopener">Iniciar sesión</a></div>
+</div></header></div>
+<main class="caja">
+<h1>Política de privacidad</h1>
+<p class="muted">Qué datos tratamos de las familias, los niños y los profesores, para qué, durante cuánto tiempo y cómo ejercer tus derechos. Versión 2026-10-borrador.</p>
+<ul class="nav-legal" aria-label="Textos legales"><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html" aria-current="page">Privacidad</a></li><li><a href="condiciones.html">Condiciones de uso</a></li><li><a href="nexipuntos.html">Nexipuntos</a></li><li><a href="cookies.html">Cookies</a></li></ul>
+
+<div class="resumen"><b>Lo esencial, en seis líneas</b>
+<ul>
+  <li>Tratamos los datos que hacen falta para que la aplicación te ayude a estudiar con tu hijo, y nada más.</li>
+  <li><b>Nunca vendemos ni cedemos</b> datos de familias ni de niños, ni con nombre ni anónimos.</li>
+  <li>El niño no tiene correo ni cuenta propia: es un perfil dentro de la cuenta de su madre, padre o tutor.</li>
+  <li>La <b>foto del cuaderno se borra al terminar la sesión</b>.</li>
+  <li>El profesor solo ve lo que la familia autoriza, y la familia puede quitarlo cuando quiera.</li>
+  <li>Puedes descargar tus datos y borrar la cuenta desde la propia aplicación, sin pedírselo a nadie.</li>
+</ul></div>
+
+<h2>1 · Quién es el responsable</h2>
+<table class="tabla kv"><tbody>
+<tr><th scope="row">Responsable</th><td><b>Nexo Digital Advisory S.L.</b></td></tr>
+<tr><th scope="row">NIF</th><td>B88744032</td></tr>
+<tr><th scope="row">Domicilio</th><td>Mirador del Río, Fase I, 27B · 11370 Los Barrios (Cádiz), España</td></tr>
+<tr><th scope="row">Correo para asuntos de datos</th><td>info@nexodigitalconsulting.com</td></tr>
+<tr><th scope="row">Delegado de protección de datos</th><td><span class="pend-t">[PENDIENTE: si se nombra DPD; si no, indicar que no es obligatorio y que el correo anterior es el canal]</span></td></tr>
+</tbody></table>
+
+<h2>2 · Qué datos tratamos, de quién y para qué</h2>
+<p>Nos mueve un principio: <b>pedir lo mínimo</b>. Lo que no hace falta, no se pide.</p>
+
+<h3>De la familia (madre, padre o tutor)</h3>
+<table class="tabla"><thead><tr><th scope="col">Dato</th><th scope="col">Para qué</th><th scope="col">Base jurídica</th><th scope="col">Cuánto tiempo</th></tr></thead><tbody>
+<tr><td data-et="Dato">Correo electrónico y acceso a la cuenta. No pedimos teléfono ni dirección <span class="pend-t">[PENDIENTE: confirmar los datos de alta definitivos]</span></td><td data-et="Para qué">Crear y mantener la cuenta, identificarte, avisarte de cosas del servicio</td><td data-et="Base jurídica">Contrato (art. 6.1.b RGPD): sin ellos no podemos darte el servicio</td><td data-et="Cuánto tiempo">Mientras exista la cuenta. <span class="pend-t">[PENDIENTE: plazo tras la baja]</span></td></tr>
+<tr><td data-et="Dato">Plan contratado y estado del pago. Los datos de la tarjeta los trata la pasarela de pago; <span class="pend-t">[PENDIENTE: confirmar que NEXOEDUCA no guarda datos de tarjeta]</span></td><td data-et="Para qué">Cobrar el plan, gestionar la baja y las facturas</td><td data-et="Base jurídica">Contrato; obligación legal para la facturación (art. 6.1.c)</td><td data-et="Cuánto tiempo">Mientras dure el contrato y después el tiempo que exijan las normas fiscales y mercantiles <span class="pend-t">[PENDIENTE: plazo concreto, a fijar con el asesor]</span></td></tr>
+<tr><td data-et="Dato">Autorizaciones que das (qué texto aceptaste, su versión, la fecha, y si las has retirado)</td><td data-et="Para qué">Demostrar y respetar tus permisos: sin una autorización registrada, <b>todo queda cerrado</b></td><td data-et="Base jurídica">Obligación legal de poder acreditar el consentimiento (art. 7.1 RGPD) e interés legítimo en acreditarlo</td><td data-et="Cuánto tiempo">Mientras exista la cuenta y el tiempo necesario para poder acreditarlo <span class="pend-t">[PENDIENTE: plazo de conservación de las autorizaciones]</span></td></tr>
+<tr><td data-et="Dato">Valoraciones y comentarios que nos mandas sobre las explicaciones</td><td data-et="Para qué">Mejorar o regenerar el material y detectar errores</td><td data-et="Base jurídica">Contrato / interés legítimo en la mejora del servicio <span class="pend-t">[PENDIENTE: asesor: confirmar la base jurídica de usar las valoraciones para mejorar]</span></td><td data-et="Cuánto tiempo">Mientras exista la cuenta</td></tr>
+<tr><td data-et="Dato">Registro de uso y de seguridad (qué se pidió, cuándo, coste, desde qué aparato; límites por correo, aparato y red)</td><td data-et="Para qué">Prestar el servicio, aplicar los límites del plan y prevenir abusos y fraude</td><td data-et="Base jurídica">Contrato; interés legítimo en la seguridad y en evitar abusos (art. 6.1.f)</td><td data-et="Cuánto tiempo"><span class="pend-t">[PENDIENTE: plazo de conservación de los registros]</span></td></tr>
+</tbody></table>
+<h3>Del niño (un perfil dentro de la cuenta de la familia, sin correo propio)</h3>
+<table class="tabla"><thead><tr><th scope="col">Dato</th><th scope="col">Para qué</th><th scope="col">Base jurídica</th><th scope="col">Cuánto tiempo</th></tr></thead><tbody>
+<tr><td data-et="Dato">Un nombre o apodo para el perfil, el <b>curso</b> y la <b>edad</b>. La provincia y la localidad, si se piden, se guardan de forma que no identifiquen. <b>No se pide el colegio.</b> <span class="pend-t">[PENDIENTE: confirmar si el perfil lleva nombre real o solo apodo]</span></td><td data-et="Para qué">Adaptar las explicaciones y los ejercicios a su curso y a su estilo de pantalla</td><td data-et="Base jurídica">Contrato con la familia y <b>consentimiento de quien tiene la patria potestad</b> para el tratamiento de los datos del menor de 14 años; a partir de los 14, también el del propio chaval</td><td data-et="Cuánto tiempo">Mientras exista la cuenta</td></tr>
+<tr><td data-et="Dato"><b>Lo trabajado</b>: temas, aciertos y errores concretos, estilo de aprendizaje, ejercicios hechos, el material generado, y qué le cuesta</td><td data-et="Para qué">Que la ayuda mejore con el tiempo, mostrar a la familia su progreso y evitar repetir lo ya sabido</td><td data-et="Base jurídica">Contrato y consentimiento parental (como arriba)</td><td data-et="Cuánto tiempo">Mientras exista la cuenta. <b>Si la familia borra la cuenta o al hijo, se borra todo lo suyo</b></td></tr>
+<tr><td data-et="Dato">Libro de texto del colegio, si la familia lo indica (opcional)</td><td data-et="Para qué">Encontrar el tema exacto que estudia ("el examen es del tema 5")</td><td data-et="Base jurídica">Consentimiento (es voluntario)</td><td data-et="Cuánto tiempo">Hasta que lo quites o se borre la cuenta</td></tr>
+<tr><td data-et="Dato"><b>Llave de acceso</b> del aparato (código o QR de un solo uso), clave de dibujos o PIN, y la lista de aparatos de cada hijo</td><td data-et="Para qué">Que el niño entre en su perfil desde su propio dispositivo sin tener correo ni contraseña</td><td data-et="Base jurídica">Contrato (seguridad de la cuenta)</td><td data-et="Cuánto tiempo">Hasta que la familia quite el aparato o se cierre la cuenta</td></tr>
+<tr><td data-et="Dato"><b>Fotos del cuaderno o de la ficha</b></td><td data-et="Para qué">Entender el ejercicio y explicarlo. Se lee, se comprueba y <b>se borra al terminar la sesión</b></td><td data-et="Base jurídica">Consentimiento parental cada vez que se sube una foto <span class="pend-t">[PENDIENTE: asesor: confirmar si basta el consentimiento general de la cuenta]</span></td><td data-et="Cuánto tiempo"><b>Hasta el fin de la sesión.</b> Solo se guarda una «huella» (un número que no permite recuperar la foto) para no repetir trabajo</td></tr>
+</tbody></table>
+<h3>Del profesor particular</h3>
+<table class="tabla"><thead><tr><th scope="col">Dato</th><th scope="col">Para qué</th><th scope="col">Base jurídica</th><th scope="col">Cuánto tiempo</th></tr></thead><tbody>
+<tr><td data-et="Dato">Correo y datos de su cuenta <span class="pend-t">[PENDIENTE: confirmar qué datos se piden al profe: nombre, facturación, verificación profesional…]</span></td><td data-et="Para qué">Crear la cuenta, darle el servicio y cobrar el plan de profe</td><td data-et="Base jurídica">Contrato; obligación legal (facturación)</td><td data-et="Cuánto tiempo">Mientras exista la cuenta, y después los plazos legales <span class="pend-t">[PENDIENTE: plazo de conservación de los datos del profe tras la baja]</span></td></tr>
+<tr><td data-et="Dato">Lo que la familia le autoriza a ver sobre el niño (su historial educativo) y el material que prepara</td><td data-et="Para qué">Preparar sus clases y los deberes</td><td data-et="Base jurídica">Autorización de la familia, que puede retirarla en cualquier momento (al retirarla, el acceso se corta en el momento)</td><td data-et="Cuánto tiempo">Solo mientras dure la autorización de la familia</td></tr>
+</tbody></table>
+<h3>De quien visita la web o responde la encuesta</h3>
+<p>Mira el apartado <a href="#encuesta">«Si respondiste la encuesta»</a>.</p>
+
+<h3>Lo que nunca guardamos</h3>
+<ul>
+  <li>Imágenes de menores más allá de la sesión; el nombre completo del niño en un registro público; su DNI, dirección o teléfono.</li>
+  <li>Libros, fichas o exámenes de editoriales o colegios (se procesan y se borran).</li>
+  <li>Datos de salud, de ideología, religión u origen, ni de ninguna otra categoría especial. <span class="pend-t">[PENDIENTE: confirmar que ninguna función recoge datos de categorías especiales, p. ej. necesidades educativas específicas]</span></li>
+</ul>
+
+<h2>3 · Las fotos del cuaderno, paso a paso</h2>
+<ol>
+  <li>La foto entra y se lee. La foto es el dato más delicado (puede llevar un nombre escrito a mano), por eso solo la ve un proveedor
+  europeo con contrato de encargado de tratamiento.</li>
+  <li>Se comprueba lo leído antes de explicar nada.</li>
+  <li>En esa misma petición se guarda, si vale, lo que no identifica: el tema, los pasos, el error típico. Lo demás se pierde con la foto.</li>
+  <li><b>Al terminar la sesión, la foto se borra.</b></li>
+</ol>
+
+<h2>4 · Quién recibe los datos</h2>
+<p>No vendemos ni cedemos datos. Solo los reciben quienes nos prestan un servicio y actúan <b>por encargo nuestro</b> (encargados del
+tratamiento, art. 28 RGPD), y el profesor, si la familia lo autoriza.</p>
+<table class="tabla"><thead><tr><th scope="col">Categoría</th><th scope="col">Quién</th><th scope="col">Qué recibe</th><th scope="col">Dónde</th></tr></thead><tbody>
+<tr><td data-et="Categoría">Alojamiento y servidores</td><td data-et="Quién">Servidores propios gestionados con Easypanel, en un proveedor de servidores <span class="pend-t">[PENDIENTE: nombre del proveedor de los servidores (VPS) y país]</span></td><td data-et="Qué recibe">Todo lo de la cuenta, cada familia en su propia base de datos separada</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: país del centro de datos del alojamiento]</span></td></tr>
+<tr><td data-et="Categoría">Asistentes de IA que leen y explican</td><td data-et="Quién"><b>Mistral AI</b> (lee la foto y explica; vía europea). Para texto ya anonimizado: <b>Google</b> (modelos Gemini) y <b>DeepSeek</b> a través de <b>OpenRouter</b>, y <b>Anthropic</b> (Claude) <span class="pend-t">[PENDIENTE: confirmar lista definitiva de proveedores y sus contratos de encargo]</span></td><td data-et="Qué recibe">Mistral: la foto y el enunciado. Los demás: <b>solo texto sin nombres ni datos que identifiquen</b> (se sustituyen por marcas internas)</td><td data-et="Dónde">Mistral: UE. Los demás: ver «Transferencias internacionales»</td></tr>
+<tr><td data-et="Categoría">Copias de seguridad</td><td data-et="Quién">Copias diarias cifradas <span class="pend-t">[PENDIENTE: confirmar el proveedor definitivo de las copias de datos de familias (propuesta: Cloudflare R2, cifrado)]</span></td><td data-et="Qué recibe">Copia cifrada de la base de datos</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: región de la copia]</span></td></tr>
+<tr><td data-et="Categoría">Cobros</td><td data-et="Quién">Pasarela de pago <span class="pend-t">[PENDIENTE: confirmar proveedor (previsto: Stripe)]</span></td><td data-et="Qué recibe">Datos de pago y de facturación</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: país de la pasarela de pago]</span></td></tr>
+<tr><td data-et="Categoría">Envío de correos del servicio</td><td data-et="Quién"><span class="pend-t">[PENDIENTE: proveedor de envío de correos]</span></td><td data-et="Qué recibe">Tu correo y el contenido del aviso</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: país del proveedor de correos]</span></td></tr>
+<tr><td data-et="Categoría">Voz de Nexi</td><td data-et="Quién">Servicio de voz sintética (ElevenLabs) <span class="pend-t">[PENDIENTE: confirmar que solo se le envían frases fijas de Nexi y ningún dato de familias ni de niños]</span></td><td data-et="Qué recibe">Frases de Nexi grabadas de antemano</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: país del proveedor de voz]</span></td></tr>
+<tr><td data-et="Categoría">Encuesta de la web</td><td data-et="Quién">Google (hoja de cálculo y programa de recogida de respuestas) <span class="pend-t">[PENDIENTE: confirmar contrato de encargo / condiciones aplicables]</span></td><td data-et="Qué recibe">Las respuestas de la encuesta y, si marcas la casilla, tu correo</td><td data-et="Dónde"><span class="pend-t">[PENDIENTE: región de Google donde se guardan las respuestas]</span></td></tr>
+<tr><td data-et="Categoría">Profesor particular</td><td data-et="Quién">El profe que tú elijas</td><td data-et="Qué recibe">Solo lo que autorices, mientras lo autorices</td><td data-et="Dónde">España / UE</td></tr>
+<tr><td data-et="Categoría">Administraciones y autoridades</td><td data-et="Quién">Solo si una ley nos obliga</td><td data-et="Qué recibe">Lo que la ley exija</td><td data-et="Dónde">España</td></tr>
+</tbody></table>
+
+<h2>5 · Transferencias fuera de la Unión Europea</h2>
+<p>Nuestra regla: <b>fuera de la UE solo viaja texto anonimizado</b>. Nunca salen el nombre del menor, su foto, su DNI, su dirección ni su
+teléfono; sí pueden salir el curso, la edad, la comunidad y el enunciado del ejercicio (sin nombres propios, colegio ni localidad).</p>
+<table class="tabla"><thead><tr><th scope="col">Proveedor</th><th scope="col">País del proveedor</th><th scope="col">Garantía</th></tr></thead><tbody>
+<tr><td data-et="Proveedor">Mistral AI</td><td data-et="País del proveedor">Francia (UE)</td><td data-et="Garantía">No hay transferencia fuera del EEE <span class="pend-t">[PENDIENTE: confirmar región de procesamiento]</span></td></tr>
+<tr><td data-et="Proveedor">Google (Gemini, vía OpenRouter)</td><td data-et="País del proveedor">EE. UU.</td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: garantía: decisión de adecuación (Marco de Privacidad de Datos UE-EE. UU.) o cláusulas contractuales tipo; confirmar]</span></td></tr>
+<tr><td data-et="Proveedor">OpenRouter (intermediario)</td><td data-et="País del proveedor">EE. UU.</td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: garantía y contrato de encargo con OpenRouter]</span></td></tr>
+<tr><td data-et="Proveedor">DeepSeek</td><td data-et="País del proveedor">China</td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: garantía: no hay decisión de adecuación; requiere cláusulas contractuales tipo y evaluación del riesgo, o dejar de usarlo]</span></td></tr>
+<tr><td data-et="Proveedor">Anthropic (Claude)</td><td data-et="País del proveedor">EE. UU.</td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: garantía y contrato de encargo con Anthropic]</span></td></tr>
+<tr><td data-et="Proveedor">Copias (propuesta Cloudflare R2)</td><td data-et="País del proveedor">EE. UU. con posibilidad de región UE</td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: región elegida para las copias y su garantía]</span></td></tr>
+<tr><td data-et="Proveedor">Pasarela de pago</td><td data-et="País del proveedor"><span class="pend-t">[PENDIENTE: país de la pasarela de pago]</span></td><td data-et="Garantía"><span class="pend-t">[PENDIENTE: garantía de la pasarela si está fuera del EEE]</span></td></tr>
+</tbody></table>
+<p>Puedes pedirnos una copia de las garantías aplicadas escribiendo al correo de contacto.</p>
+
+<h2>6 · Decisiones automatizadas</h2>
+<p>La <b>corrección</b> de los ejercicios y la explicación las hace un asistente de inteligencia artificial. No son decisiones que tengan
+efectos jurídicos sobre ti ni sobre tu hijo (no hay notas oficiales ni se decide nada sobre su escolarización), y
+<b>no se usan para perfilarte con fines comerciales</b>. Aun así, un asistente puede equivocarse:</p>
+<ul>
+  <li>El resultado de una corrección <b>siempre lo puede revisar la familia</b>, y puede marcar «esto está mal» o «repite».</li>
+  <li>Antes de llegar a las familias, el material pasa una revisión (otro sistema independiente y, en parte, personas).</li>
+  <li>Si una corrección no te convence, escríbenos y lo revisaremos.</li>
+</ul>
+
+<h2>7 · Tus derechos y cómo ejercerlos</h2>
+<p>Puedes ejercer, respecto a ti y a tus hijos (como titular de la patria potestad):</p>
+<ul>
+  <li><b>Acceso</b>: saber qué datos tenemos y recibir una copia.</li>
+  <li><b>Rectificación</b>: corregir lo que esté mal.</li>
+  <li><b>Supresión</b>: borrar tus datos o los de tu hijo.</li>
+  <li><b>Oposición</b> y <b>limitación</b> del tratamiento.</li>
+  <li><b>Portabilidad</b>: recibir tus datos en un formato que se pueda leer y reutilizar.</li>
+  <li><b>Retirar un consentimiento</b> cuando quieras, sin que afecte a lo hecho antes.</li>
+</ul>
+<p><b>Cómo:</b> la aplicación tendrá los botones <b>«Descargar mis datos»</b> y <b>«Borrar la cuenta»</b>, para que no tengas que pedírselo a nadie
+<span class="pend-t">[PENDIENTE: confirmar que ambos botones están en la aplicación en el momento de abrir]</span>. Borrar la cuenta borra de verdad la memoria del niño, sus sesiones y su material.
+Para cualquier otro derecho, escribe a info@nexodigitalconsulting.com indicando tu petición. Responderemos como mucho en <b>un mes</b>
+(prorrogable en casos complejos, avisándote).</p>
+<p>Los datos anónimos (conteos y patrones que ya no permiten volver a ninguna persona) no se pueden borrar porque no pertenecen a nadie.</p>
+<p>Si crees que no hemos tratado bien tus datos, puedes reclamar ante la <b>Agencia Española de Protección de Datos</b>
+(<a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>), sin perjuicio de que antes nos escribas a nosotros.</p>
+
+<h2>8 · Lo que hacemos con los datos «anónimos»</h2>
+<p>Para mejorar el servicio guardamos, aparte y sin identidad, <b>conteos y patrones</b> («el error típico en este tema», «cuántos alumnos
+trabajaron esto»). Antes de que un dato pase a ese almacén se le quitan el nombre, la edad exacta (se usa el curso), la localidad (se usa
+la comunidad), el colegio y el texto del niño. Un patrón solo se muestra cuando hay 20 casos o más. Base: nuestro interés legítimo en
+mejorar el servicio con datos que ya no identifican <span class="pend-t">[PENDIENTE: asesor: confirmar la base jurídica del proceso de anonimización y si basta con informarlo]</span>.</p>
+
+<h2>9 · Cómo protegemos los datos</h2>
+<ul>
+  <li><b>Cada familia vive en su propia base de datos</b>: no hay una tabla con los niños de todas. Ver los datos de otra familia por un fallo de
+  consulta no es posible por la forma en que está construido.</li>
+  <li>Conexiones cifradas, copias de seguridad cifradas y una restauración de prueba periódica.</li>
+  <li>Una autorización retirada corta el acceso en el momento, no en la sesión siguiente.</li>
+  <li>Si hubiera una brecha de seguridad que afectara a tus datos, lo notificaremos a la Agencia Española de Protección de Datos en
+  <b>72 horas</b> y a ti sin dilación indebida cuando suponga un riesgo alto.</li>
+  <li>Hemos hecho, o haremos antes de abrir, una evaluación de impacto sobre el tratamiento de datos de menores
+  <span class="pend-t">[PENDIENTE: evaluación de impacto (EIPD): confirmar si está hecha y aprobada]</span>.</li>
+</ul>
+
+<div class="ninos" id="ninos">
+<h3>Los datos de los niños, en lenguaje claro</h3>
+<ul>
+  <li><b>Nunca los vendemos ni los cedemos</b> a nadie, ni con nombre ni sin él. Tampoco hacemos publicidad con ellos.</li>
+  <li><b>El niño no tiene correo ni cuenta propia.</b> Es un perfil de la familia. Lo único que se pide es el curso y la edad; un nombre o
+  apodo para reconocer el perfil; y lo que va trabajando.</li>
+  <li><b>La foto de su cuaderno se borra</b> cuando termina la sesión.</li>
+  <li><b>El niño nunca ve comparaciones</b> con otros niños: ni puestos, ni notas de otros, ni listas.</li>
+  <li><b>Todo empieza cerrado.</b> El profesor solo ve lo que la familia le autoriza, nunca las notas privadas de los padres, y la familia
+  puede quitarle el acceso en un clic, con efecto inmediato.</li>
+  <li>En retos y juegos, solo se muestra el resultado con un <b>mote</b>, nunca el nombre, y solo si la familia decide apuntar al niño a ese reto.
+  Antes de aceptar se le dice qué sale, cómo y por cuánto tiempo.</li>
+  <li>El niño no gana descuentos ni puntos canjeables: lo suyo son solo cosas para vestir a Nexi (<a href="nexipuntos.html">más aquí</a>).</li>
+  <li><b>A partir de los 14 años</b> pedimos también el consentimiento del propio chaval, porque lo exige la ley.</li>
+  <li>Los padres pueden ver todo lo de su hijo, descargarlo y borrarlo cuando quieran, desde un botón.</li>
+</ul>
+</div>
+
+<h2 id="encuesta">10 · Si respondiste la encuesta</h2>
+<table class="tabla"><thead><tr><th scope="col">Qué</th><th scope="col">Para qué</th><th scope="col">Base jurídica</th><th scope="col">Cuánto tiempo</th></tr></thead><tbody>
+<tr><td data-et="Qué"><b>Tu correo</b>, solo si marcas la casilla</td><td data-et="Para qué">Avisarte de la apertura y de las plazas de prueba</td><td data-et="Base jurídica">Tu consentimiento</td><td data-et="Cuánto tiempo">Hasta que abramos el aviso o hasta que pidas que lo borremos</td></tr>
+<tr><td data-et="Qué"><b>Las respuestas de la encuesta</b></td><td data-et="Para qué">Decidir qué construimos y con qué cursos empezamos</td><td data-et="Base jurídica">Tu consentimiento: solo se envían si tú las mandas</td><td data-et="Cuánto tiempo">Mientras dure el proyecto, y después de forma agregada</td></tr>
+<tr><td data-et="Qué"><b>Datos del niño</b></td><td data-et="Para qué"><b>Aquí no se piden.</b> En la aplicación se pide solo el curso, y es voluntario: sin él la aplicación funciona igual</td><td data-et="Base jurídica">Consentimiento de quien tiene la patria potestad</td><td data-et="Cuánto tiempo">Lo que tú decidas: se pueden borrar</td></tr>
+</tbody></table>
+<p>La encuesta guarda un borrador en tu navegador para que no pierdas lo contestado (mira la <a href="cookies.html">política de cookies</a>).
+Puedes pedir que borremos tu correo o tus respuestas escribiendo a info@nexodigitalconsulting.com. Las plazas de prueba son limitadas y sus condiciones se
+publicarán con la web definitiva.</p>
+
+<h2>11 · Cambios en esta política</h2>
+<p>Si cambia algo importante, te lo diremos antes y te pediremos de nuevo que aceptes la versión vigente. Cada autorización que das queda
+registrada con la versión del texto que aceptaste. Versión de este texto: 2026-10-borrador (borrador).</p>
+
+<aside class="falta" aria-labelledby="falta-t"><h2 id="falta-t">Lo que falta para que este texto sea definitivo</h2><p class="mini">Hay 37 huecos marcados como <span class="pend-t">[PENDIENTE: …]</span> en esta página. Hasta que se cierren y un asesor legal valide el texto, es solo un borrador.</p><ul><li>NIF</li><li>domicilio</li><li>correo de contacto</li><li>si se nombra DPD; si no, indicar que no es obligatorio y que el correo anterior es el canal</li><li>confirmar los datos de alta definitivos</li><li>plazo tras la baja</li><li>confirmar que NEXOEDUCA no guarda datos de tarjeta</li><li>plazo concreto, a fijar con el asesor</li><li>plazo de conservación de las autorizaciones</li><li>asesor: confirmar la base jurídica de usar las valoraciones para mejorar</li><li>plazo de conservación de los registros</li><li>confirmar si el perfil lleva nombre real o solo apodo</li><li>asesor: confirmar si basta el consentimiento general de la cuenta</li><li>confirmar qué datos se piden al profe: nombre, facturación, verificación profesional…</li><li>plazo de conservación de los datos del profe tras la baja</li><li>confirmar que ninguna función recoge datos de categorías especiales, p. ej. necesidades educativas específicas</li><li>nombre del proveedor de los servidores (VPS) y país</li><li>país del centro de datos del alojamiento</li><li>confirmar lista definitiva de proveedores y sus contratos de encargo</li><li>confirmar el proveedor definitivo de las copias de datos de familias (propuesta: Cloudflare R2, cifrado)</li><li>región de la copia</li><li>confirmar proveedor (previsto: Stripe)</li><li>país de la pasarela de pago</li><li>proveedor de envío de correos</li><li>país del proveedor de correos</li><li>confirmar que solo se le envían frases fijas de Nexi y ningún dato de familias ni de niños</li><li>país del proveedor de voz</li><li>confirmar contrato de encargo / condiciones aplicables</li><li>región de Google donde se guardan las respuestas</li><li>confirmar región de procesamiento</li><li>garantía: decisión de adecuación (Marco de Privacidad de Datos UE-EE. UU.) o cláusulas contractuales tipo; confirmar</li><li>garantía y contrato de encargo con OpenRouter</li><li>garantía: no hay decisión de adecuación; requiere cláusulas contractuales tipo y evaluación del riesgo, o dejar de usarlo</li><li>garantía y contrato de encargo con Anthropic</li><li>región elegida para las copias y su garantía</li><li>garantía de la pasarela si está fuera del EEE</li><li>confirmar que ambos botones están en la aplicación en el momento de abrir</li><li>asesor: confirmar la base jurídica del proceso de anonimización y si basta con informarlo</li><li>evaluación de impacto (EIPD): confirmar si está hecha y aprobada</li></ul></aside>
+</main>
+<footer><div class="ancho"><div class="mini muted">NEXOEDUCA es un producto de <b>Nexo Digital Advisory S.L.</b><br>Textos legales · versión 2026-10-borrador (borrador)</div><nav class="mini pie-enlaces" aria-label="Textos legales"><a href="../index.html">Inicio</a><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="condiciones.html">Condiciones de uso</a><a href="nexipuntos.html">Nexipuntos</a><a href="cookies.html">Cookies</a></nav></div></footer>
+<script src="../destino.js"></script>
+<script>/* el botón «Entrar» toma su dirección de destino.js (NEXO_APP_URL): un solo sitio que cambiar */
+(function(){var u=window.NEXO_APP_URL;if(!u)return;Array.prototype.forEach.call(document.querySelectorAll("[data-entrar]"),function(a){a.setAttribute("href",u);});})();</script>
+</body></html>

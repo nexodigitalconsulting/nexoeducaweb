@@ -21,3 +21,10 @@
    ─────────────────────────────────────────────────────────────────────────────────────── */
 
 window.NEXO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxtry10VnYV2FZ87-7H9s0mLXDH9Oy8lmI2Z4ccyQAIkERa-1IqvVXLjkoenIDRDD5atg/exec";
+
+/* ───────────────────────────────────────────────────────────────────────────────────────
+   Botón «Entrar» (cabecera y pie de la web y de las páginas legales): a dónde lleva.
+   PROVISIONAL: el dominio definitivo de la app lo decide el dueño al final. Cuando lo
+   decida, se cambia SOLO esta línea y todos los botones «Entrar» la siguen.
+   ─────────────────────────────────────────────────────────────────────────────────────── */
+window.NEXO_APP_URL = "/app/";   // 10-10-2026 (pedido 98): la app, como versión de prueba, en la propia web

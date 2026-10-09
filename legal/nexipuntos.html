@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXOEDUCA · Condiciones de los Nexipuntos</title>
+<meta name="description" content="Condiciones del programa de Nexipuntos de NEXOEDUCA: es un descuento, no dinero; topes, cuándo cuentan y por qué los niños no participan.">
+<meta name="robots" content="noindex">
+<link href="../letras/letras.css" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F97316'/%3E%3Cpath d='M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z' fill='%23FFFFFF'/%3E%3Cpath d='M10.6 9.4c2.8-.4 5.6-.4 8.4 0l2.9 2.9c.2 3.6.2 7.2 0 10.8-3.8.5-7.6.5-11.4 0-.3-4.6-.3-9.1.1-13.7z' fill='%23FFE7D1'/%3E%3Cpath d='M13.6 19.8c.9 1 2 1.1 3.1.3' stroke='%2324303F' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --coral:#EF4444;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,5vw,38px);font-weight:800;letter-spacing:-.4px}
+h2{font-size:clamp(22px,3.2vw,28px);font-weight:700;letter-spacing:-.2px;margin-top:34px;margin-bottom:8px}
+h3{font-size:19px;font-weight:700;margin-top:18px;margin-bottom:4px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:5px}
+.mini{font-size:14.5px}
+.muted{color:var(--tinta-suave)}
+
+/* cabecera fija: banda de borrador + barra */
+.cabecera{position:sticky;top:0;z-index:60}
+.banda{background:#FDE68A;border-bottom:3px solid #D97706;color:#4A2B00;text-align:center;
+  font-weight:700;font-size:14.5px;line-height:1.35;padding:7px 14px}
+.banda b{font-family:'Baloo 2';font-size:15.5px}
+.topbar{background:rgba(255,248,238,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:1080px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:10px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px;
+  color:var(--tinta);text-decoration:none}
+.marca__logo{width:40px;height:40px;flex:0 0 40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.topbar__acciones{margin-left:auto;display:flex;gap:8px;align-items:center}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:16px;
+  padding:8px 16px;border-radius:14px;border:2px solid #D9600B;background:var(--naranja);color:#fff;
+  cursor:pointer;text-decoration:none;box-shadow:0 4px 0 #B84D06;transition:transform .12s, box-shadow .12s;white-space:nowrap}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #B84D06}
+.btn--blanco{background:#fff;color:var(--tinta);border-color:var(--linea);box-shadow:0 4px 0 rgba(36,48,63,.12)}
+.btn--blanco:hover{box-shadow:0 2px 0 rgba(36,48,63,.12)}
+
+/* cuerpo */
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 56px}
+.nav-legal{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 8px;padding:0;list-style:none}
+.nav-legal li{margin:0}
+.nav-legal a{display:inline-block;font-size:14.5px;font-weight:700;padding:5px 12px;border-radius:999px;border:2px solid var(--linea);
+  background:#fff;color:var(--tinta-suave);text-decoration:none}
+.nav-legal a[aria-current]{background:var(--naranja-2);border-color:#F6C79B;color:var(--naranja-tinta)}
+.resumen{background:var(--azul-2);border:2px solid #BBD3FF;border-radius:18px;padding:14px 16px;margin:16px 0}
+.resumen b:first-child{font-family:'Baloo 2';color:var(--azul-tinta)}
+.resumen ul{margin:6px 0 0}
+.ninos{background:#DCFCE7;border:2px solid #A7E8BD;border-radius:18px;padding:16px 18px;margin:14px 0}
+.ninos h3{margin-top:0;color:#166534}
+.pend{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:14px;padding:12px 14px;margin:14px 0;font-size:15.5px}
+.pend-t{background:#FFF6B8;border-bottom:2px solid #F59E0B;padding:0 3px;border-radius:3px;font-weight:700;color:#5A3B00}
+.falta{background:#FFF6B8;border:2px solid #EFE0A0;border-radius:18px;padding:16px 18px;margin:36px 0 0;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+.falta h2{margin:0 0 6px;font-size:21px}
+.falta ul{margin:6px 0 0}
+.falta li{font-size:15px}
+
+/* tablas */
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}
+.tabla th,.tabla td{border:2px solid var(--linea);padding:9px 11px;text-align:left;font-size:15.5px;vertical-align:top}
+.tabla th{background:#FFF1DF;font-family:'Baloo 2'}
+.tabla.kv th{width:30%}
+
+/* pie */
+footer{background:#fff;border-top:2px solid var(--linea);padding:26px 0;margin-top:10px}
+footer .ancho{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:12px 28px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+footer a{color:var(--tinta-suave)}
+.pie-enlaces{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .caja{padding:20px 16px 44px}
+  .topbar__in{padding:8px 14px}
+  .marca{font-size:18px}
+  .banda{font-size:13px;padding:6px 10px}
+  .banda b{font-size:14px}
+  .btn{padding:7px 12px;font-size:15px}
+  /* las tablas pasan a tarjetas de una columna */
+  .tabla,.tabla tbody,.tabla tr,.tabla td,.tabla th{display:block;width:100%}
+  .tabla thead{position:absolute;left:-9999px}
+  .tabla tr{border:2px solid var(--linea);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .tabla th,.tabla td{border:0;border-bottom:1px solid var(--linea)}
+  .tabla td:last-child{border-bottom:0}
+  .tabla td[data-et]::before{content:attr(data-et);display:block;font-family:'Baloo 2';font-weight:700;font-size:13.5px;color:var(--tinta-suave)}
+  .tabla.kv th{width:100%}
+}
+@media (max-width:380px){
+  .marca div:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs></svg>
+<div class="cabecera">
+<div class="banda" role="note"><b>Borrador pendiente de revisión legal · versión 2026-10-borrador</b></div>
+<header class="topbar"><div class="topbar__in">
+  <a class="marca" href="../index.html" aria-label="NEXOEDUCA, inicio"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><g filter="url(#c)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><div>NEXOEDUCA</div></a>
+  <div class="topbar__acciones"><a class="btn btn--blanco" href="../index.html">Volver</a><a class="btn" data-entrar href="../index.html" rel="noopener">Iniciar sesión</a></div>
+</div></header></div>
+<main class="caja">
+<h1>Condiciones de los Nexipuntos</h1>
+<p class="muted">Cómo funciona el programa de descuentos por ayudar a revisar el material. Versión 2026-10-borrador.</p>
+<ul class="nav-legal" aria-label="Textos legales"><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="condiciones.html">Condiciones de uso</a></li><li><a href="nexipuntos.html" aria-current="page">Nexipuntos</a></li><li><a href="cookies.html">Cookies</a></li></ul>
+
+<div class="resumen"><b>Lo esencial</b>
+<ul>
+  <li>Los Nexipuntos son un <b>descuento</b> en tu suscripción. <b>No son dinero</b>.</li>
+  <li>Se ganan <b>ayudando a revisar</b> el material antes de que llegue a las familias.</li>
+  <li><b>800 Nexipuntos = un mes gratis</b> del plan Familia.</li>
+  <li>Los <b>niños no participan</b>: sus «chispas» solo sirven para vestir a Nexi y no tienen ningún valor.</li>
+</ul></div>
+
+<h2>1 · Qué son los Nexipuntos</h2>
+<p>Antes de que una ficha de ejercicios llegue a una familia, la revisa un sistema automático. Para tener además la mirada de personas
+adultas, invitamos a las familias y a los profesores a <b>revisar fichas</b> y marcar si están bien o tienen un fallo. Por ese trabajo de revisión
+damos Nexipuntos.</p>
+<p>Los Nexipuntos son un <b>descuento sobre el precio de tu suscripción</b>. Solo sirven para eso. No son una moneda, ni un cobro, ni una
+retribución en dinero, y no puedes reclamarlos como tal.</p>
+
+<h2>2 · Quién puede participar</h2>
+<ul>
+  <li>Personas <b>adultas</b> con una cuenta de familia <span class="pend-t">[PENDIENTE: confirmar si los profes también acumulan Nexipuntos y qué descuento obtienen en su plan]</span>.</li>
+  <li><b>Los niños no participan</b> en este programa (mira el apartado 8).</li>
+  <li>La participación es voluntaria y gratuita. Puedes dejar de participar cuando quieras.</li>
+  <li>Las fichas que revisas son del banco de temas de NEXOEDUCA: no contienen datos de ninguna familia.</li>
+</ul>
+
+<h2>3 · Cómo se ganan</h2>
+<table class="tabla"><thead><tr><th scope="col">Qué haces</th><th scope="col">Nexipuntos</th></tr></thead><tbody>
+<tr><td data-et="Qué haces">Revisar una ficha del <b>reto</b> (revisión rápida)</td><td data-et="Nexipuntos"><b>1</b></td></tr>
+<tr><td data-et="Qué haces">Revisar una ficha de la <b>mesa de revisión</b> (marcar si está bien o si tiene un fallo, tras leerla y comprobar la solución)</td><td data-et="Nexipuntos"><b>5</b></td></tr>
+<tr><td data-et="Qué haces">Señalar un <b>fallo que se confirma</b> (una ficha mala que no llega a ninguna familia)</td><td data-et="Nexipuntos"><b>+20</b>, además de los anteriores</td></tr>
+<tr><td data-et="Qué haces">Que tu hijo haga ejercicios o juegos</td><td data-et="Nexipuntos"><b>0</b>. Lo que hace tu hijo no da puntos ni descuento</td></tr>
+</tbody></table>
+
+<h2>4 · Cuándo cuentan</h2>
+<ul>
+  <li>Un Nexipunto está <b>«en camino»</b> hasta que la ficha se decide (cuando hay suficientes revisiones para dar la ficha por buena o mala).</li>
+  <li>Cuando la ficha se decide, tus puntos <b>cuentan si tu voto coincide con el resultado</b>.</li>
+  <li><b>No cuentan</b> los votos dados al azar, sin revisar la ficha, ni los votos que fallan las <b>fichas de control</b>. Estas son fichas cuyo
+  resultado ya conocemos y que mezclamos para comprobar que se revisa de verdad; no te diremos cuáles son.</li>
+  <li>Si te equivocas en un voto, no pasa nada: simplemente no suma. No se te quitan puntos ya ganados por equivocarte
+  <span class="pend-t">[PENDIENTE: confirmar que no hay penalizaciones]</span>.</li>
+</ul>
+
+<h2>5 · Qué valen y qué topes hay</h2>
+<ul>
+  <li><b>800 Nexipuntos = un mes gratis del plan Familia.</b> Se aplica como descuento en tu próxima cuota <span class="pend-t">[PENDIENTE: mecánica exacta del descuento y factura]</span>.</li>
+  <li>Como mucho puedes disfrutar <b>un mes gratis por cada mes</b>.</li>
+  <li>Puedes tener <b>dos meses gratis guardados</b> como máximo; a partir de ahí, los puntos nuevos no suman hasta que gastes alguno
+  <span class="pend-t">[PENDIENTE: confirmar qué pasa con los puntos que sobran de los topes]</span>.</li>
+  <li>Es un descuento sobre un plan de pago: si estás en el plan gratuito, <b>guardas los puntos</b> hasta que contrates <span class="pend-t">[PENDIENTE: confirmar que los puntos se guardan mientras se está en el plan gratuito]</span>.</li>
+  <li>Verás tus puntos en la aplicación como una hucha que se va llenando hacia «un mes gratis», sin importes en euros.</li>
+</ul>
+
+<h2>6 · Lo que no se puede hacer con ellos</h2>
+<ul>
+  <li><b>No se cambian por dinero</b>, ni por otros productos, ni por nada que no sea el descuento descrito.</li>
+  <li><b>No se transfieren</b> a otra persona ni a otra cuenta, no se venden ni se heredan.</li>
+  <li>No dan derecho a ninguna cantidad de dinero si cierras la cuenta o terminamos el programa.</li>
+  <li>Si borras tu cuenta, pierdes los Nexipuntos que tuvieras <span class="pend-t">[PENDIENTE: confirmar que se pierden los puntos al borrar la cuenta]</span>.</li>
+</ul>
+
+<h2>7 · Juego limpio</h2>
+<ul>
+  <li>Una persona, una cuenta. No vale crear cuentas para sumar más, usar programas que voten por ti o votar sin leer.</li>
+  <li>Si detectamos un uso indebido, podemos <b>anular los puntos afectados</b>, suspender tu participación o cerrar la cuenta, y te lo diremos.
+  <span class="pend-t">[PENDIENTE: procedimiento de reclamación si se anulan puntos]</span></li>
+</ul>
+
+<h2>8 · Los niños no participan: sus «chispas»</h2>
+<p>Los niños no ganan Nexipuntos ni ningún descuento. Lo que hacen en la aplicación no se convierte en dinero, ni en suscripción, ni en ventajas
+para su familia. Hacemos esto a propósito, para que el niño juegue y aprenda <b>sin sentir que «trabaja para pagar la aplicación»</b>
+y para que nadie le presione con «haz más, que nos ahorramos un mes».</p>
+<ul>
+  <li>Cuando un niño termina una sesión de ejercicios o un juego se enciende una <b>chispa</b> en el pecho de Nexi. Es solo un adorno: <b>las chispas no son
+  una moneda, no tienen ningún valor y no se pueden cambiar por nada</b> que no sea vestir a Nexi.</li>
+  <li>Cuando se llena la pantalla de chispas, el niño elige <b>entre tres</b> cosas para Nexi (un gorro, unas gafas…). <b>Nada se sortea</b>: no hay sobres sorpresa
+  ni premios al azar.</li>
+  <li>El niño no ve cifras, rankings ni comparaciones con otros niños.</li>
+</ul>
+
+<h2>9 · Tus datos en el programa</h2>
+<p>Para darte los puntos guardamos qué fichas has revisado, tu voto y los puntos que llevas. Es lo mínimo necesario para cumplir lo prometido.
+Mira la <a href="privacidad.html">política de privacidad</a>. <span class="pend-t">[PENDIENTE: añadir esta finalidad y su base jurídica a la política de privacidad]</span></p>
+
+<h2>10 · Cambios en el programa</h2>
+<p>Podemos <b>cambiar o terminar el programa</b>: cuántos puntos se dan por cada tarea, cuántos hacen falta para un mes, los topes o el propio programa.
+Lo haremos <b>avisándote antes</b> <span class="pend-t">[PENDIENTE: plazo de preaviso, p. ej. 30 días]</span> en la aplicación. Respetaremos los puntos que ya hayas ganado hasta ese día
+<span class="pend-t">[PENDIENTE: periodo durante el cual se podrán seguir canjeando tras un cambio o fin del programa]</span>. El programa podrá ajustarse, por ejemplo, para que lo regalado no supere
+una parte de lo que cobramos.</p>
+
+<h2>11 · Ley aplicable</h2>
+<p>Estas condiciones se rigen por la ley española y complementan las <a href="condiciones.html">condiciones de uso</a>.
+<span class="pend-t">[PENDIENTE: asesor: tratamiento fiscal, laboral y de consumo del descuento por revisar contenidos]</span>
+Dudas: info@nexodigitalconsulting.com.</p>
+
+<aside class="falta" aria-labelledby="falta-t"><h2 id="falta-t">Lo que falta para que este texto sea definitivo</h2><p class="mini">Hay 11 huecos marcados como <span class="pend-t">[PENDIENTE: …]</span> en esta página. Hasta que se cierren y un asesor legal valide el texto, es solo un borrador.</p><ul><li>confirmar si los profes también acumulan Nexipuntos y qué descuento obtienen en su plan</li><li>confirmar que no hay penalizaciones</li><li>mecánica exacta del descuento y factura</li><li>confirmar qué pasa con los puntos que sobran de los topes</li><li>confirmar que los puntos se guardan mientras se está en el plan gratuito</li><li>confirmar que se pierden los puntos al borrar la cuenta</li><li>procedimiento de reclamación si se anulan puntos</li><li>añadir esta finalidad y su base jurídica a la política de privacidad</li><li>plazo de preaviso, p. ej. 30 días</li><li>periodo durante el cual se podrán seguir canjeando tras un cambio o fin del programa</li><li>asesor: tratamiento fiscal, laboral y de consumo del descuento por revisar contenidos</li><li>correo de contacto</li></ul></aside>
+</main>
+<footer><div class="ancho"><div class="mini muted">NEXOEDUCA es un producto de <b>Nexo Digital Advisory S.L.</b><br>Textos legales · versión 2026-10-borrador (borrador)</div><nav class="mini pie-enlaces" aria-label="Textos legales"><a href="../index.html">Inicio</a><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="condiciones.html">Condiciones de uso</a><a href="nexipuntos.html">Nexipuntos</a><a href="cookies.html">Cookies</a></nav></div></footer>
+<script src="../destino.js"></script>
+<script>/* el botón «Entrar» toma su dirección de destino.js (NEXO_APP_URL): un solo sitio que cambiar */
+(function(){var u=window.NEXO_APP_URL;if(!u)return;Array.prototype.forEach.call(document.querySelectorAll("[data-entrar]"),function(a){a.setAttribute("href",u);});})();</script>
+</body></html>

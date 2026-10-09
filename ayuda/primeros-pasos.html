@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NexoEduca · Primeros pasos</title>
+<meta name="description" content="La guía corta para madres y padres: instalar NexoEduca, configurarla y sus primeros usos.">
+<link href="../letras/letras.css" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --gris:#CBD5E1; --coral:#EF4444;
+  --uva:#8B5CF6; --menta:#14B8A6;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,h4{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5.2vw,44px);font-weight:800;letter-spacing:-.5px}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.3px;margin-top:38px}
+h3{font-size:22px;font-weight:700;margin-top:28px}
+h4{font-size:18px;font-weight:700;margin-top:18px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+.muted{color:var(--tinta-suave)}
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,248,238,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px}
+.marca__logo{width:40px;height:40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:17px;
+  padding:10px 18px;border-radius:16px;border:2px solid var(--linea);background:#fff;color:var(--tinta);
+  text-decoration:none;box-shadow:0 5px 0 rgba(36,48,63,.12);min-height:44px}
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 60px}
+.indice{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:16px 20px;box-shadow:var(--sombra);margin:20px 0}
+.indice h2{margin-top:0;font-size:24px}
+.indice ul{margin:6px 0 10px;padding-left:20px}
+.indice li{margin:2px 0}
+.indice a{display:inline-block;padding:4px 0}
+.pantalla{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:6px 20px 20px;margin:18px 0;box-shadow:var(--sombra);scroll-margin-top:80px}
+.pantalla h3{margin-top:16px}
+.apartado{scroll-margin-top:80px}
+ol,ul.lista{padding-left:22px;margin:8px 0 12px}
+li{margin:4px 0}
+dl{margin:8px 0}
+dt{font-weight:700;margin-top:10px}
+dd{margin:2px 0 0;color:var(--tinta-suave)}
+details{background:#fff;border:2px solid var(--linea);border-radius:18px;padding:12px 16px;margin-bottom:10px;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+details[open]{border-color:#F6C79B}
+summary{cursor:pointer;font-family:'Baloo 2';font-weight:700;font-size:18px;list-style:none;min-height:28px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--naranja);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+.nota{background:var(--naranja-2);border-radius:14px;padding:10px 14px;margin:14px 0 0;font-size:16px}
+.paso-n{counter-reset:paso;list-style:none;padding:0;margin:12px 0}
+.paso-n>li{counter-increment:paso;position:relative;padding:12px 14px 12px 58px;margin:10px 0;background:var(--papel-2);
+  border:2px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+.paso-n>li::before{content:counter(paso);position:absolute;left:14px;top:12px;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;background:var(--naranja);color:#fff;border:2px solid #D9600B;font-family:'Baloo 2';font-weight:800}
+footer{background:#fff;border-top:2px solid var(--linea);padding:24px 0;margin-top:20px;font-size:15px;color:var(--tinta-suave)}
+footer .caja-pie{max-width:760px;margin:0 auto;padding:0 20px}
+@media (max-width:560px){body{font-size:16px}.caja{padding:20px 16px 50px}.topbar__in{padding:8px 14px}.pantalla{padding:4px 14px 16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.topbar{display:none}body{background:#fff}details{box-shadow:none}}
+</style>
+</head><body>
+<header class="topbar"><div class="topbar__in">
+  <div class="marca"><div class="marca__logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z" fill="#FFFFFF"/><path d="M13.6 19.8c.9 1 2 1.1 3.1.3" stroke="#F97316" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div>NexoEduca</div>
+  <a class="btn" href="manual.html" style="margin-left:auto">Manual completo</a>
+</div></header>
+<div class="caja">
+<h1 style="font-size:34px">Primeros pasos con NexoEduca</h1>
+<p class="muted">Para madres y padres. Lo justo para instalar la app y dejarla lista: en unos minutos estás dentro.</p>
+<h2>1 · Instalar y configurar</h2>
+<section class="apartado" id="instalar-android"><h3>Instalar NexoEduca en un móvil Android</h3><ol><li>Abre con Chrome el enlace de NexoEduca que te han dado.</li><li>Toca los tres puntos de arriba a la derecha.</li><li>Elige «Instalar aplicación». En algunos móviles pone «Añadir a la pantalla de inicio».</li><li>Confirma con «Instalar».</li><li>Verás el icono de NexoEduca junto a tus otras aplicaciones. Ábrela desde ahí, como una más.</li></ol></section>
+<section class="apartado" id="instalar-iphone"><h3>Instalar NexoEduca en un iPhone o iPad</h3><ol><li>Abre con Safari el enlace de NexoEduca que te han dado.</li><li>Toca el botón de compartir: el cuadrado con una flecha hacia arriba.</li><li>Baja en la lista y elige «Añadir a pantalla de inicio».</li><li>Toca «Añadir», arriba a la derecha.</li><li>Ábrela desde el icono nuevo de tu pantalla de inicio.</li></ol></section>
+<section class="apartado" id="crear-cuenta"><h3>Crear tu cuenta</h3><ol><li>Al abrir la app, si no hay ninguna cuenta, llegas a «Entra en NexoEduca». Pulsa «Crear cuenta de familia».</li><li>Paso 1: escribe tu nombre y tu correo, y elige una contraseña de 10 caracteres o más, con una letra y un número. El botón «Ver» te deja comprobarla.</li><li>Elige tu código de padres, de 4 cifras: lo pedirá la app cuando vuelvas del espacio de tu hijo.</li><li>Lee y marca las casillas de «Antes de empezar»: el aviso legal y la privacidad, tu consentimiento como padre o tutor de menores y las condiciones de uso. La de novedades es opcional.</li><li>Pulsa «Crear mi cuenta». Llegas al paso 2: añadir a tu primer hijo.</li></ol></section>
+<section class="apartado" id="anadir-hijos"><h3>Añadir a tus hijos y elegir su estilo</h3><ol><li>En «Bienvenida», escribe el nombre de tu hijo y elige su curso y su edad.</li><li>Mira el estilo que te propongo: Cera (de 3 a 7 años), Cuaderno (de 8 a 11) o Libreta (de 12 a 16).</li><li>Cámbialo si lo prefieres tocando otro. Podrás cambiarlo más tarde desde el nombre de tu hijo o en «Mi hijo».</li><li>Pulsa «Añadir a …». Para otro hijo, toca el nombre de tu hijo, arriba, y elige «Añadir un hijo».</li></ol></section>
+<h2 id="primeros-usos">2 · Tus primeros usos</h2>
+<p>La primera vez que entras en «Hoy», Nexi te lo cuenta en la propia app, paso a paso. Esto es lo que te dice.</p>
+<ol class="paso-n"><li><b>Tu hijo y su estilo.</b> Aquí ves con quién estudiamos. Púlsalo para cambiar de hijo, elegir cómo verá la app (Cera, Cuaderno o Libreta, según su edad) o añadir a otro.</li><li><b>La foto de los deberes.</b> Cuando traiga deberes, pulsa aquí y hazles una foto con buena luz. Te cuento cómo explicárselo y le preparo los ejercicios.</li><li><b>Dárselo a tu hijo.</b> Cuando esté listo, pulsa «Dárselo» y el móvil pasa a su espacio. Para recuperarlo, mantén pulsado el candado que verás arriba y escribe tu código de padres.</li><li><b>El calendario de exámenes.</b> Apunta aquí los exámenes y yo reparto el repaso en las tardes de antes, para que no tengas que planificar nada.</li><li><b>Practicar y el cuadernillo.</b> En «Practicar» le pones temas con un mensaje tuyo y, si lo prefieres en papel, montas el cuadernillo de la semana en PDF.</li><li><b>«Mi hijo» y la voz de Nexi.</b> Aquí ves cómo le va la semana y le dejas notas en su nevera. Y decides si Nexi le habla en voz alta o solo se lee.</li></ol>
+<p>¿Quieres saber qué hace cada botón? En cualquier pantalla, pulsa <b>?</b> arriba a la derecha. Y el <a href="manual.html">manual completo</a> lo cuenta todo.</p>
+</div>
+<footer><div class="caja-pie">Este documento se genera de la propia ayuda de la aplicación (cada pantalla tiene su ayuda con el botón <b>?</b>): por eso nunca se contradicen.</div></footer>
+</body></html>
