@@ -265,16 +265,36 @@ footer a{color:var(--tinta-suave)}
 @media (max-width:900px){.gen{grid-template-columns:1fr}.pasos--4{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.pasos--4{grid-template-columns:1fr}.a4{padding:16px}}
 
+/* chrome compartido con la portada (pedido 108) */
+.nav{display:flex;gap:2px;margin-left:10px;flex-wrap:wrap}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;border-radius:12px;color:var(--tinta);text-decoration:none;font-weight:700;font-size:15.5px}
+.nav a:hover{background:var(--naranja-2)}
+.topbar__acc{margin-left:auto;display:flex;gap:10px;align-items:center}
+.topbar__acc .btn{font-size:17px;padding:8px 18px;min-height:46px}
+.marca__t{} .centro{text-align:center}
+.nota-honesta{max-width:760px;margin:22px auto 0;background:#FFF6B8;border:2px solid #EFE0A0;border-radius:18px;padding:14px 18px;font-size:15.5px}
+.migas{font-size:15px}
+footer .col a{display:inline-flex;align-items:center;min-height:32px}
+footer .col2{max-width:260px}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:6px}
+@media (max-width:1020px){.nav{display:none}}
+@media (max-width:560px){.topbar__in{flex-wrap:nowrap;gap:8px}.marca__t{position:absolute;left:-9999px}.topbar__acc{flex:1 1 auto;margin-left:0;gap:8px}.topbar__acc .btn{flex:1 1 0;width:auto;justify-content:center;font-size:15px;padding:6px 8px;white-space:nowrap}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs></svg>
 
+<a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="topbar">
   <div class="topbar__in">
-    <div class="marca"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></svg></div><div>NEXOEDUCA</div></div>
-    <div class="topbar__aviso"><span class="punto"></span> Plazas de prueba para los primeros 100 profes</div>
-    <a class="btn btn--blanco" href="../" style="margin-left:auto">Soy familia</a>
+    <a class="marca" href="../#inicio" style="text-decoration:none;color:inherit" aria-label="NEXOEDUCA, inicio"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><g filter="url(#c)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></div><span class="marca__t">NEXOEDUCA</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="../#como">Cómo funciona</a><a href="../padres/">Padres</a><a href="../alumnos/">Alumnos</a><a href="../profe/">Profes</a><a href="../#planes">Precios</a><a href="../#contacto">Contacto</a>
+    </nav>
+    <div class="topbar__acc">
+      <a class="btn btn--blanco" data-entrar href="https://pruebas.nexoeduca.app" rel="noopener">Iniciar sesión</a>
+      <a class="btn" data-entrar href="https://pruebas.nexoeduca.app" rel="noopener">Pruébala gratis</a>
+    </div>
   </div>
 </header>
 
@@ -295,7 +315,7 @@ footer a{color:var(--tinta-suave)}
         <a class="btn btn--blanco" href="#probarlo">Ver qué sale</a>
         <a class="btn btn--blanco" href="#sinconexion">Sin conexión</a>
       </div>
-      <div class="hero__nota"><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M12.1 7.4c.2 1.7.2 3.4 0 5.1 1.2.7 2.3 1.5 3.4 2.4" fill="none" stroke="#24303F" stroke-width="2.6" stroke-linecap="round"/><path d="M17.6 4.4c.6.6 1.1 1.2 1.6 1.9" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span>Los primeros <b>100 profes</b> entran con <b>6 meses gratis</b> a cambio de una sola cosa: decirnos qué falla.</span></div>
+      <div class="hero__nota"><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g filter="url(#c)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="#D8E7FF"/></g><g filter="url(#g)"><path d="M12 3.4c4.7-.2 8.6 3.6 8.6 8.3 0 4.7-3.9 8.6-8.6 8.6-4.7 0-8.6-3.9-8.6-8.6 0-4.7 3.9-8.4 8.6-8.3z" fill="none" stroke="#24303F" stroke-width="2.6"/><path d="M12.1 7.4c.2 1.7.2 3.4 0 5.1 1.2.7 2.3 1.5 3.4 2.4" fill="none" stroke="#24303F" stroke-width="2.6" stroke-linecap="round"/><path d="M17.6 4.4c.6.6 1.1 1.2 1.6 1.9" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span>Durante la <b>beta es gratis</b>: a cambio, solo te pedimos una cosa: decirnos qué falla.</span></div>
     </div>
     <div class="hero__mascota">
       <svg viewBox="0 0 200 210" width="230" height="230" role="img" aria-label="Nexi"><defs><filter id="g" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="c" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter><linearGradient id="gVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39485C"/><stop offset="1" stop-color="#1B2430"/></linearGradient></defs><ellipse cx="100" cy="199" rx="60" ry="9" fill="#24303F" opacity="0.10"/><g filter="url(#c)"><path d="M74 112c16-2.6 36-2.6 52-.2 5.8.9 8.8 4 9.2 9.6.5 10-.2 20-.3 30-.1 5.4-3.2 8.6-8.6 9.3-16.2 2-32.4 2-48.6 0-5.4-.7-8.4-3.9-8.6-9.3-.6-10.6-.7-21.2-.3-31.8.3-5.6 3.3-8.7 8.8-9.4z" fill="#FFE7D1"/></g><g filter="url(#g)"><path d="M74 112c16-2.6 36-2.6 52-.2 5.8.9 8.8 4 9.2 9.6.5 10-.2 20-.3 30-.1 5.4-3.2 8.6-8.6 9.3-16.2 2-32.4 2-48.6 0-5.4-.7-8.4-3.9-8.6-9.3-.6-10.6-.7-21.2-.3-31.8.3-5.6 3.3-8.7 8.8-9.4z" fill="none" stroke="#24303F" stroke-width="4.8"/><path d="M86 126c9.6-1.4 19.6-1.4 29.2 0 1.6 7.6 1.6 15.2 0 22.8-9.6 1.4-19.6 1.4-29.2 0-1.6-7.6-1.6-15.2 0-22.8z" fill="#F97316" stroke="#24303F" stroke-width="3.6"/><path d="M92.4 132.4c1.8-.4 3.6-.4 5.4 0M92.4 138.4c1.8-.4 3.6-.4 5.4 0M100 130.2c.3 4.2.3 8.4 0 12.6" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/></g><g transform="translate(100 64) scale(1.16) translate(-100 -64)"><g filter="url(#c)"><path d="M99.6 20c22.6-1 41.4 17.4 41.9 39.6.5 22.4-17.6 41-39.9 41.6C79.2 101.9 60 83.5 59.7 61.2 59.4 39 77.4 20.8 99.6 20z" fill="#FFFFFF"/></g><g filter="url(#g)"><path d="M99.6 20c22.6-1 41.4 17.4 41.9 39.6.5 22.4-17.6 41-39.9 41.6C79.2 101.9 60 83.5 59.7 61.2 59.4 39 77.4 20.8 99.6 20z" fill="none" stroke="#24303F" stroke-width="4.8"/><path d="M76 47.4c15.8-1.6 31.6-1.6 47.4 0 4.8.5 8 3.7 8.4 8.6.5 5.8.5 11.6 0 17.4-.4 4.9-3.6 8.1-8.4 8.6-15.8 1.6-31.6 1.6-47.4 0-4.8-.5-8-3.7-8.4-8.6-.5-5.8-.5-11.6 0-17.4.4-4.9 3.6-8.1 8.4-8.6z" fill="url(#gVisor)" stroke="#24303F" stroke-width="4.2"/><path d="M61.4 40c-7-1.8-12.8-5.7-17.4-11.8" fill="none" stroke="#24303F" stroke-width="4.6" stroke-linecap="round"/><path d="M43.4 27.2c-2.7-1.5-4.6-3.7-5.7-6.5 2.8-.4 5.3.1 7.6 1.3 2.3 1.2 4 3.1 5 5.4" fill="none" stroke="#24303F" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="43.7" cy="23" r="3.6" fill="#F97316" stroke="#24303F" stroke-width="2.8"/></g><circle cx="88.5" cy="62.5" r="7" fill="#5EEAD4"/><circle cx="86.2" cy="60" r="2.4" fill="#FFFFFF"/><circle cx="111.5" cy="62.7" r="7" fill="#5EEAD4"/><circle cx="109.2" cy="60.2" r="2.4" fill="#FFFFFF"/><path d="M94 90c3.4 3 7.8 3 11.2 0" stroke="#5EEAD4" stroke-width="4.4" fill="none" stroke-linecap="round"/><ellipse cx="74" cy="88" rx="7.5" ry="5" fill="#F97316" opacity="0.32"/><ellipse cx="126" cy="88" rx="7.5" ry="5" fill="#F97316" opacity="0.32"/><path d="M62 116c-8 3-13 9-16 17" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><circle cx="44" cy="135" r="6.6" fill="#FFE7D1" stroke="#24303F" stroke-width="3.6"/><path d="M138 116c8 3 13 9 16 17" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><circle cx="156" cy="135" r="6.6" fill="#FFE7D1" stroke="#24303F" stroke-width="3.6"/><path d="M86 172c-1.4 4.6-1.2 9.2.6 13.8M114 172.2c1.5 4.6 1.6 9.2.4 13.8" fill="none" stroke="#24303F" stroke-width="4.8" stroke-linecap="round"/><ellipse cx="87" cy="190" rx="10.5" ry="6" fill="#FFFFFF" stroke="#24303F" stroke-width="4.2"/><ellipse cx="115" cy="190.2" rx="10.5" ry="6" fill="#FFFFFF" stroke="#24303F" stroke-width="4.2"/><path d="M152 40c1 3.6 2.6 7 4.6 10M162 56c3.4.6 6.8 1.4 10 2.6" fill="none" stroke="#14B8A6" stroke-width="3.2" stroke-linecap="round"/></svg>
@@ -303,6 +323,12 @@ footer a{color:var(--tinta-suave)}
       <div class="postit__cinta"></div></div>
     </div>
   </div>
+</section>
+<section id="nota-estado-profe" style="padding:24px 0 0">
+  <div class="ancho"><div class="nota-honesta" style="margin-top:0"><b>Estamos en pruebas, y te lo decimos claro.</b> En la app de hoy, tu espacio de profe tiene alumnos de ejemplo,
+  la mesa de revisión, el reto al azar, el material para imprimir (el cuadernillo) y los Nexipuntos. Compartir con la familia ya funciona, solo con su permiso. Lo demás que ves en esta página
+  (el generador por alumno, los informes, los deberes) es el plan completo y lo estamos construyendo: aquí puedes ver un ejemplo y pedir tu plaza de prueba.
+  Durante la beta es gratis.</div></div>
 </section>
 
 <hr class="sep">
@@ -543,30 +569,19 @@ footer a{color:var(--tinta-suave)}
 <section>
   <div class="ancho">
     <div class="centro"><span class="pastilla">Los planes</span>
-      <h2 style="margin:10px 0 6px">Dos planes, y una hora de clase los paga</h2>
+      <h2 style="margin:10px 0 6px">Un solo plan, y una hora de clase lo paga</h2>
       <p class="muted ancho-estrecho">Precio previsto, sin permanencia y con lo que incluye escrito antes de pagar.
-      Los que entren ahora no pagan: <b>6 meses gratis</b> por decirnos qué falla.</p></div>
-    <div class="rejilla rejilla--2" style="margin-top:24px">
-      <div class="plan">
-        <span class="pastilla pastilla--azul">Starter</span>
-        <div class="plan__p" style="margin:10px 0 2px">9,99 €<small>/mes · 89 €/año</small></div>
-        <p class="mini muted" style="margin:0 0 12px">Para el profe con su cartera de casa</p>
+      <b>Durante la beta es gratis</b>: todavía no se cobra nada.</p></div>
+    <div style="max-width:480px;margin:24px auto 0">
+      <div class="plan plan--destacado">
+        <span class="pastilla pastilla--naranja">Profesor</span>
+        <div class="plan__p" style="margin:10px 0 2px">10,90 €<small>/mes</small></div>
+        <p class="mini muted" style="margin:0 0 12px">Un solo plan, sin escalones</p>
         <ul class="hero__lista">
           <li><span class="mini">Hasta <b>8 alumnos</b></span></li>
           <li><span class="mini">Generador de material (ficha, deberes, plan e informe)</span></li>
           <li><span class="mini">Tu banco personal de fichas</span></li>
           <li><span class="mini">Deberes y avisos para la familia</span></li>
-        </ul>
-      </div>
-      <div class="plan plan--destacado">
-        <span class="pastilla pastilla--naranja">Pro</span>
-        <div class="plan__p" style="margin:10px 0 2px">19,99 €<small>/mes · 169 €/año</small></div>
-        <p class="mini muted" style="margin:0 0 12px">Para el que vive de esto o lleva grupos</p>
-        <ul class="hero__lista">
-          <li><span class="mini"><b>Alumnos ilimitados</b></span></li>
-          <li><span class="mini">Planes de estudio automáticos hasta el examen</span></li>
-          <li><span class="mini">Material para clase (grupos)</span></li>
-          <li><span class="mini">Retos y concursos de clase, con autorización de las familias</span></li>
         </ul>
       </div>
     </div>
@@ -645,8 +660,8 @@ footer a{color:var(--tinta-suave)}
         <textarea id="pQueja" rows="3" placeholder="Por ejemplo: preparar material distinto para cada uno y escribir los informes"></textarea>
       </div>
       <label class="casilla" for="pQuiere"><input type="checkbox" id="pQuiere">
-        <span class="mini">Quiero que me avisen de las <b>plazas de prueba</b> (6 meses gratis) y que me guarden el correo solo para eso.
-        He leído que puedo pedir que lo borren escribiendo a <b>info@nexodigitalconsulting.com</b>.</span></label>
+        <span class="mini">Quiero que me avisen de las <b>plazas de prueba</b> (la beta es gratis) y que me guarden el correo solo para eso.
+        He leído que puedo pedir que lo borren escribiendo a <b>profes@nexoeduca.app</b>.</span></label>
       <div class="aviso-error" id="pError" hidden></div>
       <div class="pie-bloque" style="margin-top:16px">
         <button type="button" class="btn btn--grande" id="pEnviar">Apuntarme</button>
@@ -659,26 +674,37 @@ footer a{color:var(--tinta-suave)}
   </div>
 </section>
 
+<section style="padding:20px 0"><div class="ancho centro"><span class="mini muted">Más páginas: </span><a class="mas" href="../padres/">Para padres</a> <a class="mas" href="../alumnos/">Para alumnos</a></div></section>
 <footer>
   <div class="ancho">
     <div style="max-width:420px">
-      <div class="marca" style="margin-bottom:8px"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></svg></div><div>NEXOEDUCA</div></div>
-      <p class="mini muted" style="margin:0"><b>Para profesores particulares.</b> NEXOEDUCA es un producto de
-      <b>Nexo Digital Advisory S.L.</b> Nace de una pregunta sencilla: ¿por qué el material de cada alumno se prepara
-      aún a mano?</p>
+      <div class="marca" style="margin-bottom:8px"><div class="marca__logo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="color:#fff"><g filter="url(#c)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="#FFF6E4"/></g><g filter="url(#g)"><path d="M5.6 4.8c2.6-.6 5.2-.7 7.8-.3 1.4.2 2.7.6 3.9 1.2.9.4 1.3 1.1 1.4 2 .3 3.4.2 6.8-.1 10.2-.1 1.1-.7 1.8-1.7 2.2-2.4 1-5 1.1-7.6.6-1.2-.2-2.3-.7-3.2-1.3-.7-.5-1.1-1.2-1.1-2.1V6.9c0-1 .3-1.8 1.1-2.2z" fill="none" stroke="#24303F" stroke-width="2.5"/><path d="M5.9 8.2c2.4-.4 4.7-.5 7.1-.2" fill="none" stroke="#FDE68A" stroke-width="4.4" stroke-linecap="round"/><path d="M5.8 12.3c2.6-.4 5.2-.4 7.8 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M5.9 15.6c2-.3 4-.3 6 0" fill="none" stroke="#D8E7FF" stroke-width="3.4" stroke-linecap="round"/><path d="M15.6 16.4c2.6-2 5-4.2 7.2-6.6.8-.9 1.9-1.1 2.6-.3.7.8.5 1.8-.4 2.6-2.4 2.1-4.9 4-7.5 5.7" fill="none" stroke="#F97316" stroke-width="2.6"/><path d="M17.4 4.6c1.3-.4 2.6-.4 3.9 0" fill="none" stroke="#EF4444" stroke-width="2.6" stroke-linecap="round"/></g></svg></div>NEXOEDUCA</div>
+      <p class="mini muted" style="margin:0">NEXOEDUCA es un producto de <b>Nexo Digital Advisory S.L.</b> para las familias de Cádiz y de Andalucía.</p>
       <p class="mini muted" style="margin:8px 0 0">Nexo Digital Advisory S.L. · CIF B88744032 · Urb. Mirador del Río Fase I 27B, 11370 Los Barrios (Cádiz), España</p>
     </div>
-    <div class="mini">
-      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Información</div>
-      <div><a href="#apuntarse">Plazas de prueba</a></div>
-      <div><a href="#probarlo">Qué sale</a></div>
-      <div><a href="../">NEXOEDUCA para familias</a></div>
-      <div><a href="../legal.html">Aviso legal</a></div>
+    <div class="mini col">
+      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">La web</div>
+      <div><a href="../#como">Cómo funciona</a></div>
+      <div><a href="../padres/">Para padres</a></div>
+      <div><a href="../alumnos/">Para alumnos</a></div>
+      <div><a href="../profe/">Para profesores</a></div>
+      <div><a href="../#planes">Planes y precios</a></div>
+      <div style="margin-top:8px"><a class="btn btn--blanco" data-entrar href="https://pruebas.nexoeduca.app" rel="noopener" style="padding:8px 16px;font-size:17px">Iniciar sesión</a></div>
     </div>
-    <div class="mini" style="max-width:260px">
-      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Contacto</div>
-      <div>Escríbenos a <b>info@nexodigitalconsulting.com</b> o déjanos el correo arriba.</div>
-      <div class="muted" style="margin-top:8px">Nexo Digital Advisory S.L. · Los Barrios (Cádiz)</div>
+    <div class="mini col">
+      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Legal</div>
+      <div><a href="../legal/aviso-legal.html">Aviso legal</a></div>
+      <div><a href="../legal/privacidad.html">Privacidad</a></div>
+      <div><a href="../legal/condiciones.html">Condiciones</a></div>
+      <div><a href="../legal/nexipuntos.html">Nexipuntos</a></div>
+      <div><a href="../legal/cookies.html">Cookies</a></div>
+    </div>
+    <div class="mini col2">
+      <div style="font-family:'Baloo 2';font-weight:700;margin-bottom:6px">Escríbenos</div>
+      <div><a href="mailto:hola@nexoeduca.app"><b>hola@nexoeduca.app</b></a> <span class="muted">(general)</span></div>
+      <div><a href="mailto:soporte@nexoeduca.app"><b>soporte@nexoeduca.app</b></a> <span class="muted">(dudas con la app)</span></div>
+      <div><a href="mailto:privacidad@nexoeduca.app"><b>privacidad@nexoeduca.app</b></a> <span class="muted">(datos y derechos)</span></div>
+      <div><a href="mailto:profes@nexoeduca.app"><b>profes@nexoeduca.app</b></a> <span class="muted">(profes)</span></div>
     </div>
   </div>
 </footer>
@@ -754,7 +780,7 @@ document.getElementById('pEnviar').addEventListener('click', function () {
 });
 
 function panelCorreo(cuerpo, aviso) {
-  var enlace = 'mailto:info@nexodigitalconsulting.com?subject=' + encodeURIComponent('Plaza de prueba NEXOEDUCA para profes') +
+  var enlace = 'mailto:profes@nexoeduca.app?subject=' + encodeURIComponent('Plaza de prueba NEXOEDUCA para profes') +
                '&body=' + encodeURIComponent(cuerpo);
   return '<div class="tarjeta" style="text-align:left;max-width:560px;margin:0 auto">' +
     '<h3 style="margin-bottom:6px">Tus datos están listos</h3>' +
@@ -864,6 +890,13 @@ pintaGen();
     entradas.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('ya'); io.unobserve(en.target); } });
   }, { rootMargin: '0px 0px -6% 0px' });
   Array.prototype.forEach.call(document.querySelectorAll('.revela'), function (e) { io.observe(e); });
+})();
+
+/* «Iniciar sesión» lleva a la app: la dirección vive en destino.js (NEXO_APP_URL), un solo sitio que cambiar */
+(function () {
+  var u = window.NEXO_APP_URL;
+  if (!u) { return; }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-entrar]'), function (a) { a.setAttribute('href', u); });
 })();
 </script>
 </body>
