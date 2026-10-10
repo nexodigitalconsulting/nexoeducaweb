@@ -11,7 +11,6 @@ ficheros que hacen falta para que la web funcione.
 - `legal.html`  aviso legal y politica de privacidad
 - `destino.js`  a donde se mandan las respuestas de la encuesta (familias y profes)
 - `profe/index.html`  la pagina de captacion de profesores: se sirve en /profe
-- `app/`  la app, como **version de prueba** (lo que se hace se guarda solo en cada aparato): se sirve en /app
 
 **No se edita nada aqui a mano.** Los cambios se hacen en el proyecto y se publican con el script
 `scripts/publicar_web.py`. Cualquier cambio hecho directamente aqui se pierde en la siguiente publicacion.
