@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NexoEduca · Guía para empezar</title>
+<meta name="description" content="La guía para empezar con NexoEduca, con dibujos: para madres y padres, y para profes.">
+<link href="../letras/letras.css" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --papel:#FFF8EE; --papel-2:#FFFFFF; --papel-3:#FFFDF8;
+  --tinta:#24303F; --tinta-suave:#4A5A6C; --linea:#E7DCCB;
+  --naranja:#F97316; --naranja-2:#FFE7D1; --naranja-tinta:#7A3208;
+  --azul:#2563EB; --azul-2:#E3EDFF; --azul-tinta:#12306F;
+  --verde:#16A34A; --ambar:#F59E0B; --gris:#CBD5E1; --coral:#EF4444;
+  --uva:#8B5CF6; --menta:#14B8A6;
+  --sombra:0 6px 0 rgba(36,48,63,.06), 0 14px 30px rgba(36,48,63,.07);
+  --r:22px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(36,48,63,.045) 1px, transparent 1px);background-size:22px 22px}
+h1,h2,h3,h4{font-family:'Baloo 2','Nunito Sans',sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5.2vw,44px);font-weight:800;letter-spacing:-.5px}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.3px;margin-top:38px}
+h3{font-size:22px;font-weight:700;margin-top:28px}
+h4{font-size:18px;font-weight:700;margin-top:18px}
+a{color:var(--azul-tinta)}
+p{margin:0 0 12px}
+.muted{color:var(--tinta-suave)}
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,248,238,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--linea)}
+.topbar__in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:20px}
+.marca__logo{width:40px;height:40px;border-radius:13px;background:var(--naranja);border:2px solid #D9600B;
+  display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(217,96,11,.35)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Baloo 2';font-weight:700;font-size:17px;
+  padding:10px 18px;border-radius:16px;border:2px solid var(--linea);background:#fff;color:var(--tinta);
+  text-decoration:none;box-shadow:0 5px 0 rgba(36,48,63,.12);min-height:44px}
+.caja{max-width:760px;margin:0 auto;padding:26px 20px 60px}
+.indice{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:16px 20px;box-shadow:var(--sombra);margin:20px 0}
+.indice h2{margin-top:0;font-size:24px}
+.indice ul{margin:6px 0 10px;padding-left:20px}
+.indice li{margin:2px 0}
+.indice a{display:inline-block;padding:4px 0}
+.pantalla{background:var(--papel-2);border:2px solid var(--linea);border-radius:var(--r);padding:6px 20px 20px;margin:18px 0;box-shadow:var(--sombra);scroll-margin-top:80px}
+.pantalla h3{margin-top:16px}
+.apartado{scroll-margin-top:80px}
+ol,ul.lista{padding-left:22px;margin:8px 0 12px}
+li{margin:4px 0}
+dl{margin:8px 0}
+dt{font-weight:700;margin-top:10px}
+dd{margin:2px 0 0;color:var(--tinta-suave)}
+details{background:#fff;border:2px solid var(--linea);border-radius:18px;padding:12px 16px;margin-bottom:10px;box-shadow:0 4px 0 rgba(36,48,63,.05)}
+details[open]{border-color:#F6C79B}
+summary{cursor:pointer;font-family:'Baloo 2';font-weight:700;font-size:18px;list-style:none;min-height:28px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--naranja);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+.nota{background:var(--naranja-2);border-radius:14px;padding:10px 14px;margin:14px 0 0;font-size:16px}
+.paso-n{counter-reset:paso;list-style:none;padding:0;margin:12px 0}
+.paso-n>li{counter-increment:paso;position:relative;padding:12px 14px 12px 58px;margin:10px 0;background:var(--papel-2);
+  border:2px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+.paso-n>li::before{content:counter(paso);position:absolute;left:14px;top:12px;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;background:var(--naranja);color:#fff;border:2px solid #D9600B;font-family:'Baloo 2';font-weight:800}
+.paso-n h3{margin:0 0 6px;font-size:20px}
+.paso-n li>p{margin:0 0 8px}
+.captura{margin:12px 0 0}
+.captura img{display:block;width:100%;max-width:280px;height:auto;border-radius:14px;border:2px solid var(--linea);box-shadow:var(--sombra);background:var(--papel)}
+@media (max-width:560px){.paso-n.guia>li{padding:54px 14px 14px}.paso-n.guia>li::before{top:12px}}
+.frases{list-style:none;padding:0;margin:8px 0 12px}
+.frases li{background:var(--papel-2);border:2px solid var(--linea);border-radius:16px;padding:10px 14px;margin:8px 0}
+.quien{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+footer{background:#fff;border-top:2px solid var(--linea);padding:24px 0;margin-top:20px;font-size:15px;color:var(--tinta-suave)}
+footer .caja-pie{max-width:760px;margin:0 auto;padding:0 20px}
+@media (max-width:560px){body{font-size:16px}.caja{padding:20px 16px 50px}.topbar__in{padding:8px 14px}.pantalla{padding:4px 14px 16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.topbar{display:none}body{background:#fff}details{box-shadow:none}}
+</style>
+</head><body>
+<header class="topbar"><div class="topbar__in">
+  <div class="marca"><div class="marca__logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M9.5 8.2c3.4-.5 6.8-.5 10.2 0l3.6 3.6c.3 4.4.3 8.8 0 13.2-4.6.6-9.2.6-13.8 0-.4-5.6-.4-11.2 0-16.8z" fill="#FFFFFF"/><path d="M13.6 19.8c.9 1 2 1.1 3.1.3" stroke="#F97316" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div>NexoEduca</div>
+  <a class="btn" href="manual.html" style="margin-left:auto">Manual completo</a>
+</div></header>
+<div class="caja">
+<h1>Guía para empezar</h1>
+<p class="muted">Lo justo para empezar, con dibujos. Si quieres saber qué hace cada botón, en cualquier pantalla tienes el «?» de arriba, y el manual lo cuenta todo.</p>
+<nav class="indice" aria-label="En esta guía">
+<h2>En esta guía</h2>
+<ul>
+<li><a href="#que-es">Qué es NexoEduca</a></li>
+<li><a href="#padres">Si eres madre o padre</a></li>
+<li><a href="#profes">Si eres profe</a></li>
+<li><a href="#privacidad">La privacidad, en llano</a></li>
+<li><a href="#ayuda">Dónde pedir ayuda</a></li>
+</ul>
+</nav>
+<section class="apartado" id="que-es">
+<h2>Qué es NexoEduca</h2>
+<ul class="frases"><li>NexoEduca te ayuda con los deberes de tus hijos: le haces una foto a lo que traen del cole y Nexi te cuenta cómo explicárselo.</li><li>Tu hijo practica con ejercicios cortos y pegatinas, sin notas ni números; las notas del 1 al 10, si las quieres, las ves tú.</li><li>Es para madres, padres y profes particulares, y funciona en el móvil y en el ordenador.</li></ul>
+</section>
+<section class="apartado" id="padres">
+<h2>Si eres madre o padre</h2>
+<p class="muted">De cero a la primera tarde de estudio, en este orden. Puedes saltarte lo que no necesites.</p>
+<ol class="paso-n guia"><li id="padres-instalar">
+<h3>Instala la app</h3>
+<p>Se instala desde el navegador, sin tienda de aplicaciones. Queda en tu pantalla de inicio y se abre aunque no haya red.</p>
+<ol><li>En Android: abre el enlace con Chrome, elige «Instalar la app» y confirma.</li><li>En iPhone o iPad: ábrelo con Safari, toca «Compartir» y elige «Añadir a pantalla de inicio».</li><li>En el ordenador: busca el icono de instalar en la barra del navegador, o mira los pasos que te enseña la propia app.</li></ol>
+<p class="nota">No es obligatorio: también puedes seguir usándola en la web.</p>
+
+</li>
+<li id="padres-cuenta">
+<h3>Crea tu cuenta y añade a tu primer hijo</h3>
+<p>La cuenta guarda a tu familia. Son unos tres minutos, en dos pasos.</p>
+<ol><li>Pulsa «Crear cuenta de familia». Escribe tu nombre y tu correo, y elige una contraseña de 10 caracteres o más, con una letra y un número.</li><li>Elige tu código de padres, de 4 cifras: te lo pedirá la app cuando vuelvas del espacio de tu hijo.</li><li>Marca las casillas de «Antes de empezar» y pulsa «Crear mi cuenta».</li><li>Escribe el nombre de tu hijo, su curso y su edad. Te propongo cómo la verá: Cera (de 3 a 7 años), Cuaderno (de 8 a 11) o Libreta (de 12 a 16).</li></ol>
+<p class="nota">¿Solo quieres verla? «Probar con la familia de ejemplo» te deja entrar con tres niños inventados.</p>
+
+</li>
+<li id="padres-foto">
+<h3>Haz la foto de los deberes</h3>
+<p>Es lo que más se usa. Nexi lee la foto, busca el tema y te lleva a la explicación.</p>
+<ol><li>En «Hoy», pulsa «Hacer la foto de los deberes». Mejor la página entera, con buena luz y sin sombras.</li><li>Si dudo de qué tema es, te pregunto «¿Es de esto?» con hasta tres opciones: eliges la buena, o «Ninguno: preparadlo esta noche».</li><li>Si no tienes la foto a mano, pulsa «Contarlo con tus palabras» y escribe de qué van los deberes. Si no encuentro el tema, te enseño temas parecidos y puedes pulsar «Buscarlo en el árbol de temas».</li><li>Para ver cómo funciona sin hacer ninguna foto, prueba con «Probar con la foto de ejemplo».</li></ol>
+<p class="nota">Con la cuenta en el servidor hay un tope de fotos al día por familia (ahora, 10): «Capturar» te dice cuántas llevas. La foto no se guarda.</p>
+<figure class="captura"><img src="img/capturar.webp" alt="La pantalla «Capturar»: las opciones «Hacer una foto» y «Elegir un fichero» para enseñarle los deberes a Nexi, con las demás más abajo." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-explicacion">
+<h3>Entiende el tema y que lo practique</h3>
+<p>La explicación está pensada para ti, el adulto: cómo contárselo paso a paso y cuál es el error de siempre.</p>
+<ol><li>Lee «Cómo explicárselo» y fíjate en el «Ojo con el error de siempre».</li><li>Cuando estés listo, «Que lo practique ya» le pasa el móvil con los ejercicios de ese tema.</li><li>Si prefieres que lo haga más tarde, «Ponérselo para más tarde» lo deja en su nevera.</li></ol>
+
+<figure class="captura"><img src="img/explicacion.webp" alt="La explicación de un tema (las plantas), pensada para el padre: el título, un resumen y los primeros pasos de «Cómo explicárselo»." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-arbol">
+<h3>Ponle un tema del árbol de temas</h3>
+<p>Tú decides qué repasa o qué adelanta. Le sale en su nevera con un mensaje tuyo.</p>
+<ol><li>En «Practicar», pulsa «Ponerle un tema». Se abre el árbol de temas, con el curso de tu hijo abierto.</li><li>Busca escribiendo («fracciones», «tildes»…) o abre otro curso: más abajo, para repasar; más arriba, para adelantar.</li><li>Toca el tema, escribe tu mensaje, elige para cuándo y pulsa «Ponérselo».</li></ol>
+
+<figure class="captura"><img src="img/practicar.webp" alt="La pantalla «Practicar»: los botones «Ponerle un tema», «Repaso de diez minutos» y «Cuadernillo para imprimir», y debajo los temas pendientes." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-calendario">
+<h3>Apunta los exámenes</h3>
+<p>Apuntas el examen y yo reparto el repaso en las tardes de antes, para que no tengas que planificar nada.</p>
+<ol><li>En «Calendario», pulsa «Apuntar un examen».</li><li>Elige de qué es y qué día, y pulsa «Apuntarlo».</li><li>Cuando toque un repaso, «Dárselo ahora» le pasa el móvil con ese tema.</li></ol>
+
+<figure class="captura"><img src="img/calendario.webp" alt="El calendario de exámenes: el botón «Apuntar un examen» y las dos próximas semanas, con una marca en el día del examen y otra en los días de repaso." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-cuadernillo">
+<h3>Imprime el cuadernillo</h3>
+<p>Si prefieres el papel, montas el cuadernillo de la semana: portada, una hoja por día y las soluciones para ti.</p>
+<ol><li>En «Practicar», pulsa «Cuadernillo para imprimir».</li><li>Elige los temas, desde qué día y cuántos ejercicios al día.</li><li>Pulsa «Descargar PDF» o «Compartir (WhatsApp…)».</li></ol>
+<p class="nota">Sin notas: cada día acaba con tres caritas para colorear y un hueco para vuestro sello.</p>
+<figure class="captura"><img src="img/cuadernillo.webp" alt="El cuadernillo de la semana: los temas que se pueden elegir, el día de inicio y los días de colegio." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-movil">
+<h3>Dale el móvil a tu hijo, o su propio aparato</h3>
+<p>Tu hijo ve su espacio, con el estilo que le toca, sin notas ni números.</p>
+<ol><li>Pulsa «Dárselo a …», arriba: el móvil pasa a su espacio.</li><li>Para recuperarlo, mantén pulsado el candado de arriba y escribe tu código de padres. Si no lo recuerdas, pulsa «He olvidado el código» y entra con la contraseña de tu cuenta.</li><li>Si tiene su propio móvil o tablet, entra en «Configuración» (el engranaje de arriba a la derecha), pulsa «Configurar» en tu hijo y, en «Darle acceso en su propio móvil o tablet», pulsa «Crear la llave de …»: sale un código de 6 letras y un QR que valen una vez y 15 minutos.</li><li>En su aparato, que toque «Tengo una llave» y escriba el código, o «Leer el código con la cámara» y apunte al QR. Después elige su clave: tres dibujos o un PIN.</li></ol>
+
+<figure class="captura"><img src="img/hoy.webp" alt="La pantalla «Hoy» del padre: arriba, el selector de su hijo, el botón «Dárselo a Pablo», el engranaje «Configuración» y el «?»; debajo, los avisos de Nexi y el botón «Hacer la foto de los deberes»." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="padres-profe">
+<h3>Conecta con un profe</h3>
+<p>Si tu hijo va a clases particulares, el profe puede ver lo que ha trabajado. Solo si tú se lo abres.</p>
+<ol><li>En «Configuración» (el engranaje de arriba a la derecha), pulsa «Configurar» en tu hijo y baja hasta «Compartir con un profe». También está en «Mi hijo».</li><li>Escribe el código del profe, o pulsa «Leer el código con la cámara» y apunta al QR que te enseñe.</li><li>Pulsa «Compartir con este profe». Con «Dejar de compartir» lo cierras cuando quieras.</li></ol>
+<p class="nota">Por defecto nadie ve nada de tu hijo. El profe ve lo trabajado y cómo le salió, nunca tus notas privadas.</p>
+
+</li>
+<li id="padres-avisos">
+<h3>Activa los avisos al móvil</h3>
+<p>Para que el móvil te avise cuando una ficha esté lista, cuando tus hijos terminen o la víspera de un examen.</p>
+<ol><li>Entra en «Configuración» (el engranaje de arriba a la derecha) y busca «Avisos en este aparato».</li><li>Pulsa «Activar avisos en este aparato» y contesta «Permitir» a la pregunta de tu navegador.</li><li>Elige cuáles quieres y cuántos al día como mucho.</li></ol>
+<p class="nota">Nunca de 22:00 a 8:00, solo a ti (nunca a tus hijos) y solo si tú los activas. En iPhone y iPad hace falta tener la app instalada.</p>
+
+</li>
+<li id="padres-configuracion">
+<h3>Cambia lo que quieras en Configuración</h3>
+<p>El engranaje «Configuración», arriba a la derecha, es el mismo en todas las pantallas. Ahí está todo lo que se puede cambiar.</p>
+<ol><li>En «Tus hijos», pulsa «Configurar»: su nombre, su curso y su edad, cómo ve la app, su propio aparato, el profe y quitarlo.</li><li>En «Tu cuenta» está «Cerrar sesión», siempre el primero, y debajo tu nombre y tu contraseña.</li><li>Más abajo: el código de padres, los avisos, la app, los permisos de este aparato y «Mis datos», para descargarlos o borrar la cuenta.</li></ol>
+
+<figure class="captura"><img src="img/configuracion.webp" alt="La pantalla «Configuración» de la familia: los atajos a cada parte (tus hijos, tu cuenta, el código de padres, los avisos, la app y tus datos) y «Tus hijos», con el botón «Configurar» de cada uno." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li></ol>
+</section>
+<section class="apartado" id="profes">
+<h2>Si eres profe</h2>
+<p class="muted">Tu espacio es para revisar fichas, ver a tus alumnos y preparar material. De un niño solo ves lo que su familia te abre.</p>
+<ol class="paso-n guia"><li id="profes-cuenta-profe">
+<h3>Crea tu cuenta de profe</h3>
+<p>Con tu correo y los cursos y las materias que das.</p>
+<ol><li>En la entrada, pulsa «Soy profe, crear cuenta de profe».</li><li>Escribe tu nombre y tu correo, elige una contraseña y marca los cursos y las materias que das.</li><li>Marca las casillas de «Antes de empezar» y pulsa «Crear mi cuenta de profe».</li></ol>
+<p class="nota">¿Quieres verlo antes? «Probar como profe de ejemplo» te deja elegir entre dos profes inventados.</p>
+
+</li>
+<li id="profes-hoy-profe">
+<h3>Tu página de inicio y tu perfil</h3>
+<p>«Hoy» es tu página de inicio: las fichas que esperan en tu mesa, tus Nexipuntos del mes y tu perfil de revisor.</p>
+<ol><li>Lee la línea de Nexi: cuántas fichas esperan en tu mesa.</li><li>En «Tu perfil de revisor», marca los cursos y las materias que dominas: solo te llegan fichas de lo que marques.</li><li>Tu nombre, tu contraseña y tu perfil de profe también se cambian en «Configuración».</li></ol>
+
+<figure class="captura"><img src="img/profe-hoy.webp" alt="La pantalla «Hoy» del profe: la línea de Nexi con las fichas que esperan en su mesa y las tarjetas de sus Nexipuntos del mes y de su acierto en las fichas de control. Más abajo está su perfil de revisor." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="profes-abrir-puerta">
+<h3>Cómo te abre la puerta una familia</h3>
+<p>Tu código de profe está en «Configuración» (el engranaje de arriba a la derecha), con su QR. Se lo das a la familia de un alumno y ella decide.</p>
+<ol><li>En «Configuración», copia tu código o enseña el QR (tócalo para verlo en grande).</li><li>La familia lo escribe, o lo lee con la cámara, en «Mi hijo», y pulsa «Compartir con este profe».</li><li>Desde entonces ves al alumno en «Alumnos»: su mapa de temas y sus últimas sesiones.</li></ol>
+<p class="nota">Ves cómo le salió (bien, casi u otro día), no las notas del 1 al 10, que son solo de los padres. La familia puede cerrarlo cuando quiera.</p>
+<figure class="captura"><img src="img/profe-cuenta.webp" alt="La pantalla «Configuración» del profe: «Tu código de profe» para dar a las familias, con el botón «Copiar el código» y su QR." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="profes-material">
+<h3>Prepara material para imprimir</h3>
+<p>Un cuadernillo en papel para cada alumno: portada, una hoja por día y las soluciones.</p>
+<ol><li>En «Material», elige al alumno.</li><li>Mira los temas de su curso que ya tienen cuadernillo.</li><li>Pulsa «Solo este tema» o «Preparar el cuadernillo de …», y después «Descargar PDF» o «Compartir (WhatsApp…)».</li></ol>
+
+<figure class="captura"><img src="img/profe-material.webp" alt="La pantalla «Material» del profe: los alumnos entre los que elegir y, debajo, los temas del curso que ya tienen cuadernillo." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li>
+<li id="profes-nexipuntos">
+<h3>Gana Nexipuntos revisando fichas</h3>
+<p>Revisar fichas ayuda a que lo que estudian los niños esté bien, y te da Nexipuntos. Tus puntos se guardan. Cuando abramos el plan Familia podrás cambiarlos por meses gratis.</p>
+<ol><li>En «Revisar» tienes tu mesa, una ficha cada vez: «Está bien», «Tiene un fallo» o «No lo sé, la siguiente».</li><li>En «Reto» son diez fichas rápidas: las lanzas a la derecha si están bien y a la izquierda si tienen algo.</li><li>En «Mis Nexipuntos» ves cuánto llevas y cuánto está en camino.</li></ol>
+<p class="nota">Cuando se puedan cambiar, 500 Nexipuntos serán un mes gratis, como mucho uno cada mes y 2 guardados. Los puntos no se pueden pasar a otra persona. Para usarlos, confirma antes tu correo.</p>
+<figure class="captura"><img src="img/profe-revisar.webp" alt="La mesa de revisión del profe: una ficha cada vez, con el motivo de por qué está en su mesa." width="375" height="640" loading="lazy" decoding="async"></figure>
+</li></ol>
+</section>
+<section class="apartado" id="privacidad">
+<h2>La privacidad, en llano</h2>
+<ul class="lista"><li>La foto de los deberes no se guarda: se usa para leer el ejercicio y se borra al terminar la sesión.</li><li>Tu hijo no tiene correo ni cuenta propia: es un perfil dentro de la tuya. Solo pedimos su nombre (vale el de pila), su curso y su edad.</li><li>Nunca vendemos ni cedemos datos de familias ni de niños.</li><li>Un profe solo ve lo que tú le abres, y puedes cerrárselo cuando quieras.</li><li>Tus hijos no ven comparaciones con otros niños ni notas del 1 al 10, salvo que tú se la enseñes.</li><li>Puedes descargar todos tus datos o borrar la cuenta desde la propia app, sin pedírselo a nadie.</li></ul>
+<p class="muted">Todo con detalle en la política de privacidad de la web. <a href="../legal/privacidad.html">Política de privacidad</a>.</p>
+</section>
+<section class="apartado" id="ayuda">
+<h2>Dónde pedir ayuda</h2>
+<p>Escríbenos a <a href="mailto:hola@nexoeduca.app">hola@nexoeduca.app</a> si algo no te sale o tienes una duda. Para tus datos y tus derechos, a <a href="mailto:privacidad@nexoeduca.app">privacidad@nexoeduca.app</a>. Y en cualquier pantalla de la app, el botón <b>?</b> te explica qué hace cada cosa.</p>
+<p>¿Quieres el detalle? El <a href="manual.html">manual completo</a> cuenta la app pantalla a pantalla, y la <a href="primeros-pasos.html">guía corta para padres</a> es la versión de una página.</p>
+</section>
+</div>
+<footer><div class="caja-pie">Este documento se genera de la propia ayuda de la aplicación (cada pantalla tiene su ayuda con el botón <b>?</b>): por eso nunca se contradicen.</div></footer>
+</body></html>

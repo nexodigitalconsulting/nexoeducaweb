@@ -505,6 +505,7 @@ footer .col2{max-width:260px}
       <div><a href="../alumnos/">Para alumnos</a></div>
       <div><a href="../profe/">Para profesores</a></div>
       <div><a href="../#planes">Planes y precios</a></div>
+      <div><a data-instalar href="https://pruebas.nexoeduca.app/#/instalar" rel="noopener">Descargar la app</a></div>
       <div style="margin-top:8px"><a class="btn btn--blanco" data-entrar href="https://pruebas.nexoeduca.app" rel="noopener" style="padding:8px 16px;font-size:17px">Iniciar sesión</a></div>
     </div>
     <div class="mini col">
@@ -530,6 +531,8 @@ footer .col2{max-width:260px}
   var u = window.NEXO_APP_URL;
   if (!u) { return; }
   Array.prototype.forEach.call(document.querySelectorAll('[data-entrar]'), function (a) { a.setAttribute('href', u); });
+  /* «Descargar la app» lleva a la página de instalar de la app (#/instalar): la misma dirección de destino.js, con su ruta */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-instalar]'), function (a) { a.setAttribute('href', u.replace(/\/+$/, '') + '/#/instalar'); });
 })();
 </script>
 </body>

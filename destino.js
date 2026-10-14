@@ -29,3 +29,10 @@ window.NEXO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxtry10VnYV2FZ87
    producción. Cuando la haya, aquí se pone la dirección definitiva de la app.
    ─────────────────────────────────────────────────────────────────────────────────────── */
 window.NEXO_APP_URL = "https://pruebas.nexoeduca.app";
+
+/* ───────────────────────────────────────────────────────────────────────────────────────
+   Botón «Descargar la app» (portada y pie de las páginas): no hace falta tocar nada más.
+   Lleva a la misma dirección de arriba, en su página de instalar (NEXO_APP_URL + "/#/instalar"):
+   allí cada aparato ve lo suyo (un botón, los pasos para el iPhone, el menú del navegador…).
+   Si se cambia NEXO_APP_URL, el botón la sigue.
+   ─────────────────────────────────────────────────────────────────────────────────────── */
