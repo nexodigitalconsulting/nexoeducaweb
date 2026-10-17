@@ -25,10 +25,10 @@ window.NEXO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxtry10VnYV2FZ87
 /* ───────────────────────────────────────────────────────────────────────────────────────
    Botones «Iniciar sesión» y «Pruébala gratis» (barra, portada, pie y páginas legales):
    a dónde llevan. Se cambia SOLO esta línea y todos los botones la siguen.
-   10-10-2026 (pedido 108): es la versión de PRUEBAS, con servidor, y sirve hasta que haya
-   producción. Cuando la haya, aquí se pone la dirección definitiva de la app.
+   15-10-2026 (pedido 164): la dirección definitiva de la app (antes, la de pruebas,
+   pruebas.nexoeduca.app, que durante la mudanza avisa y después redirige aquí).
    ─────────────────────────────────────────────────────────────────────────────────────── */
-window.NEXO_APP_URL = "https://pruebas.nexoeduca.app";
+window.NEXO_APP_URL = "https://app.nexoeduca.app";
 
 /* ───────────────────────────────────────────────────────────────────────────────────────
    Botón «Descargar la app» (portada y pie de las páginas): no hace falta tocar nada más.
