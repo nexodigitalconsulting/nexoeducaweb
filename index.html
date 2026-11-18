@@ -305,7 +305,7 @@ section[id]{scroll-margin-top:84px}
 .cambio{display:inline-grid;grid-template-columns:1fr 1fr;gap:4px;background:#fff;border:2px solid var(--linea);border-radius:999px;padding:4px;margin:6px auto 22px}
 .cambio button{font:700 17px 'Baloo 2',sans-serif;min-height:44px;min-width:120px;padding:6px 18px;border-radius:999px;border:0;background:transparent;color:var(--tinta);cursor:pointer}
 .cambio button[aria-pressed="true"]{background:var(--naranja-2);box-shadow:inset 0 0 0 2px var(--naranja)}
-.planes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.planes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 .plan{background:#fff;border:2px solid var(--linea);border-radius:var(--r);padding:20px 18px;box-shadow:var(--sombra);display:flex;flex-direction:column;min-width:0}
 .plan--dest{border-color:var(--naranja);box-shadow:0 6px 0 #F6C79B, 0 14px 30px rgba(36,48,63,.07)}
 .plan h3{font-size:22px;margin:8px 0 0}
@@ -338,7 +338,7 @@ section[id]{scroll-margin-top:84px}
 footer .col a{display:inline-flex;align-items:center;min-height:32px}
 @media (max-width:1020px){
   .nav{display:none}
-  .planes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .planes{grid-template-columns:repeat(3,minmax(0,1fr))}
   .pasos4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .privacidad4{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -568,7 +568,7 @@ footer .col2{max-width:260px}
   <div class="ancho">
     <div class="centro"><span class="pastilla pastilla--naranja">Planes y precios</span>
       <h2 style="margin:10px 0 6px">Claro y sin letra pequeña</h2></div>
-    <div class="beta" style="margin-top:18px"><span class="pastilla pastilla--verde">En pruebas</span><b>Durante la beta es gratis.</b><span>Todavía no se cobra nada: estos son los precios previstos y se avisa antes de cobrar. Fotos de deberes: 1 al día en el plan gratuito y hasta 10 al día en el plan Familia (uso justo).</span></div>
+    <div class="beta" style="margin-top:18px"><span class="pastilla pastilla--verde">En pruebas</span><b>Durante la beta es gratis.</b><span>Todavía no se cobra nada: estos son los precios previstos y se avisa antes de cobrar. Todos los precios llevan el IVA incluido. Fotos de deberes: 1 al día en el plan gratuito y hasta 10 al día en el plan Familia (uso justo).</span></div>
     <div class="centro"><div class="cambio" role="group" aria-label="Pago mensual o anual"><button type="button" id="verMes" aria-pressed="true">Al mes</button><button type="button" id="verAnio" aria-pressed="false">Al año</button></div></div>
     <div class="planes"><div class="plan">
   <span></span><h3>Gratuito</h3>
@@ -578,21 +578,15 @@ footer .col2{max-width:260px}
   <a class="btn btn--blanco" data-entrar href="https://app.nexoeduca.app" rel="noopener">Pruébala gratis</a>
 </div><div class="plan plan--dest">
   <span class="pastilla pastilla--naranja">Para empezar</span><h3>Familia</h3>
-  <div class="plan__p" data-m="7,99 €<small> /mes</small>" data-a="69 €<small> /año · unos 5,75 € al mes</small>">7,99 €<small> /mes</small></div>
-  <p class="plan__sub">Para la mayoría de familias</p>
-  <ul><li>Hasta 10 fotos al día (uso justo)</li><li>Hasta 3 hijos</li><li>Los cuadernillos ya hechos de la noche</li><li>Nexi recuerda el curso actual y el anterior</li><li>Temario por curso y alertas</li></ul>
+  <div class="plan__p" data-m="7,99 €<small> /mes</small>" data-a="69 €<small> /año · unos 5,75 € al mes; el hijo extra, solo al mes</small>">7,99 €<small> /mes</small></div>
+  <p class="plan__sub">Para la mayoría de familias: 2 hijos incluidos</p>
+  <ul><li>Hasta 10 fotos al día (uso justo)</li><li>2 hijos incluidos y hasta 4: 3,99 € más al mes por cada hijo desde el tercero</li><li>Los cuadernillos ya hechos de la noche</li><li>Nexi recuerda el curso actual y el anterior</li><li>Temario por curso y alertas</li></ul>
   <a class="btn" data-entrar href="https://app.nexoeduca.app" rel="noopener">Pruébala gratis</a>
 </div><div class="plan">
-  <span></span><h3>Familia Plus</h3>
-  <div class="plan__p" data-m="Por decidir" data-a="Por decidir">Por decidir</div>
-  <p class="plan__sub">Para familias grandes o con varios profes</p>
-  <ul><li>Todo lo de Familia</li><li class="pronto">Lo que lleve y su precio se deciden con las familias de la beta</li></ul>
-  <a class="btn btn--blanco" data-entrar href="https://app.nexoeduca.app" rel="noopener">Pruébala gratis</a>
-</div><div class="plan">
   <span></span><h3>Profesor</h3>
-  <div class="plan__p" data-m="Por decidir" data-a="Por decidir">Por decidir</div>
+  <div class="plan__p" data-m="14,99 €<small> /mes</small>" data-a="149 €<small> /año · unos 12,42 € al mes</small>">14,99 €<small> /mes</small></div>
   <p class="plan__sub">Un solo plan, sin escalones</p>
-  <ul><li>Material para imprimir</li><li>Conectar con las familias que te abren la puerta</li><li>Tu página: <a href="profe/">nexoeduca.app/profe</a></li></ul>
+  <ul><li>De lanzamiento: un 30 % menos (unos 10,49 € al mes) los 3 primeros meses</li><li>Material para imprimir</li><li>Conectar con las familias que te abren la puerta</li><li>Tu página: <a href="profe/">nexoeduca.app/profe</a></li></ul>
   <a class="btn btn--blanco" href="profe/">Ver la página para profes</a>
 </div></div>
     <p class="mini muted centro" style="margin-top:14px">Sin permanencia. Los límites del plan gratuito son los que ves en su tarjeta.</p>
@@ -616,7 +610,7 @@ footer .col2{max-width:260px}
 <section>
   <div class="ancho-estrecho">
     <div class="centro"><span class="pastilla">Dudas</span><h2 style="margin:10px 0 22px">Lo que nos preguntáis siempre</h2></div>
-    <details><summary>¿Sustituye al profe o a las clases?</summary><p class="mini muted">No. NEXOEDUCA ayuda en casa, entre clase y clase: que sepas cómo explicar un tema, que él practique y que el examen no pille de sorpresa. Si tiene profe particular, puede ver su progreso si tú lo autorizas, y tú lo puedes cerrar cuando quieras.</p></details><details><summary>¿Cuánto cuesta?</summary><p class="mini muted">Durante la beta es gratis. Los precios previstos están arriba: Familia, 7,99 € al mes o 69 € al año; Familia Plus, 12,99 € o 109 €; Profesor, 10,90 € al mes. Sin permanencia, y se avisa antes de cobrar. El plan gratuito lee 1 foto al día y el plan Familia, por uso justo, hasta 10 al día (practicar no tiene ese límite en ninguno); si cambia, se avisa.</p></details><details><summary>¿Qué pasa con los datos de mi hijo?</summary><p class="mini muted">Pedimos lo mínimo: del niño, un nombre o apodo, el curso y la edad (no pedimos el colegio). No tiene correo ni contraseña propios. No se venden datos y puedes descargarlo todo o borrarlo cuando quieras.</p></details><details><summary>¿Le va a enganchar como un juego?</summary><p class="mini muted">No está hecho para eso: no hay rachas que den culpa, ni rankings, ni números que vea el niño (salvo la nota que tú decidas enseñarle). Los juegos son de repaso corto, y las pegatinas y las chispas no valen dinero.</p></details><details><summary>¿Quién escribe y revisa las fichas?</summary><p class="mini muted">Las escribe un asistente y las revisa primero un sistema automático. Todavía no tienen el sello de una persona: por eso existe la mesa de revisión, donde familias y profes marcan si una ficha está bien.</p></details><details><summary>¿Para qué cursos sirve?</summary><p class="mini muted">La app está pensada para niños de 1.º de Primaria a 2.º de ESO, con tres estilos por edad.</p></details><details><summary>¿Qué hace falta para empezar?</summary><p class="mini muted">Para mirarla, nada: pulsa «Probar sin cuenta» y entras con una familia de ejemplo, sin correo ni tarjeta. Para crear tu cuenta, cuatro datos tuyos (nombre, correo, contraseña y un código de 4 cifras para tu espacio de padre) y marcar tres casillas legales; después, un nombre o apodo, el curso y la edad de tu hijo. Tu hijo no necesita cuenta.</p></details><details><summary>¿Tengo que comprar libros o escanearlos?</summary><p class="mini muted">No. Se usa la ficha o el examen que ya tienes en casa. No guardamos libros ni cuadernos de ninguna editorial: del libro del colegio solo usamos los títulos de las unidades.</p></details>
+    <details><summary>¿Sustituye al profe o a las clases?</summary><p class="mini muted">No. NEXOEDUCA ayuda en casa, entre clase y clase: que sepas cómo explicar un tema, que él practique y que el examen no pille de sorpresa. Si tiene profe particular, puede ver su progreso si tú lo autorizas, y tú lo puedes cerrar cuando quieras.</p></details><details><summary>¿Cuánto cuesta?</summary><p class="mini muted">Durante la beta es gratis. Los precios previstos están arriba: Familia, 7,99 € al mes (o 69 € al año) con 2 hijos y 3,99 € más al mes por cada hijo desde el tercero (hasta 4); Profesor, 14,99 € al mes (o 149 € al año). Todos los precios llevan el IVA incluido. Sin permanencia, y se avisa antes de cobrar. El plan gratuito lee 1 foto al día y el plan Familia, por uso justo, hasta 10 al día (practicar no tiene ese límite en ninguno); si cambia, se avisa.</p></details><details><summary>¿Qué pasa con los datos de mi hijo?</summary><p class="mini muted">Pedimos lo mínimo: del niño, un nombre o apodo, el curso y la edad (no pedimos el colegio). No tiene correo ni contraseña propios. No se venden datos y puedes descargarlo todo o borrarlo cuando quieras.</p></details><details><summary>¿Le va a enganchar como un juego?</summary><p class="mini muted">No está hecho para eso: no hay rachas que den culpa, ni rankings, ni números que vea el niño (salvo la nota que tú decidas enseñarle). Los juegos son de repaso corto, y las pegatinas y las chispas no valen dinero.</p></details><details><summary>¿Quién escribe y revisa las fichas?</summary><p class="mini muted">Las escribe un asistente y las revisa primero un sistema automático. Todavía no tienen el sello de una persona: por eso existe la mesa de revisión, donde familias y profes marcan si una ficha está bien.</p></details><details><summary>¿Para qué cursos sirve?</summary><p class="mini muted">La app está pensada para niños de 1.º de Primaria a 2.º de ESO, con tres estilos por edad.</p></details><details><summary>¿Qué hace falta para empezar?</summary><p class="mini muted">Para mirarla, nada: pulsa «Probar sin cuenta» y entras con una familia de ejemplo, sin correo ni tarjeta. Para crear tu cuenta, cuatro datos tuyos (nombre, correo, contraseña y un código de 4 cifras para tu espacio de padre) y marcar tres casillas legales; después, un nombre o apodo, el curso y la edad de tu hijo. Tu hijo no necesita cuenta.</p></details><details><summary>¿Tengo que comprar libros o escanearlos?</summary><p class="mini muted">No. Se usa la ficha o el examen que ya tienes en casa. No guardamos libros ni cuadernos de ninguna editorial: del libro del colegio solo usamos los títulos de las unidades.</p></details>
   </div>
 </section>
 <section style="background:#FFFDF8;border-block:2px dashed var(--linea)">
