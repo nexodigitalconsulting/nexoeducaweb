@@ -1,0 +1,6 @@
+# NexoEduca · contacto de seguridad (RFC 9116).
+# Si has encontrado un fallo de seguridad, escríbenos aquí antes de hacerlo público. Gracias.
+Contact: mailto:hola@nexoeduca.app
+Expires: 2027-11-21T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://nexoeduca.app/.well-known/security.txt

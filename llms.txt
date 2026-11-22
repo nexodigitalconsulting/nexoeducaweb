@@ -1,0 +1,19 @@
+# NexoEduca
+
+> Plataforma de apoyo al estudio para familias y profesores particulares en España (Primaria y primeros cursos de la ESO): explica el tema, el niño practica con ejercicios y juegos, y el repaso se reparte antes del examen.
+
+Resumen de la web pública para los asistentes de IA. Contacto: hola@nexoeduca.app
+
+## Para quién
+- [Para padres y madres](https://nexoeduca.app/padres/): la explicación sin jerga, el repaso repartido antes del examen, el cuadernillo para imprimir y un seguimiento que no juzga.
+- [Para alumnos](https://nexoeduca.app/alumnos/): tres estilos por edad, Nexi, pistas antes que soluciones, juegos y dibujo, sin rachas ni competición.
+- [Para profesores particulares](https://nexoeduca.app/profe/): los alumnos que una familia le abre, su cuadernillo para imprimir y la revisión de fichas.
+
+## Ayuda
+- [Guía para empezar](https://nexoeduca.app/ayuda/guia.html)
+- [Primeros pasos](https://nexoeduca.app/ayuda/primeros-pasos.html)
+- [Manual completo](https://nexoeduca.app/ayuda/manual.html)
+
+## Legal
+- [Privacidad](https://nexoeduca.app/legal/privacidad.html)
+- [Condiciones](https://nexoeduca.app/legal/condiciones.html)

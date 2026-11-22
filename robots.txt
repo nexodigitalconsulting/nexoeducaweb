@@ -1,0 +1,7 @@
+# NexoEduca · web pública (R8.016). La web se puede leer y citar; la app (app.nexoeduca.app) lleva su propia marca de «no indexar».
+User-agent: *
+Allow: /
+Disallow: /demo/
+Disallow: /legal/
+
+Sitemap: https://nexoeduca.app/sitemap.xml
