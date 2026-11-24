@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nexoeduca.app/</loc></url>
+  <url><loc>https://nexoeduca.app/legal.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/aviso-legal.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/privacidad.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/condiciones.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/cookies.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/nexipuntos.html</loc></url>
+  <url><loc>https://nexoeduca.app/legal/creditos.html</loc></url>
   <url><loc>https://nexoeduca.app/padres/</loc></url>
   <url><loc>https://nexoeduca.app/alumnos/</loc></url>
   <url><loc>https://nexoeduca.app/profe/</loc></url>
